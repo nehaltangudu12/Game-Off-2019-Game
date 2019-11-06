@@ -1,4 +1,4 @@
 # **Game Off 2019 Game**
-Hi
-** IGNORE THE FILES IN THERE FOR NOW! THOSE SUCK AND ARE IN THE WRONG VERSION! **
-# test
+Version of the Unity to use: 2019.2.9f1
+
+Before Pushing a new Update always remeber to pull !
