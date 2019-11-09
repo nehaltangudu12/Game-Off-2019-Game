@@ -20,38 +20,86 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("Max height the character will jump regardless of gravity")]
     float jumpHeight = 4;
 
-    private BoxCollider2D boxCollider;
+    [SerializeField, Tooltip("Heightboost gained by walljumping")]
+    float walljumpboost = 5;
 
-    private Vector2 velocity;
+    public BoxCollider2D boxCollider;
 
-    private bool grounded;
+    public Vector2 velocity;
 
-    private float horizonzalInput;
+    public bool grounded;
+
+    public bool walljump;
+
+    public bool jumped;
+
+    public float horizonzalInput;
+
+    public Collider2D lastwall;
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = transform.GetComponent<BoxCollider2D>();
     }
 
 
     void Update()
     {
+        JumpingLogic();
+
+        // simulating physics for the player
+        if (!grounded)
+        {
+            velocity.y += Physics2D.gravity.y * Time.deltaTime;
+        }
+
+        MovementLogic();
+        MovementLogic();
+
+        // clears grounded each frame
+        grounded = false;
+
+        CollisionLogic();
+
+
+
+    }
+
+    private void JumpingLogic()
+    {
         // Only allows the Player to Jump if he isnt in the air
-        if (grounded)
+        if (grounded || walljump)
         {
             if (Input.GetButtonDown("Jump"))
             {
-                velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
+                velocity.y = 0;
+                // if the player is "allowed" to walljump (walljump == true + !jumped == false ) and he is not on the ground he performs a wall jump
+                if (walljump && !jumped && !grounded)
+                {
+                    Debug.Log("j");
+                    // moves in the opposite x directione -> bouncing of the wall
+                    velocity.x = -velocity.x;
+                    // gaining height with the walljump
+                    velocity.y += walljumpboost;
+                    jumped = true;
+                }
+                else if (grounded)
+                {
+                    velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
+                }
             }
+            walljump = false;
         }
-        velocity.y += Physics2D.gravity.y * Time.deltaTime;
-
+    }
+    private void MovementLogic()
+    {
         horizonzalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(velocity * Time.deltaTime);
 
         // Changes the acc-/deceleration according to the players current state of being grounded or not
         float acceleration = grounded ? walkAcceleration : airAcceleration;
         float deceleration = grounded ? groundDeceleration : 0;
+
 
         // Speeds up while getting input and slows down when not getting input
         if (horizonzalInput != 0)
@@ -62,12 +110,12 @@ public class PlayerController : MonoBehaviour
         {
             velocity.x = Mathf.MoveTowards(velocity.x, 0, deceleration * Time.deltaTime);
         }
+    }
+    private void CollisionLogic ()
+    {
 
         // Gets all Collissions in the own 2dCollider
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
-
-        // clears grounded each frame
-        grounded = false;
 
         // Loops through all Collisions and pushed the player out of other colliders by the minimum Distance required
         foreach (Collider2D hit in hits)
@@ -86,7 +134,24 @@ public class PlayerController : MonoBehaviour
                 // if the player is touching a object with the ground tag its "grounded"
                 if (hit.CompareTag("ground"))
                 {
+                    Debug.Log("g");
                     grounded = true;
+
+                    jumped = false;
+                }
+                if (hit.CompareTag("jumpwall") && hit != lastwall && jumped )
+                {
+                    jumped = false;
+                    walljump = true;
+                }
+                // Allows the player to walljump
+                if (hit.CompareTag("jumpwall") && !walljump)
+                {
+                    if (!grounded)
+                    {
+                        walljump = true;
+                        lastwall = hit;
+                    }
                 }
             }
         }
