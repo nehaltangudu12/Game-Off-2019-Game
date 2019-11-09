@@ -29,3 +29,7 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.vs/Game-Off-2019-Game/v15/Server/sqlite3/db.lock
+.vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide
+.vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide-wal
+.vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide-shm
