@@ -45,8 +45,9 @@ public class Alternate_PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(new Vector3(speed, 0, 0));
@@ -55,17 +56,21 @@ public class Alternate_PlayerController : MonoBehaviour
         {
             rb.AddForce(new Vector3(-speed, 0, 0));
         }
-        if (Input.GetKeyDown(KeyCode.W) && grounded == true)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(1.0f,0.0f,0.0f))))
+            if (grounded == false)
             {
-                rb.AddForce(new Vector3(-(jumpHeight*10), (jumpHeight * 10), 0));
+                if (Physics2D.Raycast(transform.position, transform.TransformDirection(new Vector3(1f, 0.0f, 0.0f)), 0.1f))
+                {
+                    rb.AddForce(new Vector3(-(jumpHeight * 10), (jumpHeight * 10), 0));
+                }
+                else if (Physics2D.Raycast(transform.position, transform.TransformDirection(new Vector3(-1f, 0.0f, 0.0f)), -0.1f))
+                {
+                    rb.AddForce(new Vector3(jumpHeight * 10, (jumpHeight * 10), 0));
+                }
             }
-            else if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(-1.0f, 0.0f, 0.0f))))
-            {
-                rb.AddForce(new Vector3(jumpHeight * 10, (jumpHeight * 10), 0));
-            }
-            else
+           
+            else if (grounded == true)
             {
                 rb.AddForce(new Vector3(0, (jumpHeight * 10), 0));
             }
