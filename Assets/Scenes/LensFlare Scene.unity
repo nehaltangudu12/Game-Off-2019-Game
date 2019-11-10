@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 213892796}
-  maxrange: 20
-  scalerate: 0.2
+  maxrange: 10
+  scalerate: 0.5
 --- !u!212 &486095450
 SpriteRenderer:
   m_ObjectHideFlags: 0

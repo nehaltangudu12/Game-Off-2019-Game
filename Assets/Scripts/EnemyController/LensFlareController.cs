@@ -8,10 +8,10 @@ public class LensFlareController : MonoBehaviour
     public GameObject player;
 
     [SerializeField, Tooltip("The range at which the flare starts increasing.")]
-    public float maxrange = 5.0f;
+    public float maxrange;
 
     [SerializeField, Tooltip("The rate at which the flare increases in size")]
-    public float scalerate = 1;
+    public float scalerate;
 
 
     // Start is called before the first frame update
