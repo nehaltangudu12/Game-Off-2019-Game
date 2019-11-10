@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public bool jumped;
 
-    public float horizonzalInput;
+    public float horizontalInput;
 
     public Collider2D lastwall;
 
@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             velocity.y += Physics2D.gravity.y * Time.deltaTime;
         }
 
-        MovementLogic();
         MovementLogic();
 
         // clears grounded each frame
@@ -120,7 +119,7 @@ public class PlayerController : MonoBehaviour
     }
     private void MovementLogic()
     {
-        horizonzalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(velocity * Time.deltaTime);
 
         // Changes the acc-/deceleration according to the players current state of being grounded or not
@@ -129,9 +128,9 @@ public class PlayerController : MonoBehaviour
 
 
         // Speeds up while getting input and slows down when not getting input
-        if (horizonzalInput != 0)
+        if (horizontalInput != 0)
         {
-            velocity.x = Mathf.MoveTowards(velocity.x, speed * horizonzalInput, acceleration * Time.deltaTime);
+            velocity.x = Mathf.MoveTowards(velocity.x, speed * horizontalInput, acceleration * Time.deltaTime);
         }
         else
         {
