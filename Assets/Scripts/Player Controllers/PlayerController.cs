@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("Heightboost gained by walljumping")]
     float walljumpboost = 5;
 
+    [SerializeField, Tooltip("Distance for Jump Buffering")]
+    float jbdistance = 5;
+
     public BoxCollider2D boxCollider;
 
     public Vector2 velocity;
@@ -36,6 +39,10 @@ public class PlayerController : MonoBehaviour
     public float horizonzalInput;
 
     public Collider2D lastwall;
+
+    public bool buffering;
+
+    public bool bufferedjump;
 
     private void Awake()
     {
@@ -67,28 +74,48 @@ public class PlayerController : MonoBehaviour
 
     private void JumpingLogic()
     {
-        // Only allows the Player to Jump if he isnt in the air
-        if (grounded || walljump)
+        // buffered jump
+        if (buffering)
         {
             if (Input.GetButtonDown("Jump"))
             {
-                velocity.y = 0;
-                // if the player is "allowed" to walljump (walljump == true + !jumped == false ) and he is not on the ground he performs a wall jump
-                if (walljump && !jumped && !grounded)
-                {
-                    Debug.Log("j");
-                    // moves in the opposite x directione -> bouncing of the wall
-                    velocity.x = -velocity.x;
-                    // gaining height with the walljump
-                    velocity.y += walljumpboost;
-                    jumped = true;
-                }
-                else if (grounded)
-                {
-                    velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
-                }
+                bufferedjump = true;
             }
-            walljump = false;
+        }
+
+        if (bufferedjump && grounded)
+        {
+            Debug.Log("buffer jump");
+            velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
+            bufferedjump = false;
+        }
+        // normal and wall jumping
+        if (!bufferedjump)
+        {
+            // Only allows the Player to Jump if he isnt in the air
+            if ((grounded || walljump))
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    velocity.y = 0;
+                    // if the player is "allowed" to walljump (walljump == true + !jumped == false ) and he is not on the ground he performs a wall jump
+                    if (walljump && !jumped && !grounded)
+                    {
+                        Debug.Log("wall jump");
+                        // moves in the opposite x directione -> bouncing of the wall
+                        velocity.x = -velocity.x;
+                        // gaining height with the walljump
+                        velocity.y += walljumpboost;
+                        jumped = true;
+                    }
+                    else if (grounded)
+                    {
+                        Debug.Log("normal jump");
+                        velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
+                    }
+                }
+                walljump = false;
+            }
         }
     }
     private void MovementLogic()
@@ -134,7 +161,6 @@ public class PlayerController : MonoBehaviour
                 // if the player is touching a object with the ground tag its "grounded"
                 if (hit.CompareTag("ground"))
                 {
-                    Debug.Log("g");
                     grounded = true;
 
                     jumped = false;
@@ -152,6 +178,19 @@ public class PlayerController : MonoBehaviour
                         walljump = true;
                         lastwall = hit;
                     }
+                }
+            }
+        }
+        buffering = false;
+        if (!grounded)
+        {
+            Collider2D[] jbhits = Physics2D.OverlapBoxAll(transform.position, new Vector2(boxCollider.size.x + jbdistance, boxCollider.size.y + jbdistance), 0);
+
+            foreach (Collider2D hit in jbhits)
+            {
+                if (!buffering && hit.CompareTag("ground") && velocity.y < 0)
+                {
+                    buffering = true;
                 }
             }
         }
