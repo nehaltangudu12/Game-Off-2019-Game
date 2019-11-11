@@ -12,6 +12,7 @@
         private Grid _tilesMapGrid;
         private InputData _inputData;
 
+        public Vector2 CameraBoundariesX { get; private set; }
         public void Init ()
         {
             TryGetComponent (out _camera);
@@ -20,9 +21,25 @@
             _inputData = PlayerInput.Instance.Data;
         }
 
+        void OnDrawGizmosSelected ()
+        {
+            if (Application.isPlaying)
+            {
+                DebugPlayersBoundaries ();
+            }
+        }
+
         private int index = 0;
         void Update ()
         {
+            // bounds
+            var camPos = _camera.transform.position;
+
+            var minX = camPos.x - 21f;
+            var maxX = camPos.x + 21f;
+
+            CameraBoundariesX = new Vector2 (minX, maxX);
+
             if (_inputData.CamArrowUp)
             {
                 transform.DOMoveY (Mathf.Clamp (transform.position.y + CamMoveStep, -12f, 12f), TimeToSnap);
@@ -95,5 +112,18 @@
 
                 index++;
             }
+        }
+
+        void DebugPlayersBoundaries ()
+        {
+            var camPos = _camera.transform.position;
+
+            Gizmos.color = Color.red;
+            var minLine = new Vector2 (CameraBoundariesX.x, camPos.y - 12f);
+            var minLineDest = new Vector2 (CameraBoundariesX.x, camPos.y + 12f);
+            var maxLine = new Vector2 (CameraBoundariesX.y, camPos.y - 12f);
+            var maxLineDest = new Vector2 (CameraBoundariesX.y, camPos.y + 12f);
+            Gizmos.DrawLine (minLine, minLineDest);
+            Gizmos.DrawLine (maxLine, maxLineDest);
         }
     }

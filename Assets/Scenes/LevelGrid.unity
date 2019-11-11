@@ -483,7 +483,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 24
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -507,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933983703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -200}
+  m_LocalPosition: {x: -21, y: -12, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -697,12 +697,12 @@ PrefabInstance:
     - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.2
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
         type: 3}
@@ -749,26 +749,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
+    - target: {fileID: 2678607461188244378, guid: de62108747d3c274298833c3a2a850a7,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.079
-      objectReference: {fileID: 0}
-    - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2479234
-      objectReference: {fileID: 0}
-    - target: {fileID: 6180629430388989757, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6180629430388989746, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: CameraController
+      value: 
+      objectReference: {fileID: 933983707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de62108747d3c274298833c3a2a850a7, type: 3}
 --- !u!4 &1683629798 stripped
