@@ -15,7 +15,7 @@
         private PlayerControllerDuplicate _player;
 
         private float _zoomOutOrthoSize = 24f;
-        private float _zoomInOrthoSize = 11.8f;
+        private float _zoomInOrthoSize = 11.81f;
 
         public void Init ()
         {
@@ -115,7 +115,7 @@
                 }
                 else if (_inputData.CamArrowDown)
                 {
-                    var min = _player.transform.position.y - _zoomInOrthoSize;
+                    var min = (_player.transform.position.y + 3) - _zoomInOrthoSize;
 
                     if (min < -_zoomInOrthoSize) min = -_zoomInOrthoSize;
 
