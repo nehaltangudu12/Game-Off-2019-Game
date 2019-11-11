@@ -12,6 +12,7 @@
         private Camera _mainCam;
         private Grid _tilesMapGrid;
         private InputData _inputData;
+        private PlayerControllerDuplicate _player;
 
         public void Init ()
         {
@@ -21,30 +22,48 @@
             _inputData = PlayerInput.Instance.Data;
         }
 
+        public void Init (PlayerControllerDuplicate player)
+        {
+            _player = player;
+        }
+
         void OnDrawGizmos ()
         {
             if (!_isZoomedOut) return;
             Gizmos.color = Color.green;
 
-            var max1 = new Vector3 (CameraBounds.maxXlimit.x, CameraBounds.maxYlimit.x);
+            var min1 = new Vector3 (CameraBounds.maxXlimit.x, CameraBounds.maxYlimit.x);
+            var max1 = new Vector3 (CameraBounds.maxXlimit.x, CameraBounds.maxYlimit.y);
+
+            var min2 = new Vector3 (CameraBounds.maxXlimit.y, CameraBounds.maxYlimit.x);
             var max2 = new Vector3 (CameraBounds.maxXlimit.y, CameraBounds.maxYlimit.y);
 
+            Gizmos.DrawSphere (min1, 0.5f);
             Gizmos.DrawSphere (max1, 0.5f);
+
+            Gizmos.DrawSphere (min2, 0.5f);
             Gizmos.DrawSphere (max2, 0.5f);
 
             Gizmos.color = Color.black;
 
+            Gizmos.DrawLine (max1, min2);
             Gizmos.DrawLine (max1, max2);
+            Gizmos.DrawLine (max1, min1);
+            Gizmos.DrawLine (max2, min2);
+            Gizmos.DrawLine (max2, min1);
+            Gizmos.DrawLine (min2, min1);
+
         }
 
         private int index = 0;
+
         void Update ()
         {
-            if (Input.GetKeyDown (KeyCode.F2))  
+            if (Input.GetKeyDown (KeyCode.F2))
             {
                 _isZoomedOut = true;
 
-                var pos = new Vector3 (0f, 0f, -200f);
+                var pos = new Vector3 (0, 0, -200f);
                 transform.DOMove (pos, TimeToSnap);
                 _mainCam.DOOrthoSize (24f, TimeToSnap);
             }
@@ -53,19 +72,35 @@
             {
                 if (_inputData.CamArrowUp)
                 {
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -12f, 12f), TimeToSnap);
+                    var max = _player.transform.position.y + 12f;
+
+                    if (max > 12f) max = 12f;
+
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -12f, max), TimeToSnap);
                 }
                 else if (_inputData.CamArrowDown)
                 {
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, -12f, 12f), TimeToSnap);
+                    var min = _player.transform.position.y - 12f;
+
+                    if (min < -12f) min = -12f;
+
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, 12f), TimeToSnap);
                 }
                 else if (_inputData.CamArrowLeft)
                 {
-                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x - CamMoveStep, -21f, 21f), TimeToSnap);
+                    var min = _player.transform.position.x - 21f;
+
+                    if (min < -21f) min = -21f;
+
+                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x - CamMoveStep, min, 21f), TimeToSnap);
                 }
                 else if (_inputData.CamArrowRight)
                 {
-                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, 21f), TimeToSnap);
+                    var max = _player.transform.position.x + 21f;
+
+                    if (max > 21f) max = 21f;
+
+                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap);
                 }
             }
 
