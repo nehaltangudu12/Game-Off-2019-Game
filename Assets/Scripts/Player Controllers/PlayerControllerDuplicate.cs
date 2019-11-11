@@ -123,14 +123,20 @@ public class PlayerControllerDuplicate : MonoBehaviour
     }
     private void MovementLogic ()
     {
+        // bounds
+        var camPos = CameraController.transform.position;
+
+        var minX = camPos.x - 21f;
+        var maxX = camPos.x + 21f;
+
+        var bounds = new Vector2 (minX, maxX);
 
         transform.Translate (velocity * Time.deltaTime);
 
         // Clamp
-        var targetPos = new Vector2 (Mathf.Clamp (transform.position.x,
-            CameraController.CameraBoundariesX.x, CameraController.CameraBoundariesX.y), transform.position.y);
+        var targetPos = new Vector2 (Mathf.Clamp (transform.position.x, bounds.x, bounds.y), transform.position.y);
 
-        if (transform.position.x < CameraController.CameraBoundariesX.x || transform.position.x > CameraController.CameraBoundariesX.y)
+        if (transform.position.x < bounds.x || transform.position.x > bounds.y)
         {
             transform.position = targetPos;
         }
