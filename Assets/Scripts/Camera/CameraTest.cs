@@ -9,7 +9,7 @@ public class CameraTest : MonoBehaviour
 
     private Grid _tilesMapGrid;
 
-    void Start ()
+    public void Init ()
     {
         TryGetComponent (out _camera);
 

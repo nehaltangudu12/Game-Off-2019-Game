@@ -9,7 +9,7 @@ public class TileMapController : Singleton<TileMapController>
     private TilemapRenderer _tileMapRend;
     public TilemapRenderer TileMapRend => _tileMapRend;
 
-    void Start ()
+    public void Init ()
     {
         TryGetComponent (out _tileMapRend);
         transform.parent.TryGetComponent (out _tilesGrid);
