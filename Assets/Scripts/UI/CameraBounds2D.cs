@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraBounds2D : MonoBehaviour
 {
-    [SerializeField] public Vector2 maxXlimit;
-    [SerializeField] public Vector2 maxYlimit;
+    [HideInInspector] public Vector2 maxXlimit;
+    [HideInInspector] public Vector2 maxYlimit;
 
     private Camera _camera;
     public Camera Cam => _camera;
-    
+
     void Start ()
     {
         TryGetComponent (out _camera);

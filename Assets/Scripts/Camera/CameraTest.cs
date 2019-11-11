@@ -14,12 +14,17 @@
         private InputData _inputData;
         private PlayerControllerDuplicate _player;
 
+        private float _zoomOutOrthoSize = 24f;
+        private float _zoomInOrthoSize = 11.8f;
+
         public void Init ()
         {
             TryGetComponent (out _mainCam);
 
             _tilesMapGrid = TileMapController.Instance.TilesGrid;
             _inputData = PlayerInput.Instance.Data;
+
+            CalculateGridForGizmos ();
         }
 
         public void Init (PlayerControllerDuplicate player)
@@ -27,9 +32,29 @@
             _player = player;
         }
 
-        void OnDrawGizmos ()
+        void CalculateGridForGizmos ()
         {
-            if (!_isZoomedOut) return;
+            _initPos = transform.position;
+            float cameraHalfWidth = _mainCam.aspect * 24f;
+            maxXlimit = new Vector2 (_initPos.x + cameraHalfWidth, _initPos.x - cameraHalfWidth);
+            maxYlimit = new Vector2 (_initPos.y + 24f, _initPos.y - 24f);
+        }
+
+        void MatrixGizmos ()
+        {
+            Gizmos.color = Color.red;
+
+            for (int i = -21; i < (int) Mathf.Abs (maxXlimit.y); i++)
+            {
+                for (int j = -12; j < (int) Mathf.Abs (maxYlimit.y); j++)
+                {
+                    Gizmos.DrawWireCube (new Vector2 (_initPos.x + i + .5f, _initPos.y + j + .5f), Vector3.one);
+                }
+            }
+        }
+
+        void FocusAreaGizmos ()
+        {
             Gizmos.color = Color.green;
 
             var min1 = new Vector3 (CameraBounds.maxXlimit.x, CameraBounds.maxYlimit.x);
@@ -52,10 +77,20 @@
             Gizmos.DrawLine (max2, min2);
             Gizmos.DrawLine (max2, min1);
             Gizmos.DrawLine (min2, min1);
-
         }
 
-        private int index = 0;
+        void OnDrawGizmos ()
+        {
+            if (!_isZoomedOut) return;
+
+            MatrixGizmos ();
+
+            FocusAreaGizmos ();
+        }
+
+        private Vector2 maxXlimit;
+        private Vector2 maxYlimit;
+        private Vector3 _initPos;
 
         void Update ()
         {
@@ -65,26 +100,26 @@
 
                 var pos = new Vector3 (0, 0, -200f);
                 transform.DOMove (pos, TimeToSnap);
-                _mainCam.DOOrthoSize (24f, TimeToSnap);
+                _mainCam.DOOrthoSize (_zoomOutOrthoSize, TimeToSnap);
             }
 
             if (Input.GetKey (KeyCode.F2))
             {
                 if (_inputData.CamArrowUp)
                 {
-                    var max = _player.transform.position.y + 12f;
+                    var max = _player.transform.position.y + _zoomInOrthoSize;
 
-                    if (max > 12f) max = 12f;
+                    if (max > _zoomInOrthoSize) max = _zoomInOrthoSize;
 
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -12f, max), TimeToSnap);
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -_zoomInOrthoSize, max), TimeToSnap);
                 }
                 else if (_inputData.CamArrowDown)
                 {
-                    var min = _player.transform.position.y - 12f;
+                    var min = _player.transform.position.y - _zoomInOrthoSize;
 
-                    if (min < -12f) min = -12f;
+                    if (min < -_zoomInOrthoSize) min = -_zoomInOrthoSize;
 
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, 12f), TimeToSnap);
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, _zoomInOrthoSize), TimeToSnap);
                 }
                 else if (_inputData.CamArrowLeft)
                 {
@@ -109,50 +144,9 @@
                 _isZoomedOut = false;
 
                 var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
-                var posing0 = new Vector3 (pos0.x - 21f, pos0.y - 12f, -200);
+                var posing0 = new Vector3 (pos0.x - 21f, pos0.y - _zoomInOrthoSize, -200);
                 transform.DOMove (CameraBounds.transform.position, TimeToSnap, true);
-                _mainCam.DOOrthoSize (12f, TimeToSnap);
+                _mainCam.DOOrthoSize (_zoomInOrthoSize, TimeToSnap);
             }
-
-            // if (Input.GetKeyDown (KeyCode.F1))
-            // {
-            //     var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
-            //     var pos1 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 1, 0));
-            //     var pos2 = _tilesMapGrid.CellToWorld (new Vector3Int (1, 0, 0));
-            //     var pos3 = _tilesMapGrid.CellToWorld (new Vector3Int (1, 1, 0));
-
-            //     switch (index)
-            //     {
-            //         case 0:
-            //             var posing = new Vector3 (pos0.x - 21f, pos0.y - 12f, -200);
-            //             transform.DOMove (posing, TimeToSnap, true);
-            //             break;
-
-            //         case 1:
-            //             var posing1 = new Vector3 (pos1.x - 21f, pos1.y - 12f, -200);
-            //             transform.DOMove (posing1, TimeToSnap, true);
-            //             break;
-
-            //         case 2:
-            //             var posing2 = new Vector3 (pos2.x - 21f, pos2.y - 12f, -200);
-            //             transform.DOMove (posing2, TimeToSnap, true);
-            //             break;
-
-            //         case 3:
-            //             var posing3 = new Vector3 (pos3.x / 2, pos3.y / 2, -200);
-            //             transform.DOMove (posing3, TimeToSnap, true);
-            //             break;
-
-            //         default:
-            //             index = 0;
-            //             var defaultPos = new Vector3 (pos0.x - 21f, pos0.y - 12f, -200);
-            //             transform.DOMove (defaultPos, TimeToSnap, true);
-            //             break;
-            //     }
-
-            //     _mainCam.DOOrthoSize (12f, TimeToSnap);
-
-            //     index++;
-            // }
         }
     }
