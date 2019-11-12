@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using GhAyoub.InputSystem;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerDuplicate : MonoBehaviour
 {
     [SerializeField, Tooltip ("Max speed, in units per second, that the character moves.")]
     float speed = 9;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip ("Distance for Jump Buffering")]
     float jbdistance = 5;
 
+    public CameraTest CameraController;
+
     public BoxCollider2D boxCollider;
 
     public Vector2 velocity;
@@ -44,17 +46,16 @@ public class PlayerController : MonoBehaviour
 
     private InputData _inputData;
 
-    private Vector2 startpos;
-
     private void Awake ()
     {
         boxCollider = transform.GetComponent<BoxCollider2D> ();
-        startpos = gameObject.transform.position;
     }
 
     void Start ()
     {
         _inputData = PlayerInput.Instance.Data;
+
+        CameraController.Init(this);//injection
     }
 
     void Update ()
@@ -124,7 +125,23 @@ public class PlayerController : MonoBehaviour
     }
     private void MovementLogic ()
     {
+        // bounds
+        var camPos = CameraController.transform.position;
+
+        var minX = camPos.x - 21f;
+        var maxX = camPos.x + 21f;
+
+        var bounds = new Vector2 (minX, maxX);
+
         transform.Translate (velocity * Time.deltaTime);
+
+        // Clamp
+        var targetPos = new Vector2 (Mathf.Clamp (transform.position.x, bounds.x, bounds.y), transform.position.y);
+
+        if (transform.position.x < bounds.x || transform.position.x > bounds.y)
+        {
+            transform.position = targetPos;
+        }
 
         // Changes the acc-/deceleration according to the players current state of being grounded or not
         float acceleration = grounded ? walkAcceleration : airAcceleration;
@@ -180,11 +197,6 @@ public class PlayerController : MonoBehaviour
                         walljump = true;
                         lastwall = hit;
                     }
-                }
-                if (hit.CompareTag("enemy"))
-                {
-                    Debug.Log("Death");
-                    gameObject.transform.position = startpos;
                 }
             }
         }
