@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Tooltip ("Distance for Jump Buffering")]
     float jbdistance = 5;
-
+    
+    public CheckpointController CheckpointSystem;
+    
     public BoxCollider2D boxCollider;
 
     public Vector2 velocity;
@@ -55,6 +57,9 @@ public class PlayerController : MonoBehaviour
     void Start ()
     {
         _inputData = PlayerInput.Instance.Data;
+        
+        if(CheckpointSystem == null)
+            Debug.LogError("Checkpoint controller is not initialized for player.");
     }
 
     void Update ()
@@ -149,16 +154,19 @@ public class PlayerController : MonoBehaviour
         // Loops through all Collisions and pushed the player out of other colliders by the minimum Distance required
         foreach (Collider2D hit in hits)
         {
-            // skips own collider 
-            if (hit == boxCollider)
+            if(CheckCollisionWithOwnCollider(hit))
                 continue;
-
+            
             ColliderDistance2D colliderDistance = hit.Distance (boxCollider);
 
             // checks if colliders are still overlapping (could have changed cause an collider earlier in the array already caused the player to be pushed out)
             // and if so moves the player away by the min distance also checks if the player is colliding with an "ground" object
             if (colliderDistance.isOverlapped)
             {
+                if(CheckCollisionWithEnemy(hit) 
+                    || CheckCollisionWithCheckpoint(hit))
+                    continue;
+                
                 transform.Translate (colliderDistance.pointA - colliderDistance.pointB);
                 // if the player is touching a object with the ground tag its "grounded"
                 if (hit.CompareTag ("ground"))
@@ -181,11 +189,6 @@ public class PlayerController : MonoBehaviour
                         lastwall = hit;
                     }
                 }
-                if (hit.CompareTag("enemy"))
-                {
-                    Debug.Log("Death");
-                    gameObject.transform.position = startpos;
-                }
             }
         }
         buffering = false;
@@ -203,6 +206,44 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #region Collisions except based on movement
+
+    private bool CheckCollisionWithOwnCollider(Collider2D hit)
+    {            
+        // skips own collider 
+        if (hit == boxCollider)
+            return true;
+
+        return false;
+    }
+
+    private bool CheckCollisionWithEnemy(Collider2D hit)
+    {
+        if (!hit.CompareTag("enemy"))
+            return false;
+        
+        this.Die();
+        return true;
+    }
+
+    private bool CheckCollisionWithCheckpoint(Collider2D hit)
+    {
+        if (!hit.CompareTag("checkpoint"))
+            return false;
+        
+        CheckpointSystem.SetNewCheckpoint(hit.transform.position);
+        return true;
+    }
+    
+    
+    #endregion
+    
+    private void Die()
+    {
+        Debug.Log("Died");
+        CheckpointSystem.GoToLastCheckpoint();
+    }
+    
     private void FixedUpdate ()
     {
 
