@@ -44,9 +44,12 @@ public class PlayerController : MonoBehaviour
 
     private InputData _inputData;
 
+    private Vector2 startpos;
+
     private void Awake ()
     {
         boxCollider = transform.GetComponent<BoxCollider2D> ();
+        startpos = gameObject.transform.position;
     }
 
     void Start ()
@@ -177,6 +180,11 @@ public class PlayerController : MonoBehaviour
                         walljump = true;
                         lastwall = hit;
                     }
+                }
+                if (hit.CompareTag("enemy"))
+                {
+                    Debug.Log("Death");
+                    gameObject.transform.position = startpos;
                 }
             }
         }
