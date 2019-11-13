@@ -26,11 +26,11 @@ public class LensFlareController : MonoBehaviour
         float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
         if (distance < maxrange)
         {
-            gameObject.transform.localScale += new Vector3(0.1f * scalerate, 0.1f * scalerate, 0.1f * scalerate);
+            gameObject.transform.localScale += new Vector3(((1/distance) * scalerate), ((1 / distance) * scalerate), ((1 / distance) * scalerate));
         }
         else
         {
-            gameObject.transform.localScale = Vector3.MoveTowards(gameObject.transform.localScale, startscale , (0.1f * scalerate));
+            gameObject.transform.localScale = Vector3.MoveTowards(gameObject.transform.localScale, startscale , ((0.1f) * scalerate));
         }
     }
 }

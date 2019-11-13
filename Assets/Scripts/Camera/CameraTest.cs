@@ -1,9 +1,11 @@
 ﻿    using DG.Tweening;
     using GhAyoub.InputSystem;
+    using UnityEngine.UI;
     using UnityEngine;
 
     public class CameraTest : MonoBehaviour
     {
+        [SerializeField] private Image CameraFrame;
         [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private CameraBounds2D CameraBounds;
@@ -96,6 +98,8 @@
         {
             if (Input.GetKeyDown (KeyCode.F2))
             {
+                CameraFrame.enabled = true;
+
                 _isZoomedOut = true;
 
                 var pos = new Vector3 (0, 0, -200f);
@@ -105,6 +109,7 @@
 
             if (Input.GetKey (KeyCode.F2))
             {
+
                 if (_inputData.CamArrowUp)
                 {
                     var max = _player.transform.position.y + _zoomInOrthoSize;
@@ -141,6 +146,8 @@
 
             if (Input.GetKeyUp (KeyCode.F2))
             {
+                CameraFrame.enabled = false;
+
                 _isZoomedOut = false;
 
                 var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
