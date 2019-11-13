@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - jumpwall
+  - checkpoint
+  - enemy
   layers:
   - Default
   - TransparentFX
