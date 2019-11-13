@@ -33,3 +33,8 @@ Thumbs.db
 .vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide
 .vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide-wal
 .vs/Game-Off-2019-Game/v15/Server/sqlite3/storage.ide-shm
+
+# ===================================== #
+# Rider generated #
+# ===================================== #
+.idea/
