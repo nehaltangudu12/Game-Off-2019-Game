@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Tooltip ("Distance for Jump Buffering")]
     float jbdistance = 5;
-    
+
     public CheckpointController CheckpointSystem;
-    
+
     public BoxCollider2D boxCollider;
 
     public Vector2 velocity;
@@ -57,9 +57,9 @@ public class PlayerController : MonoBehaviour
     void Start ()
     {
         _inputData = PlayerInput.Instance.Data;
-        
-        if(CheckpointSystem == null)
-            Debug.LogError("Checkpoint controller is not initialized for player.");
+
+        if (CheckpointSystem == null)
+            Debug.LogError ("Checkpoint controller is not initialized for player.");
     }
 
     void Update ()
@@ -154,19 +154,19 @@ public class PlayerController : MonoBehaviour
         // Loops through all Collisions and pushed the player out of other colliders by the minimum Distance required
         foreach (Collider2D hit in hits)
         {
-            if(CheckCollisionWithOwnCollider(hit))
+            if (CheckCollisionWithOwnCollider (hit))
                 continue;
-            
+
             ColliderDistance2D colliderDistance = hit.Distance (boxCollider);
 
             // checks if colliders are still overlapping (could have changed cause an collider earlier in the array already caused the player to be pushed out)
             // and if so moves the player away by the min distance also checks if the player is colliding with an "ground" object
             if (colliderDistance.isOverlapped)
             {
-                if(CheckCollisionWithEnemy(hit) 
-                    || CheckCollisionWithCheckpoint(hit))
+                if (CheckCollisionWithEnemy (hit) ||
+                    CheckCollisionWithCheckpoint (hit))
                     continue;
-                
+
                 transform.Translate (colliderDistance.pointA - colliderDistance.pointB);
                 // if the player is touching a object with the ground tag its "grounded"
                 if (hit.CompareTag ("ground"))
@@ -189,20 +189,16 @@ public class PlayerController : MonoBehaviour
                         lastwall = hit;
                     }
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 // If the player hits an enemy, they go back to their starting position.
-                if (hit.CompareTag("enemy"))
+                if (hit.CompareTag ("enemy"))
                 {
-                    Debug.Log("Death");
+                    Debug.Log ("Death");
                     gameObject.transform.position = startpos;
                     velocity.x = 0;
                     velocity.y = 0;
                 }
-=======
->>>>>>> 3424c81926a76641e668981b33707dc6b1c79d38
-=======
->>>>>>> 3424c81926a76641e668981b33707dc6b1c79d38
+
             }
         }
         buffering = false;
@@ -222,8 +218,8 @@ public class PlayerController : MonoBehaviour
 
     #region Collisions except based on movement
 
-    private bool CheckCollisionWithOwnCollider(Collider2D hit)
-    {            
+    private bool CheckCollisionWithOwnCollider (Collider2D hit)
+    {
         // skips own collider 
         if (hit == boxCollider)
             return true;
@@ -231,33 +227,32 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    private bool CheckCollisionWithEnemy(Collider2D hit)
+    private bool CheckCollisionWithEnemy (Collider2D hit)
     {
-        if (!hit.CompareTag("enemy"))
+        if (!hit.CompareTag ("enemy"))
             return false;
-        
-        this.Die();
+
+        this.Die ();
         return true;
     }
 
-    private bool CheckCollisionWithCheckpoint(Collider2D hit)
+    private bool CheckCollisionWithCheckpoint (Collider2D hit)
     {
-        if (!hit.CompareTag("checkpoint"))
+        if (!hit.CompareTag ("checkpoint"))
             return false;
-        
-        CheckpointSystem.SetNewCheckpoint(hit.transform.position);
+
+        CheckpointSystem.SetNewCheckpoint (hit.transform.position);
         return true;
     }
-    
-    
+
     #endregion
-    
-    private void Die()
+
+    private void Die ()
     {
-        Debug.Log("Died");
-        CheckpointSystem.GoToLastCheckpoint();
+        Debug.Log ("Died");
+        CheckpointSystem.GoToLastCheckpoint ();
     }
-    
+
     private void FixedUpdate ()
     {
 
