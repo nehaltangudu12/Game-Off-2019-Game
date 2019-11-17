@@ -6,13 +6,15 @@ namespace GhAyoub.InputSystem
     {
         public InputData Data { get; private set; } = new InputData ();
 
+        private MouseLayout _mouse = new MouseLayout ();
         private KeyboardLayout _keyboard = new KeyboardLayout ();
 
         void Update ()
         {
-            Data.ClearData();
+            Data.ClearData ();
 
-            _keyboard.Execute(Data);
+            _mouse.Execute (Data);
+            _keyboard.Execute (Data);
         }
     }
 }

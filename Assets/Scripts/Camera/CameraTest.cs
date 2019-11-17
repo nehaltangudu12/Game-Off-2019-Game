@@ -9,6 +9,8 @@
         [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private CameraBounds2D CameraBounds;
+        [SerializeField] private Sprite CameraHandGrab;
+        [SerializeField] private Sprite CameraHandNormal;
 
         private bool _isZoomedOut = false;
         private Camera _mainCam;
@@ -85,7 +87,7 @@
         {
             if (!_isZoomedOut) return;
 
-            MatrixGizmos ();
+            // MatrixGizmos ();
 
             FocusAreaGizmos ();
         }
@@ -96,8 +98,9 @@
 
         void Update ()
         {
-            if (Input.GetKeyDown (KeyCode.F2))
+            if (_inputData.CameraZoomOut)
             {
+                Cursor.visible = true;
                 CameraFrame.enabled = true;
 
                 _isZoomedOut = true;
@@ -107,8 +110,19 @@
                 _mainCam.DOOrthoSize (_zoomOutOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
             }
 
-            if (Input.GetKey (KeyCode.F2))
+            if (_inputData.CameraZoomOutHold)
             {
+                if (_inputData.CamGrab)
+                {
+                    Cursor.SetCursor (CameraHandGrab.texture, Vector2.zero, CursorMode.Auto);
+                    var mPos = _inputData.MousePosition;
+                    CameraBounds.transform.DOMove (new Vector3 (mPos.x, mPos.y, -200), TimeToSnap * Time.unscaledDeltaTime);
+                }
+                else
+                {
+                    Cursor.SetCursor (CameraHandNormal.texture, Vector2.zero, CursorMode.Auto);
+                }
+
                 Time.timeScale = 0.01f;
                 if (_inputData.CamArrowUp)
                 {
@@ -143,8 +157,7 @@
                     CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap * Time.unscaledDeltaTime);
                 }
             }
-
-            if (Input.GetKeyUp (KeyCode.F2))
+            else if (_inputData.CameraZoomIn)
             {
                 Time.timeScale = 1f;
                 CameraFrame.enabled = false;
