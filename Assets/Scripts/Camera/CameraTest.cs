@@ -17,7 +17,7 @@
         private PlayerControllerDuplicate _player;
 
         private float _zoomOutOrthoSize = 24f;
-        private float _zoomInOrthoSize = 11.81f;
+        private float _zoomInOrthoSize = 12f;
 
         public void Init ()
         {
@@ -103,20 +103,20 @@
                 _isZoomedOut = true;
 
                 var pos = new Vector3 (0, 0, -200f);
-                transform.DOMove (pos, TimeToSnap);
-                _mainCam.DOOrthoSize (_zoomOutOrthoSize, TimeToSnap);
+                transform.DOMove (pos, TimeToSnap * Time.unscaledDeltaTime);
+                _mainCam.DOOrthoSize (_zoomOutOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
             }
 
             if (Input.GetKey (KeyCode.F2))
             {
-
+                Time.timeScale = 0.01f;
                 if (_inputData.CamArrowUp)
                 {
                     var max = _player.transform.position.y + _zoomInOrthoSize;
 
                     if (max > _zoomInOrthoSize) max = _zoomInOrthoSize;
 
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -_zoomInOrthoSize, max), TimeToSnap);
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -_zoomInOrthoSize, max), TimeToSnap * Time.unscaledDeltaTime);
                 }
                 else if (_inputData.CamArrowDown)
                 {
@@ -124,7 +124,7 @@
 
                     if (min < -_zoomInOrthoSize) min = -_zoomInOrthoSize;
 
-                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, _zoomInOrthoSize), TimeToSnap);
+                    CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, _zoomInOrthoSize), TimeToSnap * Time.unscaledDeltaTime);
                 }
                 else if (_inputData.CamArrowLeft)
                 {
@@ -132,7 +132,7 @@
 
                     if (min < -21f) min = -21f;
 
-                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x - CamMoveStep, min, 21f), TimeToSnap);
+                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x - CamMoveStep, min, 21f), TimeToSnap * Time.unscaledDeltaTime);
                 }
                 else if (_inputData.CamArrowRight)
                 {
@@ -140,20 +140,21 @@
 
                     if (max > 21f) max = 21f;
 
-                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap);
+                    CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap * Time.unscaledDeltaTime);
                 }
             }
 
             if (Input.GetKeyUp (KeyCode.F2))
             {
+                Time.timeScale = 1f;
                 CameraFrame.enabled = false;
 
                 _isZoomedOut = false;
 
                 var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
                 var posing0 = new Vector3 (pos0.x - 21f, pos0.y - _zoomInOrthoSize, -200);
-                transform.DOMove (CameraBounds.transform.position, TimeToSnap, true);
-                _mainCam.DOOrthoSize (_zoomInOrthoSize, TimeToSnap);
+                transform.DOMove (CameraBounds.transform.position, TimeToSnap * Time.unscaledDeltaTime, true);
+                _mainCam.DOOrthoSize (_zoomInOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
             }
         }
     }

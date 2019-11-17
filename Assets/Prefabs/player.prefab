@@ -150,12 +150,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f6bb57e50e7c364bad0ab7806951bd8, type: 3}
+  m_Sprite: {fileID: 1066728747248849634, guid: 31abcee8614447b4b8a8501326dd1528,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.07, y: 1.28}
+  m_Size: {x: 0.55, y: 0.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -227,7 +228,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5229216, y: 3.0515785}
+  m_Offset: {x: 1.52, y: 3.0515785}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -238,7 +239,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2490444, y: 5.123171}
+  m_Size: {x: 3.36, y: 5.5}
   m_EdgeRadius: 0
 --- !u!114 &2678607461188244378
 MonoBehaviour:
@@ -256,9 +257,10 @@ MonoBehaviour:
   walkAcceleration: 75
   airAcceleration: 30
   groundDeceleration: 70
-  jumpHeight: 2
+  jumpHeight: 13
   walljumpboost: 9
   jbdistance: 0.05
+  GravityMultiplier: 2.2
   PlayerAnimator: {fileID: 8541831491370629000}
   PlayerSprite: {fileID: 8072563125471531341}
   CameraController: {fileID: 0}

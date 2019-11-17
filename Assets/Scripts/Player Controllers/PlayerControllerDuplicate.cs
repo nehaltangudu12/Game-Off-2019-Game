@@ -26,6 +26,8 @@ public class PlayerControllerDuplicate : MonoBehaviour
     [SerializeField, Tooltip ("Distance for Jump Buffering")]
     float jbdistance = 5;
 
+    [SerializeField] private float GravityMultiplier = 1f;
+
     [SerializeField] private Animator PlayerAnimator = null;
     [SerializeField] private SpriteRenderer PlayerSprite = null;
 
@@ -68,7 +70,7 @@ public class PlayerControllerDuplicate : MonoBehaviour
         // simulating physics for the player
         if (!grounded)
         {
-            velocity.y += Physics2D.gravity.y * Time.deltaTime;
+            velocity.y += Physics2D.gravity.y * GravityMultiplier * Time.deltaTime;
         }
 
         MovementLogic ();
@@ -81,6 +83,7 @@ public class PlayerControllerDuplicate : MonoBehaviour
         CollisionLogic ();
 
     }
+
 
     private void JumpingLogic ()
     {
