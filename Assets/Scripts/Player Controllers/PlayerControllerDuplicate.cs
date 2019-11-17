@@ -26,6 +26,9 @@ public class PlayerControllerDuplicate : MonoBehaviour
     [SerializeField, Tooltip ("Distance for Jump Buffering")]
     float jbdistance = 5;
 
+    [SerializeField] private Animator PlayerAnimator = null;
+    [SerializeField] private SpriteRenderer PlayerSprite = null;
+
     public CameraTest CameraController;
 
     public BoxCollider2D boxCollider;
@@ -55,7 +58,7 @@ public class PlayerControllerDuplicate : MonoBehaviour
     {
         _inputData = PlayerInput.Instance.Data;
 
-        CameraController.Init(this);//injection
+        CameraController.Init (this); //injection
     }
 
     void Update ()
@@ -69,6 +72,8 @@ public class PlayerControllerDuplicate : MonoBehaviour
         }
 
         MovementLogic ();
+
+        VisualLogic ();
 
         // clears grounded each frame
         grounded = false;
@@ -156,7 +161,20 @@ public class PlayerControllerDuplicate : MonoBehaviour
         {
             velocity.x = Mathf.MoveTowards (velocity.x, 0, deceleration * Time.deltaTime);
         }
+
+        if (velocity.x != 0)
+        {
+            _isLastMovementLeft = velocity.x < 0;
+        }
     }
+
+    private bool _isLastMovementLeft = false;
+    private void VisualLogic ()
+    {
+        PlayerAnimator.SetFloat ("Velocity", velocity.x);
+        PlayerSprite.flipX = _isLastMovementLeft;
+    }
+
     private void CollisionLogic ()
     {
 
