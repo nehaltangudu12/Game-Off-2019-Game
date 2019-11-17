@@ -84,7 +84,6 @@ public class PlayerControllerDuplicate : MonoBehaviour
 
     }
 
-
     private void JumpingLogic ()
     {
         // buffered jump

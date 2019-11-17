@@ -200,12 +200,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &179010221 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2306193504468659336, guid: de62108747d3c274298833c3a2a850a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1524430533}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &348292728
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,11 +884,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 6180629430388989744, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6180629430388989756, guid: de62108747d3c274298833c3a2a850a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -955,36 +944,6 @@ PrefabInstance:
       propertyPath: CameraController
       value: 
       objectReference: {fileID: 933983707}
-    - target: {fileID: 2678607461188244378, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 2116933987}
-    - target: {fileID: 2678607461188244378, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: PlayerSprite
-      value: 
-      objectReference: {fileID: 179010221}
-    - target: {fileID: 2678607461188244378, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678607461188244378, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: jumpHeight
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888457764272558876, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.714
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888457764272558876, guid: de62108747d3c274298833c3a2a850a7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.933
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de62108747d3c274298833c3a2a850a7, type: 3}
 --- !u!1 &1629950215
@@ -1468,9 +1427,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923227609}
   m_CullTransparentMesh: 0
---- !u!95 &2116933987 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8541831491370629000, guid: de62108747d3c274298833c3a2a850a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1524430533}
-  m_PrefabAsset: {fileID: 0}
