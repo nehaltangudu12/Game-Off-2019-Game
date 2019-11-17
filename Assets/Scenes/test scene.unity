@@ -669,10 +669,11 @@ MonoBehaviour:
   speed: 5
   walkAcceleration: 75
   airAcceleration: 30
-  groundDeceleration: 70
+  groundDeceleration: 100
   jumpHeight: 5
   walljumpboost: 9
   jbdistance: 0.05
+  CheckpointSystem: {fileID: 0}
   boxCollider: {fileID: 0}
   velocity: {x: 0, y: 0}
   grounded: 0
