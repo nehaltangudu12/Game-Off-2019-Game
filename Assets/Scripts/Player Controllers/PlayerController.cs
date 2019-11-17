@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 startpos;
 
+    public Animator animator;
+
     private void Awake ()
     {
         boxCollider = transform.GetComponent<BoxCollider2D> ();
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
         grounded = false;
 
         CollisionLogic ();
+
+        animator.SetFloat("XVelocity", Mathf.Abs(velocity.x));
 
     }
 

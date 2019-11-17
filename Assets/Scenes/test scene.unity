@@ -683,6 +683,7 @@ MonoBehaviour:
   lastwall: {fileID: 0}
   buffering: 0
   bufferedjump: 0
+  animator: {fileID: 811447450}
 --- !u!61 &811447447
 BoxCollider2D:
   m_ObjectHideFlags: 0
