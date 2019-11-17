@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
                 {
                     jumped = false;
                     walljump = true;
+                    velocity.y = 0;
                 }
                 // Allows the player to walljump
                 if (hit.CompareTag ("jumpwall") && !walljump)
@@ -187,6 +188,7 @@ public class PlayerController : MonoBehaviour
                     {
                         walljump = true;
                         lastwall = hit;
+                        velocity.y = 0;
                     }
                 }
 
