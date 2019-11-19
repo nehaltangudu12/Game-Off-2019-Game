@@ -31,7 +31,7 @@ public class PlayerControllerDuplicate : MonoBehaviour
     [SerializeField] private Animator PlayerAnimator = null;
     [SerializeField] private SpriteRenderer PlayerSprite = null;
 
-    public CameraTest CameraController;
+    public CameraController CameraController;
 
     public BoxCollider2D boxCollider;
 

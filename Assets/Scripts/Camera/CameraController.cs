@@ -3,7 +3,7 @@
     using UnityEngine.UI;
     using UnityEngine;
 
-    public class CameraTest : MonoBehaviour
+    public class CameraController : MonoBehaviour
     {
         [SerializeField] private Image CameraFrame;
         [SerializeField] private float TimeToSnap = 0.25f;
@@ -100,10 +100,10 @@
         {
             if (_inputData.CameraZoomOut)
             {
-                Cursor.visible = true;
-                CameraFrame.enabled = true;
-
                 _isZoomedOut = true;
+                Cursor.visible = true;
+                Time.timeScale = 0.01f;
+                CameraFrame.enabled = true;
 
                 var pos = new Vector3 (0, 0, -200f);
                 transform.DOMove (pos, TimeToSnap * Time.unscaledDeltaTime);
@@ -123,7 +123,6 @@
                     Cursor.SetCursor (CameraHandNormal.texture, Vector2.zero, CursorMode.Auto);
                 }
 
-                Time.timeScale = 0.01f;
                 if (_inputData.CamArrowUp)
                 {
                     var max = _player.transform.position.y + _zoomInOrthoSize;
@@ -160,9 +159,9 @@
             else if (_inputData.CameraZoomIn)
             {
                 Time.timeScale = 1f;
-                CameraFrame.enabled = false;
-
                 _isZoomedOut = false;
+                Cursor.visible = false;
+                CameraFrame.enabled = false;
 
                 var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
                 var posing0 = new Vector3 (pos0.x - 21f, pos0.y - _zoomInOrthoSize, -200);

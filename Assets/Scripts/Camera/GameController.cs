@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public CameraTest CameraTest;
+    public CameraController CameraTest;
     public TileMapController TilesController;
 
     void Start()
