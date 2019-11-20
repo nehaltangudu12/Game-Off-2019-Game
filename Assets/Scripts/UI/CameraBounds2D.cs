@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraBounds2D : MonoBehaviour
 {
+    [SerializeField] private RawImage _cameraLens;
     [HideInInspector] public Vector2 maxXlimit;
     [HideInInspector] public Vector2 maxYlimit;
 
     private Camera _camera;
     public Camera Cam => _camera;
+
+    public RawImage Lens => _cameraLens;
 
     void Start ()
     {

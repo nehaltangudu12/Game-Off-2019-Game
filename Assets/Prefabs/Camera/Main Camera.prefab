@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8225334007387017977}
   - component: {fileID: 8225334007387017976}
   - component: {fileID: 8225334007387017979}
+  - component: {fileID: 8225334007387017982}
   - component: {fileID: 8225334007387017981}
   - component: {fileID: 8225334007387017980}
-  - component: {fileID: 8225334007387017982}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -101,15 +101,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraFrame: {fileID: 0}
   CameraBatteryTube: {fileID: 0}
+  CamTransition: 1.1
   TimeToSnap: 0.12
   CamMoveStep: 1.5
   CameraHandGrab: {fileID: 21300000, guid: 81599069f6daac74c90a1fb4082eba05, type: 3}
   CameraHandNormal: {fileID: 21300000, guid: e7788f859ee41a94a867e79c51205796, type: 3}
-  CameraFrameNormal: {fileID: 21300000, guid: 92069ee3e70cc8f4dae533e129d8c12a, type: 3}
-  CameraFrameZoomedOut: {fileID: 21300000, guid: c5c0eb9414f017941926994fe21fbe2a,
-    type: 3}
   CameraBounds: {fileID: 0}
   CameraEffects: {fileID: 8225334007387017982}
+--- !u!114 &8225334007387017982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225334007387017975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cac3c62c6bf134ebec311540e7f603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PostVolume: {fileID: 8225334007387017980}
 --- !u!114 &8225334007387017981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,16 +198,3 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &8225334007387017982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225334007387017975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00cac3c62c6bf134ebec311540e7f603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PostVolume: {fileID: 8225334007387017980}

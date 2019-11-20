@@ -9,6 +9,7 @@
     {
         [SerializeField] private Image CameraFrame;
         [SerializeField] private Image CameraBatteryTube;
+        [SerializeField] private float CamTransition = 1.5f;
         [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private Sprite CameraHandGrab;
@@ -114,6 +115,7 @@
             if (_inputData.CameraZoomOut)
             {
                 CameraZoom (false);
+                CameraScreenShot ();
             }
 
             if (_isZoomedOut && _inputData.CameraZoomOutHold)
@@ -168,6 +170,23 @@
             }
         }
 
+        private Texture2D _lensTex = null;
+        void CameraScreenShot ()
+        {
+            var rt = new RenderTexture (Screen.width, Screen.height, 24);
+            _mainCam.targetTexture = rt;
+            _lensTex = new Texture2D (Screen.width, Screen.height, TextureFormat.RGB24, false);
+            CameraEffects.LensDistortionStatus (true, 60);
+            _mainCam.Render ();
+            RenderTexture.active = rt;
+            _lensTex.ReadPixels (new Rect (0, 0, Screen.width, Screen.height), 0, 0);
+            _lensTex.Apply ();
+            _mainCam.targetTexture = null;
+            CameraEffects.LensDistortionStatus (false);
+
+            CameraBounds.Lens.texture = _lensTex;
+        }
+
         void CameraZoom (bool zoomIn)
         {
             _isZoomedOut = !zoomIn;
@@ -176,20 +195,31 @@
 
             CameraEffects.LensDistortionStatus (zoomIn);
 
-            TweenBattery (!zoomIn);
+            var lensPos = CameraBounds.Lens.transform.position;
+            var pos = new Vector3 (lensPos.x, lensPos.y, -200f);
 
-            var pos = new Vector3 (0, 0, -200f);
-            transform.DOMove (zoomIn ? CameraBounds.transform.position : pos, TimeToSnap * Time.unscaledDeltaTime, true);
-            _mainCam.DOOrthoSize (zoomIn ? _zoomInOrthoSize : _zoomOutOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
+            transform.DOMove (zoomIn ? CameraBounds.transform.position : pos, 0.01f * Time.unscaledDeltaTime, true);
+            if (zoomIn)
+            {
+                _mainCam.DOOrthoSize (_zoomInOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
+            }
+            else
+            {
+                _mainCam.DOOrthoSize (_zoomOutOrthoSize, CamTransition * Time.unscaledDeltaTime).OnComplete (() =>
+                {
+                    transform.DOMoveY (0.5f, CamTransition * Time.unscaledDeltaTime, false);
+                    TweenBattery (!zoomIn, CamTransition * Time.unscaledDeltaTime);
+                });
+            }
         }
 
-        void TweenBattery (bool emptyIt)
+        void TweenBattery (bool emptyIt, float delay = 0f)
         {
             _batteryTween?.Kill ();
 
             if (emptyIt)
             {
-                _batteryTween = CameraBatteryTube.DOFillAmount (0, 4f * Time.unscaledDeltaTime);
+                _batteryTween = CameraBatteryTube.DOFillAmount (0, 4f * Time.unscaledDeltaTime).SetDelay (delay);
 
                 DOTween.Play (_batteryTween);
             }
@@ -203,10 +233,10 @@
 
         void BatteryChecker ()
         {
-            if (CameraBatteryTube.fillAmount <= 0.15f)
-            {
-                if (_isZoomedOut) CameraZoom (true);
-            }
+            // if (CameraBatteryTube.fillAmount <= 0.15f)
+            // {
+            //     if (_isZoomedOut) CameraZoom (true);
+            // }
 
             if (CameraBatteryTube.fillAmount < 0.3f)
             {
