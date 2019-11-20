@@ -2733,6 +2733,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+        type: 3}
+      propertyPath: CameraFrame
+      value: 
+      objectReference: {fileID: 1923227611}
+    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+        type: 3}
+      propertyPath: CameraBatteryTube
+      value: 
+      objectReference: {fileID: 1193306428}
+    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+        type: 3}
+      propertyPath: CameraBounds
+      value: 
+      objectReference: {fileID: 1629950218}
+    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+        type: 3}
+      propertyPath: CameraFrameZoomedOut
+      value: 
+      objectReference: {fileID: 21300000, guid: 2768c5550447d45409eb2e7024f100e1,
+        type: 3}
     - target: {fileID: 8225334007387017978, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2788,20 +2809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+    - target: {fileID: 8225334007387017977, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
         type: 3}
-      propertyPath: CameraFrame
-      value: 
-      objectReference: {fileID: 1923227611}
-    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
-        type: 3}
-      propertyPath: CameraBatteryTube
-      value: 
-      objectReference: {fileID: 1193306428}
-    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
-        type: 3}
-      propertyPath: CameraBounds
-      value: 
-      objectReference: {fileID: 1629950218}
+      propertyPath: orthographic size
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee7a6277d8cfb884eb99d16bc70fd5b0, type: 3}

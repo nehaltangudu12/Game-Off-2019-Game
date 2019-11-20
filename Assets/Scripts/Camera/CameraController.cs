@@ -14,8 +14,6 @@
         [SerializeField] private Sprite CameraHandGrab;
         [SerializeField] private Sprite CameraHandNormal;
 
-        [SerializeField] private Sprite CameraFrameNormal;
-        [SerializeField] private Sprite CameraFrameZoomedOut;
         [SerializeField] private CameraBounds2D CameraBounds;
         [SerializeField] private CameraEffects CameraEffects;
 
@@ -175,7 +173,6 @@
             _isZoomedOut = !zoomIn;
             Cursor.visible = !zoomIn;
             Time.timeScale = zoomIn ? 1f : 0.01f;
-            CameraFrame.sprite = zoomIn ? CameraFrameNormal : CameraFrameZoomedOut;
 
             CameraEffects.LensDistortionStatus (zoomIn);
 
