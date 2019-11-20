@@ -1,4 +1,6 @@
-﻿    using DG.Tweening;
+﻿    using System.Linq;
+    using System;
+    using DG.Tweening;
     using GhAyoub.InputSystem;
     using UnityEngine.UI;
     using UnityEngine;
@@ -8,18 +10,21 @@
         [SerializeField] private Image CameraFrame;
         [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamMoveStep = 1.5f;
-        [SerializeField] private CameraBounds2D CameraBounds;
         [SerializeField] private Sprite CameraHandGrab;
         [SerializeField] private Sprite CameraHandNormal;
 
+        [SerializeField] private Sprite CameraFrameNormal;
+        [SerializeField] private Sprite CameraFrameZoomedOut;
+        [SerializeField] private CameraBounds2D CameraBounds;
+        [SerializeField] private Image[] CameraBatteryChunks;
+
         private bool _isZoomedOut = false;
+        private float _zoomInOrthoSize = 12f;
+        private float _zoomOutOrthoSize = 24f;
         private Camera _mainCam;
         private Grid _tilesMapGrid;
         private InputData _inputData;
         private PlayerControllerDuplicate _player;
-
-        private float _zoomOutOrthoSize = 24f;
-        private float _zoomInOrthoSize = 12f;
 
         public void Init ()
         {
@@ -103,7 +108,20 @@
                 _isZoomedOut = true;
                 Cursor.visible = true;
                 Time.timeScale = 0.01f;
-                CameraFrame.enabled = true;
+                CameraFrame.sprite = CameraFrameZoomedOut;
+
+                CameraBatteryChunks[0].DOFillAmount (0, 1f * Time.unscaledDeltaTime).OnComplete (() =>
+                {
+                    CameraBatteryChunks.ToList ().ForEach (cc => cc.color = Color.yellow);
+                    CameraBatteryChunks[1].DOFillAmount (0, 1f * Time.unscaledDeltaTime).OnComplete (() =>
+                    {
+                        CameraBatteryChunks[2].DOFillAmount (0, 1f * Time.unscaledDeltaTime).OnComplete (() =>
+                        {
+                            CameraBatteryChunks.ToList ().ForEach (cc => cc.color = Color.red);
+                            CameraBatteryChunks[3].DOFillAmount (0, 1f * Time.unscaledDeltaTime);
+                        });
+                    });
+                });
 
                 var pos = new Vector3 (0, 0, -200f);
                 transform.DOMove (pos, TimeToSnap * Time.unscaledDeltaTime);
@@ -161,7 +179,20 @@
                 Time.timeScale = 1f;
                 _isZoomedOut = false;
                 Cursor.visible = false;
-                CameraFrame.enabled = false;
+                CameraFrame.sprite = CameraFrameNormal;
+
+                CameraBatteryChunks[3].DOFillAmount (1, 1f).OnComplete (() =>
+                {
+                    CameraBatteryChunks[2].DOFillAmount (1, 1f).OnComplete (() =>
+                    {
+                        CameraBatteryChunks.ToList ().ForEach (cc => cc.color = Color.yellow);
+                        CameraBatteryChunks[1].DOFillAmount (1, 1f).OnComplete (() =>
+                        {
+                            CameraBatteryChunks.ToList ().ForEach (cc => cc.color = Color.green);
+                            CameraBatteryChunks[0].DOFillAmount (1, 1f);
+                        });
+                    });
+                });
 
                 var pos0 = _tilesMapGrid.CellToWorld (new Vector3Int (0, 0, 0));
                 var posing0 = new Vector3 (pos0.x - 21f, pos0.y - _zoomInOrthoSize, -200);
