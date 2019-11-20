@@ -2783,6 +2783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoundsCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3012848845212855024, guid: 307c7d5b395080b4caa2c04b0bf6df3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3012848845212855039, guid: 307c7d5b395080b4caa2c04b0bf6df3d,
         type: 3}
       propertyPath: m_LocalPosition.x
