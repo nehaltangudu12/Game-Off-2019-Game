@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_LevelsController : MonoBehaviour
 {
+    [SerializeField] private MainMenuCameraController MainMenuCameraController;
     [SerializeField] private UI_LevelItem[] LevelItems;
 
     private PlayerInput _inputInstance;
@@ -51,7 +52,8 @@ public class UI_LevelsController : MonoBehaviour
 
     void ChargeAScene ()
     {
-        Camera.main.DOOrthoSize (0.5f, 3f).OnComplete (() =>
+        MainMenuCameraController.DepthOfFieldAnim ();
+        Camera.main.DOOrthoSize (1.5f, 3f).OnComplete (() =>
         {
             SceneManager.LoadSceneAsync (1, LoadSceneMode.Single);
         });
