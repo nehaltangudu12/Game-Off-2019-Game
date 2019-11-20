@@ -118,7 +118,7 @@
                 CameraZoom (false);
             }
 
-            if (_inputData.CameraZoomOutHold)
+            if (_isZoomedOut && _inputData.CameraZoomOutHold)
             {
                 if (_inputData.CamGrab)
                 {
@@ -172,9 +172,9 @@
 
         void CameraZoom (bool zoomIn)
         {
-            Time.timeScale = zoomIn ? 1f : 0.01f;
             _isZoomedOut = !zoomIn;
             Cursor.visible = !zoomIn;
+            Time.timeScale = zoomIn ? 1f : 0.01f;
             CameraFrame.sprite = zoomIn ? CameraFrameNormal : CameraFrameZoomedOut;
 
             CameraEffects.LensDistortionStatus (zoomIn);
@@ -182,7 +182,7 @@
             TweenBattery (!zoomIn);
 
             var pos = new Vector3 (0, 0, -200f);
-            transform.DOMove (zoomIn ? CameraBounds.transform.position : pos, TimeToSnap * Time.unscaledDeltaTime, zoomIn ? true : false);
+            transform.DOMove (zoomIn ? CameraBounds.transform.position : pos, TimeToSnap * Time.unscaledDeltaTime, true);
             _mainCam.DOOrthoSize (zoomIn ? _zoomInOrthoSize : _zoomOutOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
         }
 
@@ -206,7 +206,12 @@
 
         void BatteryChecker ()
         {
-            if (CameraBatteryTube.fillAmount < 0.2f)
+            if (CameraBatteryTube.fillAmount <= 0.15f)
+            {
+                if (_isZoomedOut) CameraZoom (true);
+            }
+
+            if (CameraBatteryTube.fillAmount < 0.3f)
             {
                 CameraBatteryTube.color = Color.red;
             }
