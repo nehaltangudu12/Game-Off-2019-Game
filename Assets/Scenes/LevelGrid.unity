@@ -3124,6 +3124,11 @@ PrefabInstance:
       propertyPath: CameraFlashScreen
       value: 
       objectReference: {fileID: 3727289}
+    - target: {fileID: 8225334007387017979, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
+        type: 3}
+      propertyPath: CamTransition
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8225334007387017978, guid: ee7a6277d8cfb884eb99d16bc70fd5b0,
         type: 3}
       propertyPath: m_LocalPosition.x
