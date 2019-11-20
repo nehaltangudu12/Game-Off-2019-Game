@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DG.Tweening;
 using GhAyoub.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI_LevelsController : MonoBehaviour
 {
     [SerializeField] private UI_LevelItem[] LevelItems;
 
     private PlayerInput _inputInstance;
+    private UI_LevelItem _currentHoveredItem = null;
 
     private void Start ()
     {
@@ -26,9 +30,30 @@ public class UI_LevelsController : MonoBehaviour
         {
             var item = LevelItems[i];
             var itemPos = LevelItems[i].transform.position;
-            var ishovered = mousePos.x < itemPos.x && mousePos.x > itemPos.x - item.Size.x;
+            var diff = new Vector3 (mousePos.x, mousePos.y, 0f) - new Vector3 (itemPos.x - item.Size.x / 2, itemPos.y - item.Size.y / 2, 0f);
+
+            var ishovered = Vector3.SqrMagnitude (diff) < (2f * 2f);
 
             item.UpdateItem (ishovered);
+
+            if (ishovered) _currentHoveredItem = item;
         }
+
+        if (_inputInstance.Data.MouseClick)
+        {
+            if (_currentHoveredItem != null)
+            {
+                ChargeAScene ();
+            }
+        }
+
+    }
+
+    void ChargeAScene ()
+    {
+        Camera.main.DOOrthoSize (0.5f, 3f).OnComplete (() =>
+        {
+            SceneManager.LoadSceneAsync (1, LoadSceneMode.Single);
+        });
     }
 }
