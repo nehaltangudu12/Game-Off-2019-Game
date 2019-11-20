@@ -7,6 +7,7 @@
 
     public class CameraController : MonoBehaviour
     {
+        [SerializeField] private Image CameraFlashScreen;
         [SerializeField] private Image CameraFrame;
         [SerializeField] private Image CameraBatteryTube;
         [SerializeField] private float CamTransition = 1.5f;
@@ -188,6 +189,14 @@
             CameraBounds.Lens.texture = _lensTex;
         }
 
+        void CameraFlash ()
+        {
+            CameraFlashScreen.DOFade (1.0f, 0.05f).SetEase (Ease.Flash).OnComplete (() =>
+            {
+                CameraFlashScreen.DOFade (0.0f, 0.05f).SetEase (Ease.Flash);
+            });
+        }
+
         void CameraZoom (bool zoomIn)
         {
             _isZoomedOut = !zoomIn;
@@ -201,8 +210,8 @@
 
             if (zoomIn)
             {
-
-                transform.DOMoveY (lensPos.y, CamTransition).OnComplete (() =>
+                CameraFlash ();
+                transform.DOMoveY (lensPos.y, CamTransition * 3f).OnComplete (() =>
                 {
                     _mainCam.DOOrthoSize (_zoomInOrthoSize, CamTransition).OnComplete (() =>
                     {
