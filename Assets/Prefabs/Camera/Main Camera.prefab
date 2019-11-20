@@ -106,6 +106,7 @@ MonoBehaviour:
   CamMoveStep: 1.5
   CameraHandGrab: {fileID: 21300000, guid: 81599069f6daac74c90a1fb4082eba05, type: 3}
   CameraHandNormal: {fileID: 21300000, guid: e7788f859ee41a94a867e79c51205796, type: 3}
+  CameraScreenTrans: {fileID: 0}
   CameraBounds: {fileID: 0}
   CameraEffects: {fileID: 8225334007387017982}
 --- !u!114 &8225334007387017982

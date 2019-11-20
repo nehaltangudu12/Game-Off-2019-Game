@@ -14,6 +14,7 @@
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private Sprite CameraHandGrab;
         [SerializeField] private Sprite CameraHandNormal;
+        [SerializeField] private Transform CameraScreenTrans;
 
         [SerializeField] private CameraBounds2D CameraBounds;
         [SerializeField] private CameraEffects CameraEffects;
@@ -198,17 +199,26 @@
             var lensPos = CameraBounds.Lens.transform.position;
             var pos = new Vector3 (lensPos.x, lensPos.y, -200f);
 
-            transform.DOMove (zoomIn ? CameraBounds.transform.position : pos, 0.01f * Time.unscaledDeltaTime, true);
             if (zoomIn)
             {
-                _mainCam.DOOrthoSize (_zoomInOrthoSize, TimeToSnap * Time.unscaledDeltaTime);
+
+                transform.DOMoveY (lensPos.y, CamTransition).OnComplete (() =>
+                {
+                    _mainCam.DOOrthoSize (_zoomInOrthoSize, CamTransition).OnComplete (() =>
+                    {
+                        transform.DOMove (CameraBounds.transform.position, 0.01f, true);
+                        TweenBattery (false, CamTransition);
+                    });
+                });
             }
             else
             {
+                transform.DOMove (pos, 0.01f * Time.unscaledDeltaTime, true);
+
                 _mainCam.DOOrthoSize (_zoomOutOrthoSize, CamTransition * Time.unscaledDeltaTime).OnComplete (() =>
                 {
-                    transform.DOMoveY (0.5f, CamTransition * Time.unscaledDeltaTime, false);
-                    TweenBattery (!zoomIn, CamTransition * Time.unscaledDeltaTime);
+                    transform.DOMoveY (CameraScreenTrans.position.y, CamTransition * Time.unscaledDeltaTime, false);
+                    TweenBattery (true, CamTransition * Time.unscaledDeltaTime);
                 });
             }
         }
