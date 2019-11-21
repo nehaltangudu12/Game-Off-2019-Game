@@ -213,10 +213,11 @@
                 CameraFlash ();
                 transform.DOMoveY (lensPos.y, CamTransition * 3f).OnComplete (() =>
                 {
-                    _mainCam.DOOrthoSize (_zoomInOrthoSize, CamTransition).OnComplete (() =>
+                    _mainCam.DOOrthoSize (7f, CamTransition).OnComplete (() =>
                     {
-                        transform.DOMove (CameraBounds.transform.position, 0.01f, true);
+                        transform.DOMove (CameraBounds.transform.position, 0.005f).SetEase(Ease.Flash);
                         TweenBattery (false, CamTransition);
+                        _mainCam.DOOrthoSize (_zoomInOrthoSize, 0.01f);
                     });
                 });
             }
