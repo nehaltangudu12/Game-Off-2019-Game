@@ -60,7 +60,7 @@ public class PlayerControllerDuplicate : MonoBehaviour
     {
         _inputData = PlayerInput.Instance.Data;
 
-        CameraController.Init (this); //injection
+        //CameraController.Init (this); //injection
     }
 
     void Update ()

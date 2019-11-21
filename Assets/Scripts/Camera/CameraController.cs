@@ -28,7 +28,7 @@
         private InputData _inputData;
 
         private Tween _batteryTween = null;
-        private PlayerControllerDuplicate _player;
+        private CharacterController _player;
 
         public void Init ()
         {
@@ -40,7 +40,7 @@
             CalculateGridForGizmos ();
         }
 
-        public void Init (PlayerControllerDuplicate player)
+        public void Init (CharacterController player)
         {
             _player = player;
         }
