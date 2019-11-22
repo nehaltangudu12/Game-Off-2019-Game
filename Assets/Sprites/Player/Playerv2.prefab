@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RunSpeed: 600
   JumpForce: 400
+  AirForce: 300
   WallCheckDistRight: 0.81
   WallCheckDistLeft: 0.81
   GroundCheckRadius: 0.2

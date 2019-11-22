@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
+    [SerializeField] private float AirForce = 400f;
     [SerializeField] private float WallCheckDistRight = 0.2f;
     [SerializeField] private float WallCheckDistLeft = 0.2f;
     [SerializeField] private float GroundCheckRadius = 0.2f;
@@ -102,10 +103,18 @@ public class CharacterController : MonoBehaviour
 
     void Jump ()
     {
-        if (_isGrounded && _inputData.Jump)
+        if (_inputData.Jump)
         {
-            _isGrounded = false;
-            _rdPlayer.AddForce (new Vector2 (0, JumpForce));
+            if (_isGrounded)
+            {
+                _isGrounded = false;
+                _rdPlayer.AddForce (new Vector2 (0, JumpForce));
+            }
+
+            if(_isWallSliding)
+            {
+                 _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
+            }
         }
     }
 
@@ -181,13 +190,16 @@ public class CharacterController : MonoBehaviour
 
     void FlipIt ()
     {
-        if (_inputData.XMove < 0)
+        if (!_isWallSliding)
         {
-            _isFacingRight = false;
-        }
-        else if (_inputData.XMove > 0)
-        {
-            _isFacingRight = true;
+            if (_inputData.XMove < 0)
+            {
+                _isFacingRight = false;
+            }
+            else if (_inputData.XMove > 0)
+            {
+                _isFacingRight = true;
+            }
         }
 
         transform.localScale = new Vector3 (_isFacingRight ? (_isWallSliding? - 1.5f : 1.5f) : (_isWallSliding? 1.5f: -1.5f), 1.5f, 1.5f);
