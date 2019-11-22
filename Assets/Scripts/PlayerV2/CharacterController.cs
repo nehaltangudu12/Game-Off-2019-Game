@@ -8,15 +8,21 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
+    [SerializeField] private float WallCheckDist = 0.2f;
     [SerializeField] private float GroundCheckRadius = 0.2f;
+    [SerializeField] private float WallSlidingSpeedThreshold = 0.2f;
     [SerializeField] private LayerMask GroundLayer;
+    [SerializeField] private LayerMask WallLayer;
     [SerializeField] private Animator PlayerAnim = null;
+    [SerializeField] private Transform WallCheckObj = null;
     [SerializeField] private Transform GroundCheckObj = null;
     [SerializeField] private SpriteRenderer PlayerVisual = null;
     [SerializeField] private CameraController CamController = null;
     [SerializeField] private GUISkin DebugGUISkin = null;
 
-    private bool _grounded = false;
+    private bool _isGrounded = false;
+    private bool _isNearWall = false;
+    private bool _isWallSliding = false;
     private bool _isFacingRight = true;
     private InputData _inputData = null;
     private Rigidbody2D _rdPlayer = null;
@@ -41,17 +47,22 @@ public class CharacterController : MonoBehaviour
 
     private void OnGUI ()
     {
-        var debgRect = new Rect (50f, 50f, 250f, 50f);
+        var groundedRect = new Rect (50f, 50f, 250f, 50f);
 
-        GUI.Label (debgRect, string.Format ("Grounded? => {0}", _grounded), _debugStyle);
+        GUI.Label (groundedRect, string.Format ("Grounded? => {0}", _isGrounded), _debugStyle);
 
-        var veloRect = new Rect (50f, 110f, 250f, 50f);
+        var wallRect = new Rect (50f, 110f, 250f, 50f);
+
+        GUI.Label (wallRect, string.Format ("Near Wall? => {0}", _isNearWall), _debugStyle);
+
+        var veloRect = new Rect (50f, 170f, 250f, 50f);
 
         GUI.Label (veloRect, string.Format ("Velocity? => {0}", _rdPlayer.velocity), _debugStyle);
     }
 
     private void OnDrawGizmos ()
     {
+        WallCheckGizmos ();
         GroundCheckGizmos ();
     }
 
@@ -60,6 +71,14 @@ public class CharacterController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (GroundCheckObj.position, GroundCheckRadius);
     }
+
+    void WallCheckGizmos ()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position + new Vector3 (WallCheckDist, 0f, 0f));
+        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position - new Vector3 (WallCheckDist, 0f, 0f));
+    }
+
     #endregion
 
     private void Update ()
@@ -67,24 +86,31 @@ public class CharacterController : MonoBehaviour
         Animation ();
 
         FlipIt ();
+
+        Jump ();
+
+        WallSide ();
     }
 
     private void FixedUpdate ()
     {
-        GroundCheck ();
-
         Movement ();
 
-        Jump ();
+        StatesChecker ();
     }
 
     void Jump ()
     {
-        if (_grounded && _inputData.Jump)
+        if (_isGrounded && _inputData.Jump)
         {
-            _grounded = false;
+            _isGrounded = false;
             _rdPlayer.AddForce (new Vector2 (0, JumpForce));
         }
+    }
+
+    void WallSide ()
+    {
+        _isWallSliding = (_rdPlayer.velocity.y < 0 && _isNearWall && !_isGrounded);
     }
 
     void Movement ()
@@ -92,17 +118,25 @@ public class CharacterController : MonoBehaviour
         var targetVelocity = new Vector2 (_inputData.XMove * RunSpeed * Time.fixedDeltaTime, _rdPlayer.velocity.y);
 
         _rdPlayer.velocity = Vector3.SmoothDamp (_rdPlayer.velocity, targetVelocity, ref _storedVelocity, .05f);
+
+        if (_isWallSliding)
+        {
+            if (_rdPlayer.velocity.y < -WallSlidingSpeedThreshold)
+            {
+                _rdPlayer.velocity = new Vector2 (_rdPlayer.velocity.x, -WallSlidingSpeedThreshold);
+            }
+        }
     }
 
     void Animation ()
     {
-        if (_grounded || _rdPlayer.velocity.y == 0)
+        if (_isGrounded || _rdPlayer.velocity.y == 0)
         {
             PlayerAnim.SetBool ("IsJumping", false);
             PlayerAnim.SetBool ("IsFalling", false);
         }
 
-        if (!_grounded)
+        if (!_isGrounded)
         {
             if ((_rdPlayer.velocity.y > 0))
             {
@@ -112,7 +146,17 @@ public class CharacterController : MonoBehaviour
             else if (_rdPlayer.velocity.y < 0)
             {
                 PlayerAnim.SetBool ("IsJumping", false);
-                PlayerAnim.SetBool ("IsFalling", true);
+
+                if (_isWallSliding)
+                {
+                    PlayerAnim.SetBool ("IsFalling", false);
+                    PlayerAnim.SetBool ("IsWallSliding", true);
+                }
+                else
+                {
+                    PlayerAnim.SetBool ("IsFalling", true);
+                    PlayerAnim.SetBool ("IsWallSliding", false);
+                }
             }
         }
         else
@@ -126,15 +170,11 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    void GroundCheck ()
+    void StatesChecker ()
     {
-        _grounded = false;
+        _isGrounded = Physics2D.OverlapCircle (GroundCheckObj.position, GroundCheckRadius, GroundLayer);
 
-        var colliders = Physics2D.OverlapCircleAll (GroundCheckObj.position, GroundCheckRadius, GroundLayer);
-
-        for (int i = 0; i < colliders.Length; i++)
-            if (colliders[i].gameObject != gameObject)
-                _grounded = true;
+        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDist, WallLayer) || Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDist, WallLayer);
     }
 
     void FlipIt ()
@@ -148,6 +188,6 @@ public class CharacterController : MonoBehaviour
             _isFacingRight = true;
         }
 
-        transform.localScale = new Vector3 (_isFacingRight ? 1.5f : -1.5f, 1.5f, 1.5f);
+        transform.localScale = new Vector3 (_isFacingRight ? (_isWallSliding? - 1.5f : 1.5f) : (_isWallSliding? 1.5f: -1.5f), 1.5f, 1.5f);
     }
 }
