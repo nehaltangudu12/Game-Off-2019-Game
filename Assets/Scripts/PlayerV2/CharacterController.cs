@@ -8,7 +8,8 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
-    [SerializeField] private float WallCheckDist = 0.2f;
+    [SerializeField] private float WallCheckDistRight = 0.2f;
+    [SerializeField] private float WallCheckDistLeft = 0.2f;
     [SerializeField] private float GroundCheckRadius = 0.2f;
     [SerializeField] private float WallSlidingSpeedThreshold = 0.2f;
     [SerializeField] private LayerMask GroundLayer;
@@ -75,8 +76,8 @@ public class CharacterController : MonoBehaviour
     void WallCheckGizmos ()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position + new Vector3 (WallCheckDist, 0f, 0f));
-        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position - new Vector3 (WallCheckDist, 0f, 0f));
+        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position + new Vector3 (WallCheckDistRight, 0f, 0f));
+        Gizmos.DrawLine (WallCheckObj.position, WallCheckObj.position - new Vector3 (WallCheckDistLeft, 0f, 0f));
     }
 
     #endregion
@@ -174,7 +175,8 @@ public class CharacterController : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapCircle (GroundCheckObj.position, GroundCheckRadius, GroundLayer);
 
-        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDist, WallLayer) || Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDist, WallLayer);
+        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer) ||
+            Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer);
     }
 
     void FlipIt ()
