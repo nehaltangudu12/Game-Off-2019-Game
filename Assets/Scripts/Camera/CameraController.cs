@@ -5,18 +5,18 @@
     using UnityEngine.UI;
     using UnityEngine;
 
-    public class CameraController : MonoBehaviour
+    public class CameraController : Singleton<CameraController>
     {
-        [SerializeField] private Image CameraFlashScreen;
-        [SerializeField] private Image CameraFrame;
-        [SerializeField] private Image CameraBatteryTube;
-        [SerializeField] private float CamTransition = 1.5f;
-        [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamMoveStep = 1.5f;
+        [SerializeField] private float TimeToSnap = 0.25f;
+        [SerializeField] private float CamTransition = 1.5f;
+        [SerializeField] private Image CameraFrame;
+        [SerializeField] private Image CameraFlashScreen;
         [SerializeField] private Sprite CameraHandGrab;
         [SerializeField] private Sprite CameraHandNormal;
         [SerializeField] private Transform CameraScreenTrans;
 
+        [SerializeField] private Battery CameraBattery;
         [SerializeField] private CameraBounds2D CameraBounds;
         [SerializeField] private CameraEffects CameraEffects;
 
@@ -27,8 +27,13 @@
         private Grid _tilesMapGrid;
         private InputData _inputData;
 
-        private Tween _batteryTween = null;
+        private Sequence _zoomTweenSeq = null;
         private CharacterController _player;
+
+        public float PreviousFillAmount { get; private set; } = 1f;
+        public Property<bool> IsZoomedOut = new Property<bool> ();
+
+        public Property<bool> BatteryStatus = new Property<bool> ();
 
         public void Init ()
         {
@@ -36,6 +41,8 @@
 
             _tilesMapGrid = TileMapController.Instance.TilesGrid;
             _inputData = PlayerInput.Instance.Data;
+
+            _zoomTweenSeq = DOTween.Sequence ();
 
             CalculateGridForGizmos ();
         }
@@ -107,8 +114,6 @@
 
         void Update ()
         {
-            BatteryChecker ();
-
             CameraBoundsMovement ();
         }
 
@@ -166,7 +171,8 @@
                     CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap * Time.unscaledDeltaTime);
                 }
             }
-            else if (_inputData.CameraZoomIn)
+
+            if (_inputData.CameraZoomIn)
             {
                 CameraZoom (true);
             }
@@ -201,74 +207,45 @@
         {
             _isZoomedOut = !zoomIn;
             Cursor.visible = !zoomIn;
+            CameraBattery.CacheBatteryAmount();
             Time.timeScale = zoomIn ? 1f : 0.01f;
 
             CameraEffects.LensDistortionStatus (zoomIn);
 
+            IsZoomedOut.Value = _isZoomedOut;
+
             var lensPos = CameraBounds.Lens.transform.position;
             var pos = new Vector3 (lensPos.x, lensPos.y, -200f);
+
+            _zoomTweenSeq?.Kill ();
 
             if (zoomIn)
             {
                 CameraFlash ();
-                transform.DOMoveY (lensPos.y, CamTransition * 3f).OnComplete (() =>
+
+                _zoomTweenSeq.Append (transform.DOMoveY (lensPos.y, CamTransition * 3f).OnComplete (() =>
                 {
                     _mainCam.DOOrthoSize (7f, CamTransition).OnComplete (() =>
                     {
-                        transform.DOMove (CameraBounds.transform.position, 0.005f).SetEase(Ease.Flash);
-                        TweenBattery (false, CamTransition);
+                        transform.DOMove (CameraBounds.transform.position, 0.005f).SetEase (Ease.Flash);
                         _mainCam.DOOrthoSize (_zoomInOrthoSize, 0.01f);
+
+                        // UI Callback
+                        BatteryStatus.Fire (false);
                     });
-                });
+                }));
             }
             else
             {
-                transform.DOMove (pos, 0.01f * Time.unscaledDeltaTime, true);
+                _zoomTweenSeq.Append (transform.DOMove (pos, 0.01f * Time.unscaledDeltaTime, true));
 
-                _mainCam.DOOrthoSize (_zoomOutOrthoSize, CamTransition * Time.unscaledDeltaTime).OnComplete (() =>
+                _zoomTweenSeq.Append (_mainCam.DOOrthoSize (_zoomOutOrthoSize, CamTransition * Time.unscaledDeltaTime).OnComplete (() =>
                 {
                     transform.DOMoveY (CameraScreenTrans.position.y, CamTransition * Time.unscaledDeltaTime, false);
-                    TweenBattery (true, CamTransition * Time.unscaledDeltaTime);
-                });
-            }
-        }
 
-        void TweenBattery (bool emptyIt, float delay = 0f)
-        {
-            _batteryTween?.Kill ();
-
-            if (emptyIt)
-            {
-                _batteryTween = CameraBatteryTube.DOFillAmount (0, 4f * Time.unscaledDeltaTime).SetDelay (delay);
-
-                DOTween.Play (_batteryTween);
-            }
-            else
-            {
-                _batteryTween = CameraBatteryTube.DOFillAmount (1, 4f);
-
-                _batteryTween.Play ();
-            }
-        }
-
-        void BatteryChecker ()
-        {
-            // if (CameraBatteryTube.fillAmount <= 0.15f)
-            // {
-            //     if (_isZoomedOut) CameraZoom (true);
-            // }
-
-            if (CameraBatteryTube.fillAmount < 0.3f)
-            {
-                CameraBatteryTube.color = Color.red;
-            }
-            else if (CameraBatteryTube.fillAmount < 0.7f)
-            {
-                CameraBatteryTube.color = Color.yellow;
-            }
-            else
-            {
-                CameraBatteryTube.color = Color.green;
+                    // UI Callback
+                    BatteryStatus.Fire (true);
+                }));
             }
         }
     }
