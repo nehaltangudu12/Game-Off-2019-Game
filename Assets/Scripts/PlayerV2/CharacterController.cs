@@ -14,6 +14,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform GroundCheckObj = null;
     [SerializeField] private SpriteRenderer PlayerVisual = null;
     [SerializeField] private CameraController CamController = null;
+    [SerializeField] private GUISkin DebugGUISkin = null;
 
     private bool _grounded = false;
     private bool _isFacingRight = true;
@@ -21,6 +22,7 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D _rdPlayer = null;
     private BoxCollider2D _colliderPlayer = null;
     private Vector3 _storedVelocity = Vector3.zero;
+    private GUIStyle _debugStyle = null;
 
     void Awake ()
     {
@@ -31,14 +33,34 @@ public class CharacterController : MonoBehaviour
     void Start ()
     {
         _inputData = PlayerInput.Instance.Data;
+        _debugStyle = DebugGUISkin.label;
 
         CamController.Init (this);
+    }
+    #region  Debug
+
+    private void OnGUI ()
+    {
+        var debgRect = new Rect (50f, 50f, 250f, 50f);
+
+        GUI.Label (debgRect, string.Format ("Grounded? => {0}", _grounded), _debugStyle);
+
+        var veloRect = new Rect (50f, 110f, 250f, 50f);
+
+        GUI.Label (veloRect, string.Format ("Velocity? => {0}", _rdPlayer.velocity), _debugStyle);
     }
 
     private void OnDrawGizmos ()
     {
         GroundCheckGizmos ();
     }
+
+    void GroundCheckGizmos ()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere (GroundCheckObj.position, GroundCheckRadius);
+    }
+    #endregion
 
     private void Update ()
     {
@@ -74,8 +96,34 @@ public class CharacterController : MonoBehaviour
 
     void Animation ()
     {
-        PlayerAnim.SetFloat ("velocity", _rdPlayer.velocity.x);
-        PlayerAnim.SetFloat ("velocityY", _rdPlayer.velocity.y);
+        if (_grounded || _rdPlayer.velocity.y == 0)
+        {
+            PlayerAnim.SetBool ("IsJumping", false);
+            PlayerAnim.SetBool ("IsFalling", false);
+        }
+
+        if (!_grounded)
+        {
+            if ((_rdPlayer.velocity.y > 0))
+            {
+                PlayerAnim.SetBool ("IsJumping", true);
+                PlayerAnim.SetBool ("IsFalling", false);
+            }
+            else if (_rdPlayer.velocity.y < 0)
+            {
+                PlayerAnim.SetBool ("IsJumping", false);
+                PlayerAnim.SetBool ("IsFalling", true);
+            }
+        }
+        else
+        {
+            if (Mathf.Abs (_inputData.XMove) > 0)
+            {
+                PlayerAnim.SetBool ("IsRunning", true);
+            }
+            else
+                PlayerAnim.SetBool ("IsRunning", false);
+        }
     }
 
     void GroundCheck ()
@@ -89,12 +137,6 @@ public class CharacterController : MonoBehaviour
                 _grounded = true;
     }
 
-    void GroundCheckGizmos ()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere (GroundCheckObj.position, GroundCheckRadius);
-    }
-
     void FlipIt ()
     {
         if (_inputData.XMove < 0)
@@ -106,6 +148,6 @@ public class CharacterController : MonoBehaviour
             _isFacingRight = true;
         }
 
-        transform.localScale = new Vector3 (_isFacingRight ? 1.5f : -1.5f, 1.5f);
+        transform.localScale = new Vector3 (_isFacingRight ? 1.5f : -1.5f, 1.5f, 1.5f);
     }
 }
