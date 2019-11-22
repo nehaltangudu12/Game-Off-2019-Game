@@ -12,8 +12,8 @@
         [SerializeField] private float CamTransition = 1.5f;
         [SerializeField] private Image CameraFrame;
         [SerializeField] private Image CameraFlashScreen;
-        [SerializeField] private Sprite CameraHandGrab;
-        [SerializeField] private Sprite CameraHandNormal;
+        [SerializeField] private Texture2D CameraHandGrab;
+        [SerializeField] private Texture2D CameraHandNormal;
         [SerializeField] private Transform CameraScreenTrans;
 
         [SerializeField] private Battery CameraBattery;
@@ -129,13 +129,13 @@
             {
                 if (_inputData.CamGrab)
                 {
-                    Cursor.SetCursor (CameraHandGrab.texture, Vector2.zero, CursorMode.Auto);
+                    Cursor.SetCursor (CameraHandGrab, Vector2.zero, CursorMode.Auto);
                     var mPos = _inputData.MousePosition;
                     CameraBounds.transform.DOMove (new Vector3 (mPos.x, mPos.y, -200), TimeToSnap * Time.unscaledDeltaTime);
                 }
                 else
                 {
-                    Cursor.SetCursor (CameraHandNormal.texture, Vector2.zero, CursorMode.Auto);
+                    Cursor.SetCursor (CameraHandNormal, Vector2.zero, CursorMode.Auto);
                 }
 
                 if (_inputData.CamArrowUp)
@@ -207,7 +207,7 @@
         {
             _isZoomedOut = !zoomIn;
             Cursor.visible = !zoomIn;
-            CameraBattery.CacheBatteryAmount();
+            CameraBattery.CacheBatteryAmount ();
             Time.timeScale = zoomIn ? 1f : 0.01f;
 
             CameraEffects.LensDistortionStatus (zoomIn);
