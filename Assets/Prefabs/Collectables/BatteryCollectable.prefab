@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4954105111655561922}
   - component: {fileID: 4954105111655561923}
   - component: {fileID: 6128146822872788930}
+  - component: {fileID: 4756704705169319508}
   m_Layer: 0
   m_Name: BatteryCollectable
   m_TagString: Untagged
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,3 +122,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.26, y: 0.54}
   m_EdgeRadius: 0
+--- !u!114 &4756704705169319508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954105111655561920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9c8a85bcc8f2c4d895855abc5a8173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0, g: 0.8584906, b: 0.030488329, a: 1}
+  glowBrightness: 2.96
+  outlineWidth: 3
+  alphaThreshold: 0.5
+  drawOutside: 0
+  enableInstancing: 1
