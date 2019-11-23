@@ -8,8 +8,9 @@ public class ICollectable : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer CollectableVisual;
 
-    private Sequence _animSeq;
-    private CollectablesSpawner _spawner;
+    protected Sequence _animSeq;
+    protected CollectablesSpawner _spawner;
+    protected SpriteRenderer _visual => CollectableVisual;
 
     public void Init (CollectablesSpawner spawner)
     {
@@ -35,14 +36,14 @@ public class ICollectable : MonoBehaviour
         }
     }
 
-    public void Collect ()
+    public virtual void Collect ()
     {
-        Debug.Log("Effect here");
+        Debug.Log("Base Collect");
     }
 
-    void Animate ()
+    public virtual void Animate ()
     {
-        _animSeq.Append(CollectableVisual.transform.DOShakePosition (.25f, .5f, 3, 20).SetDelay(1.5f)).SetLoops(-1);
+        _animSeq.Append(CollectableVisual.transform.DOScale (new Vector3(1.1f,1.1f,1.1f), .2f).SetDelay(.7f)).SetLoops(-1, LoopType.Yoyo);
 
         _animSeq.Play();
     }
