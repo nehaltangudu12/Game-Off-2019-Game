@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class BatteryCollectable : ICollectable
 {
+    private UIController _uiController;
+
+    private void Start ()
+    {
+        _uiController = UIController.Instance;
+    }
+
     public override void Collect ()
     {
         base.Collect ();
+        _uiController.FillBattery (.2f);
         Debug.Log ("Collect Battery");
     }
 

@@ -17,6 +17,8 @@ public class Battery : MonoBehaviour
     private Tween _batteryTween = null;
     private CameraController _camInstance;
 
+    public void FillAmount(float amount) => BatteryTube.fillAmount += amount;
+
     void Start ()
     {
         _camInstance = CameraController.Instance;
@@ -63,7 +65,7 @@ public class Battery : MonoBehaviour
         else
         {
             // Debug.Log ("Fill amount when filling : " + BatteryTube.fillAmount);
-            _batteryTween = BatteryTube.DOFillAmount (1, 4f);
+            //_batteryTween = BatteryTube.DOFillAmount (1, 4f);
         }
     }
 

@@ -21,7 +21,7 @@ public class CameraEffects : MonoBehaviour
 
     void DepthOfFieldAnim ()
     {
-        DOTween.To (() => { return _currentDepthOfField.aperture.value; }, val => { _currentDepthOfField.aperture.value = val; }, 31f, 3);
+        DOTween.To (() => { return _currentDepthOfField.aperture.value; }, val => { _currentDepthOfField.aperture.value = val; }, 31f, 1.5f);
     }
 
     public void LensDistortionStatus (bool enable, int intensity = 15)
