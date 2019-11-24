@@ -5,6 +5,8 @@ using UnityEngine;
 public class LaserBeam : MonoBehaviour
 {
     [SerializeField] private float LaserDistance = 0.5f;
+    [SerializeField] private Transform LaserStartEffect = null;
+    [SerializeField] private Transform LaserEndEffect = null;
     [SerializeField, Tooltip ("0: right, 1: left, 2: up, 3: down")] private byte LaserDirection = 0;
 
     private LineRenderer _lineR;
@@ -22,6 +24,16 @@ public class LaserBeam : MonoBehaviour
         {
             _lineR.SetPosition (0, transform.position);
             _lineR.SetPosition (1, hittedObj.point);
+
+            LaserEndEffect.gameObject.SetActive (true);
+            LaserStartEffect.gameObject.SetActive (true);
+            
+            LaserEndEffect.position = hittedObj.point;
+        }
+        else
+        {
+            LaserEndEffect.gameObject.SetActive (false);
+            LaserStartEffect.gameObject.SetActive (false);
         }
     }
 

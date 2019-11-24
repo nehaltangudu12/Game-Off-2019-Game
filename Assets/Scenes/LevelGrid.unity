@@ -2805,12 +2805,12 @@ PrefabInstance:
     - target: {fileID: 2783298590345574840, guid: 3192b479afdad2d43bdf19838be2f7e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.82
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 2783298590345574840, guid: 3192b479afdad2d43bdf19838be2f7e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.76
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 2783298590345574840, guid: 3192b479afdad2d43bdf19838be2f7e4,
         type: 3}
@@ -2856,36 +2856,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419313501647662622, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: LaserDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 998213376963251886, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.7368362
-      objectReference: {fileID: 0}
-    - target: {fileID: 998213376963251886, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 998213376963251886, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: m_Parameters.numCornerVertices
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 998213376963251886, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: m_Parameters.numCapVertices
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 998213376963251886, guid: 3192b479afdad2d43bdf19838be2f7e4,
-        type: 3}
-      propertyPath: m_Parameters.generateLightingData
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3192b479afdad2d43bdf19838be2f7e4, type: 3}
