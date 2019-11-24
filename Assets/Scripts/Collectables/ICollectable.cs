@@ -24,7 +24,7 @@ public class ICollectable : MonoBehaviour
     {
         if (other.CompareTag ("Player"))
         {
-            _spawner.Collect (this);
+            Collect (other.gameObject);
         }
     }
 
@@ -32,12 +32,13 @@ public class ICollectable : MonoBehaviour
     {
         if (other.collider.CompareTag ("Player"))
         {
-            _spawner.Collect (this);
+            Collect (other.gameObject);
         }
     }
 
-    public virtual void Collect ()
+    public virtual void Collect (GameObject target)
     {
+        _spawner.Collect (this);
         Debug.Log ("Base Collect");
     }
 

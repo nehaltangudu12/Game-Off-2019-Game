@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7283045475380923889}
   - component: {fileID: 6208556424435459480}
   - component: {fileID: 6876073529290754665}
+  - component: {fileID: 8758402990103746575}
   m_Layer: 11
   m_Name: Playerv2
   m_TagString: Player
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 169968693615729817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 169968694282857126}
   - {fileID: 6561070698458596149}
@@ -113,8 +114,22 @@ MonoBehaviour:
   WallCheckObj: {fileID: 6463774699571989228}
   GroundCheckObj: {fileID: 6561070698458596149}
   PlayerVisual: {fileID: 169968694282857127}
-  CamController: {fileID: 0}
   DebugGUISkin: {fileID: 11400000, guid: 41524c051c923c947b91a3b5ddb8ee21, type: 2}
+  CamController: {fileID: 0}
+  CharEffects: {fileID: 0}
+--- !u!114 &8758402990103746575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169968693615729817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842b635bf80eec14794ca7807871ad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterGlow: {fileID: 7067410938902252265}
 --- !u!1 &169968694282857121
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +141,7 @@ GameObject:
   - component: {fileID: 169968694282857126}
   - component: {fileID: 169968694282857127}
   - component: {fileID: 8204679523431746856}
+  - component: {fileID: 7067410938902252265}
   m_Layer: 11
   m_Name: visual
   m_TagString: Untagged
@@ -164,7 +180,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,6 +231,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7067410938902252265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169968694282857121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9c8a85bcc8f2c4d895855abc5a8173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0, g: 0, b: 0, a: 1}
+  glowBrightness: 2
+  outlineWidth: 1
+  alphaThreshold: 0.01
+  drawOutside: 0
+  enableInstancing: 1
 --- !u!1 &6345213343030679174
 GameObject:
   m_ObjectHideFlags: 0

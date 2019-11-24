@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 [RequireComponent (typeof (SpriteRenderer)), DisallowMultipleComponent, ExecuteInEditMode]
 public class SpriteGlowEffect : MonoBehaviour
@@ -70,6 +71,25 @@ public class SpriteGlowEffect : MonoBehaviour
         SetMaterialProperties ();
     }
 
+    internal void FlashGlow ()
+    {
+        ColorUtility.TryParseHtmlString("#7EFF00", out var greenColor);
+
+        DOTween.To (() => { return glowBrightness; }, val => { glowBrightness = val; glowColor = greenColor; }, 7.21f, .2f)
+            .SetEase (Ease.Flash)
+            .OnComplete (() =>
+            {
+                SetMaterialProperties ();
+
+                DOTween.To (() => { return glowBrightness; }, val => { glowColor = Color.black; glowBrightness = val; }, 2, .2f)
+                    .SetEase (Ease.Flash)
+                    .OnComplete (() =>
+                    {
+                        SetMaterialProperties ();
+                    });
+            });
+    }
+
     private void OnValidate ()
     {
         if (!isActiveAndEnabled) return;
@@ -87,6 +107,8 @@ public class SpriteGlowEffect : MonoBehaviour
     private void SetMaterialProperties ()
     {
         if (!Renderer) return;
+
+        Debug.Log ("Refreshing");
 
         Renderer.sharedMaterial = SpriteGlowMaterial.GetSharedFor (this);
 

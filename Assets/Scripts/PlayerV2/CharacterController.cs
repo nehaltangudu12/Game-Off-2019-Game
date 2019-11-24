@@ -20,8 +20,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform WallCheckObj = null;
     [SerializeField] private Transform GroundCheckObj = null;
     [SerializeField] private SpriteRenderer PlayerVisual = null;
-    [SerializeField] private CameraController CamController = null;
     [SerializeField] private GUISkin DebugGUISkin = null;
+    [SerializeField] private CameraController CamController = null;
+    [SerializeField] private CharacterEffects CharEffects = null;
 
     private bool _isGrounded = false;
     private bool _isNearWall = false;
@@ -32,6 +33,8 @@ public class CharacterController : MonoBehaviour
     private BoxCollider2D _colliderPlayer = null;
     private Vector3 _storedVelocity = Vector3.zero;
     private GUIStyle _debugStyle = null;
+
+    public CharacterEffects Effects => CharEffects;
 
     void Awake ()
     {

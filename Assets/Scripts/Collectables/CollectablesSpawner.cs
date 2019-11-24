@@ -27,7 +27,6 @@ public class CollectablesSpawner : MonoBehaviour
 
     internal void Collect (ICollectable collectable)
     {
-        collectable.Collect ();
         ConsumeCollectable (collectable);
     }
 

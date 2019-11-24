@@ -12,10 +12,14 @@ public class BatteryCollectable : ICollectable
         _uiController = UIController.Instance;
     }
 
-    public override void Collect ()
+    public override void Collect (GameObject target)
     {
-        base.Collect ();
+        base.Collect (target);
         _uiController.FillBattery (.2f);
+
+        target.TryGetComponent(out CharacterEffects effects);
+
+        effects.PickUpBattery();
         Debug.Log ("Collect Battery");
     }
 
