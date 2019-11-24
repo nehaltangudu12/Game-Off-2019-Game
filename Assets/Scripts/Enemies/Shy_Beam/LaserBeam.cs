@@ -10,15 +10,21 @@ public class LaserBeam : MonoBehaviour
     [SerializeField, Tooltip ("0: right, 1: left, 2: up, 3: down")] private byte LaserDirection = 0;
 
     private LineRenderer _lineR;
+    private SceneController _sceneControl;
 
     private void Awake ()
     {
         TryGetComponent (out _lineR);
     }
 
+    internal void Init (SceneController sceneControl)
+    {
+        _sceneControl = sceneControl;
+    }
+
     private void FixedUpdate ()
     {
-        RaycastHit2D hittedObj = Physics2D.Raycast (transform.position, DirectionExtractor (), LaserDistance, 1 << 9 | 1 << 10);
+        RaycastHit2D hittedObj = Physics2D.Raycast (transform.position, DirectionExtractor (), LaserDistance, 1 << 9 | 1 << 10 | 1 << 11);
 
         if (hittedObj.collider != null)
         {
@@ -27,8 +33,13 @@ public class LaserBeam : MonoBehaviour
 
             LaserEndEffect.gameObject.SetActive (true);
             LaserStartEffect.gameObject.SetActive (true);
-            
+
             LaserEndEffect.position = hittedObj.point;
+
+            if (hittedObj.collider.CompareTag ("Player")) // reset level
+            {
+                _sceneControl.ResetCurrentScene ();
+            }
         }
         else
         {

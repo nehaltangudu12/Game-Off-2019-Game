@@ -7,14 +7,11 @@ public class UIController : Singleton<UIController>
 {
     [SerializeField] private Battery Battery = null;
 
-    internal void Init()
-    {
-        
-    }
+    internal void Init () { }
 
-    public void FillBattery(float amount)
+    public void FillBattery (float amount)
     {
-        Battery.FillAmount(amount);
-        Battery.CacheBatteryAmount();
+        Battery.FillAmount (amount);
+        Battery.CacheBatteryAmount ();
     }
 }

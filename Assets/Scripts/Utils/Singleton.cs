@@ -10,7 +10,5 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             Instance = FindObjectOfType<T> ();
         }
-
-        DontDestroyOnLoad (this);
     }
 }

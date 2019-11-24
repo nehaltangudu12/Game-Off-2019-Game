@@ -6,12 +6,14 @@ public class EnemyShyBeam : MonoBehaviour, IEnemy
 {
     [SerializeField] private LaserBeam Laser = null;
 
-    public void Init ()
-    { }
+    private void Start ()
+    {
+        Laser.Init (SceneController.Instance);
+    }
 
-    public void Freeze ()
-    { }
+    public void Init () { }
 
-    public void UnFreeze ()
-    { }
+    public void Freeze () { }
+
+    public void UnFreeze () { }
 }
