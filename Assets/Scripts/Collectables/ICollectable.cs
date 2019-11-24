@@ -15,7 +15,7 @@ public class ICollectable : MonoBehaviour
     public void Init (CollectablesSpawner spawner)
     {
         _spawner = spawner;
-        _animSeq = DOTween.Sequence();
+        _animSeq = DOTween.Sequence ();
 
         Animate ();
     }
@@ -24,7 +24,7 @@ public class ICollectable : MonoBehaviour
     {
         if (other.CompareTag ("Player"))
         {
-            _spawner.Collect(this);
+            _spawner.Collect (this);
         }
     }
 
@@ -32,19 +32,20 @@ public class ICollectable : MonoBehaviour
     {
         if (other.collider.CompareTag ("Player"))
         {
-             _spawner.Collect(this);
+            _spawner.Collect (this);
         }
     }
 
     public virtual void Collect ()
     {
-        Debug.Log("Base Collect");
+        Debug.Log ("Base Collect");
     }
 
     public virtual void Animate ()
     {
-        _animSeq.Append(CollectableVisual.transform.DOScale (new Vector3(1.1f,1.1f,1.1f), .2f).SetDelay(.7f)).SetLoops(-1, LoopType.Yoyo);
+        _animSeq.Append (CollectableVisual.transform.DOScale (CollectableVisual.transform.localScale + new Vector3 (.2f, .2f, .2f),
+            .2f).SetDelay (.7f)).SetLoops (-1, LoopType.Yoyo);
 
-        _animSeq.Play();
+        _animSeq.Play ();
     }
 }

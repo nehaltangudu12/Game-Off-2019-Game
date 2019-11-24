@@ -4926,6 +4926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaserDistance: 50
+  LaserStartEffect: {fileID: 6378374775008908106}
   LaserEndEffect: {fileID: 8389939993882864151}
   LaserDirection: 1
 --- !u!120 &998213376963251886
