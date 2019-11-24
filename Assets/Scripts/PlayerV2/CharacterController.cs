@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] private bool ShowDebug = false;
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
     [SerializeField] private float AirForce = 400f;
@@ -49,6 +50,8 @@ public class CharacterController : MonoBehaviour
 
     private void OnGUI ()
     {
+        if (!ShowDebug) return;
+
         var groundedRect = new Rect (50f, 50f, 250f, 50f);
 
         GUI.Label (groundedRect, string.Format ("Grounded? => {0}", _isGrounded), _debugStyle);
@@ -111,9 +114,9 @@ public class CharacterController : MonoBehaviour
                 _rdPlayer.AddForce (new Vector2 (0, JumpForce));
             }
 
-            if(_isWallSliding)
+            if (_isWallSliding)
             {
-                 _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
+                _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
             }
         }
     }
