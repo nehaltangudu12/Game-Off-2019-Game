@@ -7,15 +7,19 @@ using UnityEngine;
 public class ICollectable : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer CollectableVisual;
+    [SerializeField] private AudioClip CollectableSound;
 
     protected Sequence _animSeq;
+    private AudioController _audioControl;
     protected CollectablesSpawner _spawner;
+
     protected SpriteRenderer _visual => CollectableVisual;
 
     public void Init (CollectablesSpawner spawner)
     {
         _spawner = spawner;
         _animSeq = DOTween.Sequence ();
+        _audioControl = AudioController.Instance;
 
         Animate ();
     }
@@ -39,6 +43,7 @@ public class ICollectable : MonoBehaviour
     public virtual void Collect (GameObject target)
     {
         _spawner.Collect (this);
+        _audioControl.PlaySfx (CollectableSound, 1);
         Debug.Log ("Base Collect");
     }
 

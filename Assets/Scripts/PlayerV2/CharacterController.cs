@@ -23,6 +23,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GUISkin DebugGUISkin = null;
     [SerializeField] private CameraController CamController = null;
     [SerializeField] private CharacterEffects CharEffects = null;
+    [SerializeField] private CharacterSound CharSounds = null;
 
     private bool _isGrounded = false;
     private bool _isNearWall = false;
@@ -115,11 +116,17 @@ public class CharacterController : MonoBehaviour
             {
                 _isGrounded = false;
                 _rdPlayer.AddForce (new Vector2 (0, JumpForce));
+
+                // sound
+                CharSounds.PlayJumpGround();
             }
 
             if (_isWallSliding)
             {
                 _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
+
+                // sound
+                CharSounds.PlayWallJump ();
             }
         }
     }

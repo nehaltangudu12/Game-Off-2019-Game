@@ -11,12 +11,14 @@ public class UI_LevelsController : MonoBehaviour
     [SerializeField] private MainMenuCameraController MainMenuCameraController;
     [SerializeField] private UI_LevelItem[] LevelItems;
 
-    private PlayerInput _inputInstance;
+    private PlayerInput _inputInstance = null;
+    private SceneController _sceneControl = null;
     private UI_LevelItem _currentHoveredItem = null;
 
     private void Start ()
     {
         _inputInstance = PlayerInput.Instance;
+        _sceneControl = SceneController.Instance;
 
         foreach (var item in LevelItems)
         {
@@ -55,7 +57,7 @@ public class UI_LevelsController : MonoBehaviour
         MainMenuCameraController.DepthOfFieldAnim ();
         Camera.main.DOOrthoSize (1.5f, 3f).OnComplete (() =>
         {
-            SceneManager.LoadSceneAsync (1, LoadSceneMode.Single);
+           _sceneControl.LoadSceneAsync(1);
         });
     }
 }

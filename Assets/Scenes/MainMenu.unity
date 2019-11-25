@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 772361798}
   - component: {fileID: 772361797}
   - component: {fileID: 772361801}
-  - component: {fileID: 772361796}
   - component: {fileID: 772361800}
   - component: {fileID: 772361799}
   m_Layer: 8
@@ -141,14 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &772361796
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772361795}
-  m_Enabled: 1
 --- !u!20 &772361797
 Camera:
   m_ObjectHideFlags: 0
@@ -326,6 +317,7 @@ Transform:
   m_Children:
   - {fileID: 2124793680}
   - {fileID: 2003108158}
+  - {fileID: 1807156146}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -339,6 +331,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e924a141afd2be94ab77fa5b9ae03178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1807156145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1807156146}
+  - component: {fileID: 1807156147}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1807156146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807156145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1388883884}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807156147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807156145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7067db3e17fd25945b9ea0cec1fcd589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1915791021
@@ -432,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64c77b117869214195b0882b187cea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BackgroundMusic: {fileID: 8300000, guid: 4036000ad0e711f4b8540275cb407362, type: 3}
 --- !u!1001 &2031124193
 PrefabInstance:
   m_ObjectHideFlags: 0
