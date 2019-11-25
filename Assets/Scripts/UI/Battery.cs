@@ -17,6 +17,8 @@ public class Battery : MonoBehaviour
     private Tween _batteryTween = null;
     private CameraController _camInstance;
 
+    public bool IsBatteryFull => BatteryTube.fillAmount == 1f;
+
     public void FillAmount(float amount) => BatteryTube.fillAmount += amount;
 
     void Start ()

@@ -7,6 +7,8 @@ public class UIController : Singleton<UIController>
 {
     [SerializeField] private Battery Battery = null;
 
+    public Battery BatteryInstance => Battery;
+
     internal void Init () { }
 
     public void FillBattery (float amount)

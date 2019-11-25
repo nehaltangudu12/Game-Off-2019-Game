@@ -108,8 +108,6 @@ public class SpriteGlowEffect : MonoBehaviour
     {
         if (!Renderer) return;
 
-        Debug.Log ("Refreshing");
-
         Renderer.sharedMaterial = SpriteGlowMaterial.GetSharedFor (this);
 
         if (materialProperties == null) // Initializing it at `Awake` or `OnEnable` causes nullref in editor in some cases.
