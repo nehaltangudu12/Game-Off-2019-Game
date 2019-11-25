@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioController : Singleton<AudioController>
+public class AudioController : MonoBehaviour
 {
-
     public static AudioController Instance = null;
 
     private AudioSource _sfxSource;
@@ -25,7 +24,7 @@ public class AudioController : Singleton<AudioController>
     {
         _sfxSource = this.gameObject.AddComponent<AudioSource> ();
         _backSource = this.gameObject.AddComponent<AudioSource> ();
-        _audioListener= this.gameObject.AddComponent<AudioListener>();
+        _audioListener = this.gameObject.AddComponent<AudioListener> ();
 
         _sfxSource.playOnAwake = false;
         _backSource.playOnAwake = false;
@@ -38,7 +37,7 @@ public class AudioController : Singleton<AudioController>
     {
         _backSource.clip = clip;
         _backSource.volume = volume;
-        _backSource.Play();
+        _backSource.Play ();
     }
 
     public void PlaySfx (AudioClip clip, float volume)
