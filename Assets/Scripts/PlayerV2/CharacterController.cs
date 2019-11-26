@@ -64,7 +64,11 @@ public class CharacterController : MonoBehaviour
 
         GUI.Label (wallRect, string.Format ("Near Wall? => {0}", _isNearWall), _debugStyle);
 
-        var veloRect = new Rect (50f, 170f, 250f, 50f);
+        var wallSlideRect = new Rect (50f, 170f, 250f, 50f);
+
+        GUI.Label (wallSlideRect, string.Format ("Wall Sliding? => {0}", _isWallSliding), _debugStyle);
+
+        var veloRect = new Rect (50f, 230f, 250f, 50f);
 
         GUI.Label (veloRect, string.Format ("Velocity? => {0}", _rdPlayer.velocity), _debugStyle);
     }
@@ -96,9 +100,9 @@ public class CharacterController : MonoBehaviour
 
         FlipIt ();
 
-        Jump ();
-
         WallSide ();
+
+        Jump ();
     }
 
     private void FixedUpdate ()
@@ -118,7 +122,7 @@ public class CharacterController : MonoBehaviour
                 _rdPlayer.AddForce (new Vector2 (0, JumpForce));
 
                 // sound
-                CharSounds.PlayJumpGround();
+                CharSounds.PlayJumpGround ();
             }
 
             if (_isWallSliding)
@@ -155,41 +159,29 @@ public class CharacterController : MonoBehaviour
     {
         if (_isGrounded || _rdPlayer.velocity.y == 0)
         {
+            if (Mathf.Abs (_inputData.XMove) > 0)
+                PlayerAnim.SetBool ("IsRunning", true);
+            else
+                PlayerAnim.SetBool ("IsRunning", false);
+
             PlayerAnim.SetBool ("IsJumping", false);
             PlayerAnim.SetBool ("IsFalling", false);
+            PlayerAnim.SetBool ("IsWallSliding", false);
         }
-
-        if (!_isGrounded)
+        else if (!_isGrounded)
         {
             if ((_rdPlayer.velocity.y > 0))
             {
                 PlayerAnim.SetBool ("IsJumping", true);
                 PlayerAnim.SetBool ("IsFalling", false);
+                PlayerAnim.SetBool ("IsWallSliding", false);
             }
             else if (_rdPlayer.velocity.y < 0)
             {
                 PlayerAnim.SetBool ("IsJumping", false);
-
-                if (_isWallSliding)
-                {
-                    PlayerAnim.SetBool ("IsFalling", false);
-                    PlayerAnim.SetBool ("IsWallSliding", true);
-                }
-                else
-                {
-                    PlayerAnim.SetBool ("IsFalling", true);
-                    PlayerAnim.SetBool ("IsWallSliding", false);
-                }
+                PlayerAnim.SetBool ("IsFalling", !_isWallSliding);
+                PlayerAnim.SetBool ("IsWallSliding", _isWallSliding);
             }
-        }
-        else
-        {
-            if (Mathf.Abs (_inputData.XMove) > 0)
-            {
-                PlayerAnim.SetBool ("IsRunning", true);
-            }
-            else
-                PlayerAnim.SetBool ("IsRunning", false);
         }
     }
 
@@ -199,6 +191,7 @@ public class CharacterController : MonoBehaviour
 
         _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer) ||
             Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer);
+
     }
 
     void FlipIt ()

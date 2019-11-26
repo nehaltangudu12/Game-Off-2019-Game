@@ -29,7 +29,7 @@ public class AudioController : MonoBehaviour
         _sfxSource.playOnAwake = false;
         _backSource.playOnAwake = false;
 
-        _sfxSource.loop = true;
+        _sfxSource.loop = false;
         _backSource.loop = true;
     }
 
