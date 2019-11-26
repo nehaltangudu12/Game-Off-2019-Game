@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
-{
+{/*
 	public Vector2 maxDims;
 	Vector2[] corners;
 	public Color gridColor;
@@ -19,6 +19,10 @@ public class GridManager : MonoBehaviour
 
 	public bool debugTileShapes = true;
 
+	public MeshFilter tileMesh;
+	public MeshFilter borderMesh;
+
+
 	public float tilePixelSize;
 	public bool showGrid = true;
 	public RectTransform mapBG;
@@ -27,23 +31,6 @@ public class GridManager : MonoBehaviour
 	Tile[] currentMap;
 	Tile scrolledTile;
 
-	public GameObject brushIconHalfTri;
-	public GameObject brushIconSharpTriLeft;
-	public GameObject brushIconSharpTriRight;
-	public GameObject brushIconFatTriLeft;
-	public GameObject brushIconFatTriRight;
-	public GameObject brushIconFlatRect;
-	public GameObject brushIconCornerFull;
-	public GameObject brushIconCornerEmpty;
-
-	public GameObject brushActiveQ;
-	public GameObject brushActiveA;
-	public GameObject brushActiveS;
-	public GameObject brushActiveW;
-
-	GameObject activeBrushIcon;
-
-	public RectTransform brushSelector;
 
 	Vector2 boundsTopRight;
 	Vector2 boundsTopLeft;
@@ -52,7 +39,7 @@ public class GridManager : MonoBehaviour
 
 
 
-	Tile.Shape activeShape = Tile.Shape.HalfTri;
+	
 
 
 	void Start()
@@ -70,6 +57,8 @@ public class GridManager : MonoBehaviour
 			boundsTopRight = new Vector2(offset.x*-1 - tilePixelSize, offset.y*-1 - tilePixelSize);
 			activeShape = Tile.Shape.HalfTri;
 			activeBrushIcon = brushIconHalfTri;
+			PaletteSwap();
+			BorderMesh();
 		}
 		else
 		{
@@ -77,12 +66,115 @@ public class GridManager : MonoBehaviour
 		}
 	}
 
-	
 
+	void BorderMesh()
+	{
+		//add the border to the tile mesh
+		Vector3[] borderVerts = new Vector3[8]
+		{
+			boundsTopLeft + new Vector2(-tilePixelSize,tilePixelSize),
+			boundsTopRight + new Vector2(tilePixelSize,tilePixelSize),
+			boundsBotRight + new Vector2(tilePixelSize,-tilePixelSize),
+			boundsBotLeft + new Vector2(-tilePixelSize,-tilePixelSize),
+			boundsTopLeft,
+			boundsTopRight,
+			boundsBotRight,
+			boundsBotLeft
+		};
+
+		int[] borderTris = new int[24]{0,1,4,1,4,5,1,5,2,5,2,6,6,2,7,2,7,3,7,3,0,0,7,4};
+
+		Mesh mesh = new Mesh();
+		borderMesh.mesh = mesh;
+		mesh.vertices = borderVerts;
+		mesh.triangles = borderTris;
+	}
+
+
+	int CountVerts()
+	{
+		int totalVerts = 0;
+		foreach (Tile t in currentMap)
+		{
+			if (!t.isEmpty && t.type == Tile.Type.Main)
+			{
+				totalVerts+=t.points.Length;
+			}
+		}
+		return totalVerts;
+	}
+
+	int CountTris()
+	{
+		int totalTris = 0;
+		foreach (Tile t in currentMap)
+		{
+			if (!t.isEmpty && t.type == Tile.Type.Main)
+			{
+				totalTris+=t.tris.Length;
+			}
+		}
+		return totalTris;
+	}
+
+
+	void UpdateMesh()
+	{
+		int triPos=0;
+		int vertPos=0;
+		int currentVerts = 0;
+		Vector3[] newVerts = new Vector3[CountVerts()];
+		int[] newTris = new int[CountTris()];
+		
+		foreach (Tile t in currentMap)
+		{
+			if (!t.isEmpty && t.type == Tile.Type.Main)
+			{
+				for(int s = 0; s < t.points.Length; s++)
+				{
+					Vector3 newVertex = t.points[s] * tilePixelSize + t.screenPosition;
+					newVerts[vertPos] = newVertex;
+					vertPos++;
+				}
+
+				for(int a = 0; a < t.tris.Length; a++)
+				{
+					int newTri = t.tris[a] + currentVerts;
+					newTris[triPos] = newTri;
+					triPos++;
+				}
+				currentVerts += t.points.Length;
+			}
+		}
+
+		Mesh mesh = new Mesh();
+		tileMesh.mesh = mesh;
+		mesh.vertices = newVerts;
+		mesh.triangles = newTris;
+	}
 
 
 	void Update()
 	{
+		if (Input.GetKeyDown("f1"))
+		{
+			PaletteSwap(1);
+		}
+		if (Input.GetKeyDown("f2"))
+		{
+			PaletteSwap(2);
+		}
+		if (Input.GetKeyDown("f3"))
+		{
+			PaletteSwap(3);
+		}
+		if (Input.GetKeyDown("f4"))
+		{
+			PaletteSwap(4);
+		}
+
+
+
 		UpdateTileBrush();
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		if (mousePos.x >= offset.x + tilePixelSize && mousePos.x <= offset.x*-1 - tilePixelSize && mousePos.y >= offset.y + tilePixelSize && mousePos.y <= offset.y*-1 - tilePixelSize)
@@ -93,50 +185,60 @@ public class GridManager : MonoBehaviour
 				scrolledTile = currentTile;
 			}
 
-			Debug.DrawLine(scrolledTile.screenPosition, new Vector2(scrolledTile.screenPosition.x + tilePixelSize, scrolledTile.screenPosition.y), scrollColor);
-			Debug.DrawLine(scrolledTile.screenPosition, new Vector2(scrolledTile.screenPosition.x, scrolledTile.screenPosition.y + tilePixelSize), scrollColor);
-			Debug.DrawLine(scrolledTile.screenPosition + new Vector2(tilePixelSize, tilePixelSize), new Vector2(scrolledTile.screenPosition.x + tilePixelSize, scrolledTile.screenPosition.y), scrollColor);
-			Debug.DrawLine(scrolledTile.screenPosition + new Vector2(tilePixelSize, tilePixelSize), new Vector2(scrolledTile.screenPosition.x, scrolledTile.screenPosition.y + tilePixelSize), scrollColor);
+			//Debug.DrawLine(scrolledTile.screenPosition, new Vector2(scrolledTile.screenPosition.x + tilePixelSize, scrolledTile.screenPosition.y), scrollColor);
+			//Debug.DrawLine(scrolledTile.screenPosition, new Vector2(scrolledTile.screenPosition.x, scrolledTile.screenPosition.y + tilePixelSize), scrollColor);
+			//Debug.DrawLine(scrolledTile.screenPosition + new Vector2(tilePixelSize, tilePixelSize), new Vector2(scrolledTile.screenPosition.x + tilePixelSize, scrolledTile.screenPosition.y), scrollColor);
+			//Debug.DrawLine(scrolledTile.screenPosition + new Vector2(tilePixelSize, tilePixelSize), new Vector2(scrolledTile.screenPosition.x, scrolledTile.screenPosition.y + tilePixelSize), scrollColor);
 		
 			if (scrolledTile.type != Tile.Type.Border)
 			{
 				bool shapeBrush = false;
 				int turns = 0;
+				bool flipVert = false;
+				bool flipHor = false;
 				if(Input.GetKey("q"))
 				{
 					shapeBrush = true;
 					turns = 0;
+					flipVert = false;
+					flipHor = false;
 				}
 				if(Input.GetKey("w"))
 				{
 					shapeBrush = true;
 					turns = 3;
+					flipVert = false;
+					flipHor = true;
 				}
 				if(Input.GetKey("s"))
 				{
 					shapeBrush = true;
 					turns = 2;
+					flipVert = true;
+					flipHor = true;
 				}
 				if(Input.GetKey("a"))
 				{
 					shapeBrush = true;
 					turns = 1;
+					flipVert = true;
+					flipHor = false;
 				}
 				if (shapeBrush)
 				{
-					scrolledTile.type = Tile.Type.IsShape;
-					scrolledTile.SetPoints(activeShape, turns);
+					scrolledTile.SetPoints(activeShape, flipVert, flipHor, turns);
+					UpdateMesh();
 				}
 
 				if (Input.GetKey("e"))
 				{
-					scrolledTile.type = Tile.Type.IsShape;
-					scrolledTile.SetPoints(Tile.Shape.Full);
+					scrolledTile.SetPoints(Tile.Shape.Full, false, false);
+					UpdateMesh();
 				}
 				if (Input.GetKey("d"))
 				{
-					scrolledTile.type = Tile.Type.Empty;
-					scrolledTile.SetPoints(Tile.Shape.Empty);
+					scrolledTile.SetPoints(Tile.Shape.Empty, false, false);
+					UpdateMesh();
 				}
 			}
 
@@ -152,39 +254,35 @@ public class GridManager : MonoBehaviour
 			{
 				Debug.DrawLine(leftPoints[h], rightPoints[h], gridColor);
 			}
-			Debug.DrawLine(boundsTopLeft, boundsTopRight, shapeColor);
-			Debug.DrawLine(boundsTopLeft, boundsBotLeft, shapeColor);
-			Debug.DrawLine(boundsBotRight, boundsTopRight, shapeColor);
-			Debug.DrawLine(boundsBotRight, boundsBotLeft, shapeColor);
-			Debug.DrawLine(boundsTopLeft + new Vector2(-tilePixelSize,tilePixelSize), boundsTopRight + new Vector2(tilePixelSize,tilePixelSize), shapeColor);
-			Debug.DrawLine(boundsTopLeft + new Vector2(-tilePixelSize,tilePixelSize), boundsBotLeft + new Vector2(-tilePixelSize,-tilePixelSize), shapeColor);
-			Debug.DrawLine(boundsBotRight + new Vector2(tilePixelSize,-tilePixelSize), boundsTopRight + new Vector2(tilePixelSize,tilePixelSize), shapeColor);
-			Debug.DrawLine(boundsBotRight + new Vector2(tilePixelSize,-tilePixelSize), boundsBotLeft + new Vector2(-tilePixelSize,-tilePixelSize), shapeColor);
 		}
+
+
+		//Debug.DrawLine(boundsTopLeft, boundsTopRight, scrollColor);
+		//Debug.DrawLine(boundsTopLeft, boundsBotLeft, scrollColor);
+		//Debug.DrawLine(boundsBotRight, boundsTopRight, scrollColor);
+		//Debug.DrawLine(boundsBotRight, boundsBotLeft, scrollColor);
+
 		
-		if (debugTileShapes)
+		foreach (Tile t in currentMap)
 		{
-			foreach (Tile t in currentMap)
+			if(!t.isEmpty && t.type == Tile.Type.Main)
 			{
-				if (t.type == Tile.Type.IsShape)
+				for (int s = 0; s < t.points.Length; s++)
 				{
-					for (int s = 0; s < t.points.Length; s++)
+					if (s!=0)
 					{
-						if (s!=0)
-						{
-							Debug.DrawLine(t.points[s] * tilePixelSize + t.screenPosition, t.points[s-1] * tilePixelSize + t.screenPosition, shapeColor);
-						}
-						else
-						{
-							Debug.DrawLine(t.points[0] * tilePixelSize + t.screenPosition, t.points[t.points.Length-1] * tilePixelSize + t.screenPosition, shapeColor);
-						}
+						Debug.DrawLine(t.points[s] * tilePixelSize + t.screenPosition, t.points[s-1] * tilePixelSize + t.screenPosition, shapeColor);
+					}
+					else
+					{
+						Debug.DrawLine(t.points[0] * tilePixelSize + t.screenPosition, t.points[t.points.Length-1] * tilePixelSize + t.screenPosition, shapeColor);
 					}
 				}
 			}
 		}
-
-
 	}
+
+
 
 	public Tile WorldToGrid (Vector2 worldPos, Tile[] grid)
 	{
@@ -201,6 +299,8 @@ public class GridManager : MonoBehaviour
 		}
 		return foundTile;
 	}
+
+
 
 	public Tile[] NewGrid ()
 	{
@@ -232,7 +332,7 @@ public class GridManager : MonoBehaviour
 				if (r == 0 || r == maxDims.y+1 || c == 0 || c == maxDims.x+1)
 				{
 					tileData[arrayPos].type = Tile.Type.Border;
-					tileData[arrayPos].SetPoints(Tile.Shape.Full);
+					tileData[arrayPos].SetPoints(Tile.Shape.Full, false, false);
 
 					if(r == 0 && botPointCount <= maxDims.x)
 					{
@@ -257,19 +357,15 @@ public class GridManager : MonoBehaviour
 				}
 				else
 				{
-					tileData[arrayPos].type = Tile.Type.Empty;
+					tileData[arrayPos].type = Tile.Type.Main;
+					tileData[arrayPos].SetPoints(Tile.Shape.Empty, false, false);
 				}
 
 				arrayPos++;
 			}
 		}
 
-		/*
-		tileData[0].type = Tile.Type.Corner;
-		tileData[(int)maxDims.x+1].type = Tile.Type.Corner;
-		tileData[tileData.Length-1].type = Tile.Type.Corner;
-		tileData[tileData.Length-1-((int)maxDims.x+1)].type = Tile.Type.Corner;
-		*/
+
 
 		return tileData;
 	}
@@ -283,18 +379,18 @@ public class GridManager : MonoBehaviour
 		}
 		if (Input.GetKeyDown("2"))
 		{
-			activeShape = Tile.Shape.SharpTriLeft;
-			activeBrushIcon = brushIconSharpTriLeft;
+			activeShape = Tile.Shape.SharpTriHor;
+			activeBrushIcon = brushIconSharpTriHor;
 		}
 		if (Input.GetKeyDown("3"))
 		{
-			activeShape = Tile.Shape.SharpTriRight;
-			activeBrushIcon = brushIconSharpTriRight;
+			activeShape = Tile.Shape.SharpTriVert;
+			activeBrushIcon = brushIconSharpTriVert;
 		}
 		if (Input.GetKeyDown("4"))
 		{
-			activeShape = Tile.Shape.CornerFull;
-			activeBrushIcon = brushIconCornerFull;
+			activeShape = Tile.Shape.CornerSquare;
+			activeBrushIcon = brushIconCornerSquare;
 		}
 		if (Input.GetKeyDown("5"))
 		{
@@ -303,18 +399,28 @@ public class GridManager : MonoBehaviour
 		}
 		if (Input.GetKeyDown("6"))
 		{
-			activeShape = Tile.Shape.FatTriLeft;
-			activeBrushIcon = brushIconFatTriLeft;
+			activeShape = Tile.Shape.FatTriHor;
+			activeBrushIcon = brushIconFatTriHor;
 		}
 		if (Input.GetKeyDown("7"))
 		{
-			activeShape = Tile.Shape.FatTriRight;
-			activeBrushIcon = brushIconFatTriRight;
+			activeShape = Tile.Shape.FatTriVert;
+			activeBrushIcon = brushIconFatTriVert;
 		}
 		if (Input.GetKeyDown("8"))
 		{
-			activeShape = Tile.Shape.CornerEmpty;
-			activeBrushIcon = brushIconCornerEmpty;
+			activeShape = Tile.Shape.CornerSquareInvert;
+			activeBrushIcon = brushIconCornerSquareInvert;
+		}
+		if (Input.GetKeyDown("9"))
+		{
+			activeShape = Tile.Shape.CornerTri;
+			activeBrushIcon = brushIconCornerTri;
+		}
+		if (Input.GetKeyDown("0"))
+		{
+			activeShape = Tile.Shape.CornerTriInvert;
+			activeBrushIcon = brushIconCornerTriInvert;
 		}
 
 		Sprite activeBrushSprite = activeBrushIcon.GetComponent<Image>().sprite;
@@ -327,6 +433,56 @@ public class GridManager : MonoBehaviour
 
 	}
 
+
+	//.GetComponent<Image>().sprite
+
+	void PaletteSwap(int n = 0)
+	{
+		Palette palette = palette1;
+		if(n == 0)
+		{
+			n = Random.Range(1, 5);
+		}
+		if (n == 1)
+		{
+			palette = palette1;
+		}
+		if (n == 2)
+		{
+			palette = palette2;
+		}
+		if (n == 3)
+		{
+			palette = palette3;
+		}
+		if (n == 4)
+		{
+			palette = palette4;
+		}
+
+		gridColor = palette.levelTile;
+		gridColor.a = .2f;
+		shapeColor = palette.levelTile;
+
+		foreach(Image s in tileSprites)
+		{
+			s.color = palette.levelTile;
+		}
+		foreach(Image b in bgSprites)
+		{
+			b.color = palette.levelSky;
+		}
+		foreach(Image x in boxSprites)
+		{
+			x.color = palette.levelBG[1];
+		}
+		foreach(Image f in frameSprites)
+		{
+			f.color = palette.levelBG[0];
+		}
+	}
+
+*/
 }
 
 
@@ -345,3 +501,11 @@ public class Frame
 	}
 
 }
+
+
+		/*
+		tileData[0].type = Tile.Type.Corner;
+		tileData[(int)maxDims.x+1].type = Tile.Type.Corner;
+		tileData[tileData.Length-1].type = Tile.Type.Corner;
+		tileData[tileData.Length-1-((int)maxDims.x+1)].type = Tile.Type.Corner;
+		*/

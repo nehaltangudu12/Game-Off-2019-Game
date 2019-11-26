@@ -2,109 +2,152 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+
 public class Tile
 {
-	public enum Type
-	{
-		Border,
-		Empty,
-		IsShape
-	}
 
-	public Type type;
-
-	public bool inFrame;
+	
+	public bool isBorder;
+	public int index;
 	public Vector2 coord;
-	public Vector2 screenPosition;
-	public int arrayPos;
-	public Vector2[] points;
+	public bool isEmpty = true;
 
-	public enum Shape
+	public Tile (bool isBorder, int index, Vector2 coord)
 	{
-		Empty,
-		Full,
-		HalfTri,
-		SharpTriLeft,
-		SharpTriRight,
-		FatTriLeft,
-		FatTriRight,
-		FlatRect,
-		CornerFull,
-		CornerEmpty
+		this.isBorder = isBorder;
+		this.index = index;
+		this.coord = coord;
+		if (isBorder)
+		{
+			FillTile();
+		}
+		else
+		{
+			ClearTile();
+		}
 	}
 
-	public void CheckFrameState(Vector2 frameSize, Vector2 frameCoord)
+	public enum Key
 	{
+		Q,W,S,A
+	}
+	
 
+
+	public Vector2 screenPos;
+
+	public void SetScreenPos (float tilePixelSize, Vector2 offset) // find the bottom left anchor of the tile in world points
+	{
+		screenPos = new Vector2(coord.x * tilePixelSize + offset.x, coord.y * tilePixelSize + offset.y);
+	}
+
+	public Vector2[] verts;
+	public int[] tris;
+
+	
+	public void ClearTile ()
+	{
+		isEmpty = true;
+		verts = new Vector2[0];
+		tris = new int[0];
+	}
+
+	public void FillTile ()
+	{
+		isEmpty = false;
+		verts = new Vector2[4]{
+			new Vector2(0,0),
+			new Vector2(0,1),
+			new Vector2(1,1),
+			new Vector2(1,0)};
+		tris = new int[6]{
+			0,
+			1,
+			2,
+			2,
+			3,
+			0};
 	}
 
 
-	public void SetPoints (Shape shape, int turns = 0)
+
+
+	public void ShapeTile (Shape shape, Key key) // set the tile's verts using a predefined shape
 	{
-		points = new Vector2[0];
-
-		Vector2 topLeft = new Vector2(0, 1);
-		Vector2 topRight = new Vector2(1, 1);
-		Vector2 botLeft = new Vector2(0, 0);
-		Vector2 botRight = new Vector2(1, 0);
-		Vector2 midTop = new Vector2(0.5f, 1);
-		Vector2 midBot = new Vector2(0.5f, 0);
-		Vector2 midRight = new Vector2(1, 0.5f);
-		Vector2 midLeft = new Vector2(0, 0.5f);
-		Vector2 midMid = new Vector2(0.5f, 0.5f);
-
-		//points connect in order, final point connects to first point to complete the shape
-		if (shape == Shape.Full)
+		bool flipHor = false;
+		bool flipVer = false;
+		int turns = 0;
+		ClearTile();
+		isEmpty = false;
+		if (key == Key.Q)
 		{
-			points = new Vector2[]{botLeft, botRight, topRight, topLeft};
+			flipHor = false;
+			flipVer = false;
+			turns = 0;
 		}
-		if (shape == Shape.HalfTri)
+		if (key == Key.W)
 		{
-			points = new Vector2[]{botLeft, topRight, botRight};
+			flipHor = true;
+			flipVer = false;
+			turns = 3;
 		}
-		if (shape == Shape.SharpTriLeft)
+		if (key == Key.S)
 		{
-			points = new Vector2[]{midRight, botRight, botLeft};
+			flipHor = true;
+			flipVer = true;
+			turns = 2;
 		}
-		if (shape == Shape.SharpTriRight)
+		if (key == Key.A)
 		{
-			points = new Vector2[]{midLeft, botLeft, botRight};
-		}
-		if (shape == Shape.FatTriLeft)
-		{
-			points = new Vector2[]{midLeft, botLeft, botRight, topRight};
-		}
-		if (shape == Shape.FatTriRight)
-		{
-			points = new Vector2[]{midRight, botRight, botLeft, topLeft};
-		}
-		if (shape == Shape.FlatRect)
-		{
-			points = new Vector2[]{midLeft, midRight, botRight, botLeft};
-		}
-		if (shape == Shape.CornerFull)
-		{
-			points = new Vector2[]{midLeft, midMid, midBot, botLeft};
-		}
-		if (shape == Shape.CornerEmpty)
-		{
-			points = new Vector2[]{topLeft, midTop, midMid, midRight, botRight, botLeft};
+			flipHor = false;
+			flipVer = true;
+			turns = 1;
 		}
 
-		if (turns != 0)
+		verts = new Vector2[shape.verts.Length];
+		
+		for(int s = 0; s < verts.Length; s++)
+		{
+			verts[s] = new Vector2(shape.verts[s].x, shape.verts[s].y);
+		}
+
+		if (flipHor && !shape.useTurns)
+		{
+			for(int h = 0; h < verts.Length; h++)
+			{
+				Vector2 newH = verts[h] * new Vector2(-1, 1) + new Vector2(1, 0);
+				verts[h] = newH;
+			}
+		}
+
+		if (flipVer && !shape.useTurns)
+		{
+			for(int v = 0; v < verts.Length; v++)
+			{
+				Vector2 newV = verts[v] * new Vector2(1, -1) + new Vector2(0, 1);
+				verts[v] = newV;
+			}
+		}
+
+		if (turns != 0 && shape.useTurns)
 		{
 			float rad = Mathf.Deg2Rad * (90 * turns);
 			float c = Mathf.Cos(rad);
 			float s = Mathf.Sin(rad);
-			for (int i = 0; i < points.Length; i++)
+			for (int i = 0; i < verts.Length; i++)
 			{
-				float newX = (points[i].x -.5f) * c - (points[i].y-.5f) * s;
-				float newY = (points[i].y -.5f) * c + (points[i].x-.5f) * s;
-				points[i] = new Vector2(newX + .5f, newY + .5f);
+				float newX = (verts[i].x -.5f) * c - (verts[i].y-.5f) * s;
+				float newY = (verts[i].y -.5f) * c + (verts[i].x-.5f) * s;
+				verts[i] = new Vector2(newX + .5f, newY + .5f);
 			}
 		}
 
-
+		tris = shape.tris;
 	}
+
+
+	//gameplay vars
+	bool inFrame;
+
+
 }
