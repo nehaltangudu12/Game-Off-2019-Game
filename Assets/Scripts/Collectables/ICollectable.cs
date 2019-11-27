@@ -44,8 +44,8 @@ public class ICollectable : MonoBehaviour
     {
         _spawner.Collect (this);
 
-            _audioControl.PlaySfx (CollectableSound, 1);
-            Debug.Log ("Base Collect");
+        _audioControl.PlaySfx (CollectableSound, 1);
+        Debug.Log ("Base Collect");
     }
 
     public virtual void Animate ()

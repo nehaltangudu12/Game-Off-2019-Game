@@ -23,7 +23,6 @@
         private float _zoomInOrthoSize = 12f;
         private float _zoomOutOrthoSize = 24f;
         private Camera _mainCam;
-        private Grid _tilesMapGrid;
         private InputData _inputData;
 
         private Sequence _zoomTweenSeq = null;
@@ -40,7 +39,6 @@
         {
             TryGetComponent (out _mainCam);
 
-            _tilesMapGrid = TileMapController.Instance.TilesGrid;
             _inputData = PlayerInput.Instance.Data;
 
             _zoomTweenSeq = DOTween.Sequence ();

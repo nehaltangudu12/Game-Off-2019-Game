@@ -12,6 +12,5 @@ public class GameController : Singleton<GameController>
     {
         UIControl.Init();
         CameraTest.Init();
-        TilesController.Init();
     }
 }
