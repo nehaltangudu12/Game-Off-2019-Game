@@ -6,8 +6,8 @@ TagManager:
   tags:
   - enemy
   - checkpoint
-  - ground
   - jumpwall
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - Ground
   - Wall
   - Player
-  - 
+  - Bounds
   - 
   - 
   - 

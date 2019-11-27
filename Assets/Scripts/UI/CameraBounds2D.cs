@@ -12,6 +12,8 @@ public class CameraBounds2D : MonoBehaviour
 
     public RawImage Lens => _cameraLens;
 
+    public Vector3 Position => this.transform.position;
+
     void Start ()
     {
         TryGetComponent (out _camera);

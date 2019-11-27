@@ -111,6 +111,9 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 1024
+  BoundsLayer:
+    serializedVersion: 2
+    m_Bits: 4096
   PlayerAnim: {fileID: 8204679523431746856}
   WallCheckObj: {fileID: 6463774699571989228}
   GroundCheckObj: {fileID: 6561070698458596149}

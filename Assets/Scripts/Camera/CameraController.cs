@@ -10,7 +10,6 @@
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private float TimeToSnap = 0.25f;
         [SerializeField] private float CamTransition = 1.5f;
-        [SerializeField] private Image CameraFrame;
         [SerializeField] private Image CameraFlashScreen;
         [SerializeField] private Texture2D CameraHandGrab;
         [SerializeField] private Texture2D CameraHandNormal;
@@ -31,6 +30,8 @@
         private CharacterController _player;
 
         public float PreviousFillAmount { get; private set; } = 1f;
+        public Vector3 BoundsWorldPos => CameraBounds.Position;
+
         public Property<bool> IsZoomedOut = new Property<bool> ();
 
         public Property<bool> BatteryStatus = new Property<bool> ();

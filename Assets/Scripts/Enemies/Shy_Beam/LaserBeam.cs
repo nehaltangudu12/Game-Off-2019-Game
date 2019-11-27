@@ -9,8 +9,11 @@ public class LaserBeam : MonoBehaviour
     [SerializeField] private Transform LaserEndEffect = null;
     [SerializeField, Tooltip ("0: right, 1: left, 2: up, 3: down")] private byte LaserDirection = 0;
 
+    private bool _stopLaser = false;
     private LineRenderer _lineR;
     private SceneController _sceneControl;
+
+    public bool StopLaser { get { return _stopLaser; } set { _stopLaser = value; } }
 
     private void Awake ()
     {
@@ -24,7 +27,10 @@ public class LaserBeam : MonoBehaviour
 
     private void FixedUpdate ()
     {
+        if (_stopLaser) return;
+
         RaycastHit2D hittedObj = Physics2D.Raycast (transform.position, DirectionExtractor (), LaserDistance, 1 << 9 | 1 << 10 | 1 << 11);
+
 
         if (hittedObj.collider != null)
         {

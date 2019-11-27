@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float WallSlidingSpeedThreshold = 0.2f;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private LayerMask WallLayer;
+    [SerializeField] private LayerMask BoundsLayer;
     [SerializeField] private Animator PlayerAnim = null;
     [SerializeField] private Transform WallCheckObj = null;
     [SerializeField] private Transform GroundCheckObj = null;
@@ -189,8 +190,8 @@ public class CharacterController : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapCircle (GroundCheckObj.position, GroundCheckRadius, GroundLayer);
 
-        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer) ||
-            Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer);
+        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer | BoundsLayer) ||
+            Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer | BoundsLayer);
 
     }
 
