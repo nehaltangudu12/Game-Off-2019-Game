@@ -16,7 +16,7 @@ public class GoalCheck : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex + 1);
+            EditorSceneManager.LoadScene("MainMenu");
         }
     }
 }
