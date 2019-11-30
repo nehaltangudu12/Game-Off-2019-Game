@@ -93,10 +93,9 @@ MonoBehaviour:
   CamMoveStep: 1.5
   TimeToSnap: 0.12
   CamTransition: 0.12
-  CameraFrame: {fileID: 0}
   CameraFlashScreen: {fileID: 0}
-  CameraHandGrab: {fileID: 2800000, guid: 81599069f6daac74c90a1fb4082eba05, type: 3}
-  CameraHandNormal: {fileID: 2800000, guid: e7788f859ee41a94a867e79c51205796, type: 3}
+  CameraHandGrab: {fileID: 2800000, guid: adcfc5d66660d99448696843b09f2192, type: 3}
+  CameraHandNormal: {fileID: 2800000, guid: 966d57ed1e998884f9952287fed5989c, type: 3}
   CameraScreenTrans: {fileID: 0}
   CameraBattery: {fileID: 0}
   CameraBounds: {fileID: 0}
