@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 237.30005, y: 25}
+  m_AnchoredPosition: {x: 237.3003, y: 25}
   m_SizeDelta: {x: 474.6001, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733192733
@@ -770,7 +770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64c77b117869214195b0882b187cea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusic: {fileID: 8300000, guid: 4036000ad0e711f4b8540275cb407362, type: 3}
+  BackgroundMusic: {fileID: 8300000, guid: 10ecef540047bc64aa1f6f6eb981350f, type: 3}
+  MMBackgroundMusic: {fileID: 8300000, guid: 64759483ca024374380b1fe674e47a2e, type: 3}
 --- !u!1001 &2031124193
 PrefabInstance:
   m_ObjectHideFlags: 0

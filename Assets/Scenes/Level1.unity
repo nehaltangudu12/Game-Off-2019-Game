@@ -6066,8 +6066,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2117543207}
   - component: {fileID: 2117543208}
-  - component: {fileID: 2117543210}
   - component: {fileID: 2117543209}
+  - component: {fileID: 2117543210}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -6148,7 +6148,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6176,7 +6176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3a0330d09d40941ae8f80705402b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &2138306285
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,20 +6,25 @@ using UnityEngine.SceneManagement;
 public class SceneController : Singleton<SceneController>
 {
     [SerializeField] private AudioClip BackgroundMusic = null;
+    [SerializeField] private AudioClip MMBackgroundMusic = null;
 
     private AudioController _audioControl;
 
     private void Start ()
     {
         _audioControl = AudioController.Instance;
+
+        _audioControl.PlayMusic (MMBackgroundMusic, .5f);
     }
 
     public void LoadSceneAsync (int sceneId)
     {
-        SceneManager.LoadSceneAsync (1, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync (sceneId, LoadSceneMode.Single);
 
-        _audioControl.PlayMusic (BackgroundMusic, .01f);
-
+        if (sceneId == 1)
+            _audioControl.PlayMusic (BackgroundMusic, .5f);
+        else
+            _audioControl.PlayMusic (MMBackgroundMusic, .5f);
     }
 
     public void ResetCurrentScene ()

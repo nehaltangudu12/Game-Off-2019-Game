@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectableVisual: {fileID: 4954105111655561922}
-  CollectableSound: {fileID: 8300000, guid: cc853dee187dcb649af3b35f7334783a, type: 3}
+  CollectableSound: {fileID: 8300000, guid: 1e450b0c0edf32e4e9abc4f7ff5de88f, type: 3}
 --- !u!61 &6128146822872788930
 BoxCollider2D:
   m_ObjectHideFlags: 0

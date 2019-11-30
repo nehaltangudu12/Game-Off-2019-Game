@@ -1,22 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class GoalCheck : MonoBehaviour
 {
-    public GameObject player;
+    private SceneController _sceneInstance;
 
-    void Start()
+    void Start ()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        _sceneInstance = SceneController.Instance;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D (Collider2D collider)
     {
-        if (collision.gameObject == player)
+        if (collider.TryGetComponent(out CharacterController player))
         {
-            EditorSceneManager.LoadScene("MainMenu");
+            _sceneInstance.LoadSceneAsync (0);
         }
     }
 }
