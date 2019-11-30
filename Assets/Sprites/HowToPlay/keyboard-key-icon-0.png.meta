@@ -1,0 +1,3739 @@
+fileFormatVersion: 2
+guid: e6dbd1a5cf60b20459e7705f73cacedd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5191214646012618677
+    second: keyboard-key-icon-0_0
+  - first:
+      213: 6977921584529770259
+    second: keyboard-key-icon-0_1
+  - first:
+      213: -7876929439573943198
+    second: keyboard-key-icon-0_2
+  - first:
+      213: -5077623072416240607
+    second: keyboard-key-icon-0_3
+  - first:
+      213: 7794250565833872068
+    second: keyboard-key-icon-0_4
+  - first:
+      213: 1333415979069297795
+    second: keyboard-key-icon-0_5
+  - first:
+      213: -7461278245726271960
+    second: keyboard-key-icon-0_6
+  - first:
+      213: -3899108344605250574
+    second: keyboard-key-icon-0_7
+  - first:
+      213: -6926719693826270403
+    second: keyboard-key-icon-0_8
+  - first:
+      213: 6362269151429748819
+    second: keyboard-key-icon-0_9
+  - first:
+      213: 7393755784979545058
+    second: keyboard-key-icon-0_10
+  - first:
+      213: -7798136488901880951
+    second: keyboard-key-icon-0_11
+  - first:
+      213: -4093288441300897973
+    second: keyboard-key-icon-0_12
+  - first:
+      213: 482675106583885420
+    second: keyboard-key-icon-0_13
+  - first:
+      213: 7672047506212834747
+    second: keyboard-key-icon-0_14
+  - first:
+      213: 7434777683448610783
+    second: keyboard-key-icon-0_15
+  - first:
+      213: 744236101611517364
+    second: keyboard-key-icon-0_16
+  - first:
+      213: -1696283052470650186
+    second: keyboard-key-icon-0_17
+  - first:
+      213: -3844802236950201004
+    second: keyboard-key-icon-0_18
+  - first:
+      213: -5937217501380886534
+    second: keyboard-key-icon-0_19
+  - first:
+      213: -7925915730192108172
+    second: keyboard-key-icon-0_20
+  - first:
+      213: 668658165995289877
+    second: keyboard-key-icon-0_21
+  - first:
+      213: 1076783841678152089
+    second: keyboard-key-icon-0_22
+  - first:
+      213: 2821060339451439606
+    second: keyboard-key-icon-0_23
+  - first:
+      213: -4258625577707711059
+    second: keyboard-key-icon-0_24
+  - first:
+      213: -5475101368020137538
+    second: keyboard-key-icon-0_25
+  - first:
+      213: 1757580862410979299
+    second: keyboard-key-icon-0_26
+  - first:
+      213: 7820305985700915279
+    second: keyboard-key-icon-0_27
+  - first:
+      213: 1070624327845366803
+    second: keyboard-key-icon-0_28
+  - first:
+      213: -4684876435784403484
+    second: keyboard-key-icon-0_29
+  - first:
+      213: -6753711657122084588
+    second: keyboard-key-icon-0_30
+  - first:
+      213: -6128131769886022501
+    second: keyboard-key-icon-0_31
+  - first:
+      213: 7600461654353178132
+    second: keyboard-key-icon-0_32
+  - first:
+      213: 9175680610321062624
+    second: keyboard-key-icon-0_33
+  - first:
+      213: -1617807614379011944
+    second: keyboard-key-icon-0_34
+  - first:
+      213: 7837544320804774084
+    second: keyboard-key-icon-0_35
+  - first:
+      213: -5542102258555814187
+    second: keyboard-key-icon-0_36
+  - first:
+      213: -8590008533089803599
+    second: keyboard-key-icon-0_37
+  - first:
+      213: 2133394048788335521
+    second: keyboard-key-icon-0_38
+  - first:
+      213: -2146279822177696794
+    second: keyboard-key-icon-0_39
+  - first:
+      213: -1572303342641829200
+    second: keyboard-key-icon-0_40
+  - first:
+      213: -2335252926818490961
+    second: keyboard-key-icon-0_41
+  - first:
+      213: 6296979307883292025
+    second: keyboard-key-icon-0_42
+  - first:
+      213: 6181206854431478052
+    second: keyboard-key-icon-0_43
+  - first:
+      213: 3334000083910467831
+    second: keyboard-key-icon-0_44
+  - first:
+      213: -6092351931121267524
+    second: keyboard-key-icon-0_45
+  - first:
+      213: 5111544477226447018
+    second: keyboard-key-icon-0_46
+  - first:
+      213: 8196100154209886384
+    second: keyboard-key-icon-0_47
+  - first:
+      213: -3959405588144459248
+    second: keyboard-key-icon-0_48
+  - first:
+      213: 5213295451427648868
+    second: keyboard-key-icon-0_49
+  - first:
+      213: 3884028416033471759
+    second: keyboard-key-icon-0_50
+  - first:
+      213: -371839415581894094
+    second: keyboard-key-icon-0_51
+  - first:
+      213: -4711462895578681471
+    second: keyboard-key-icon-0_52
+  - first:
+      213: 5583031808857375571
+    second: keyboard-key-icon-0_53
+  - first:
+      213: -9015133768951834909
+    second: keyboard-key-icon-0_54
+  - first:
+      213: -6368618540764072056
+    second: keyboard-key-icon-0_55
+  - first:
+      213: -4646858319191247236
+    second: keyboard-key-icon-0_56
+  - first:
+      213: -5279058655625972294
+    second: keyboard-key-icon-0_57
+  - first:
+      213: 1857138640982585095
+    second: keyboard-key-icon-0_58
+  - first:
+      213: -2044783838138036762
+    second: keyboard-key-icon-0_59
+  - first:
+      213: -4366926878983552648
+    second: keyboard-key-icon-0_60
+  - first:
+      213: 312323865518350666
+    second: keyboard-key-icon-0_61
+  - first:
+      213: -8809533339941718225
+    second: keyboard-key-icon-0_62
+  - first:
+      213: -9064039398096306112
+    second: keyboard-key-icon-0_63
+  - first:
+      213: -9030420292888822078
+    second: keyboard-key-icon-0_64
+  - first:
+      213: 6913806856944175215
+    second: keyboard-key-icon-0_65
+  - first:
+      213: -856417749469192078
+    second: keyboard-key-icon-0_66
+  - first:
+      213: -5767966662750042136
+    second: keyboard-key-icon-0_67
+  - first:
+      213: -9037712518871798391
+    second: keyboard-key-icon-0_68
+  - first:
+      213: 6649097429357687730
+    second: keyboard-key-icon-0_69
+  - first:
+      213: 5453273154753390978
+    second: keyboard-key-icon-0_70
+  - first:
+      213: -4127773736249080398
+    second: keyboard-key-icon-0_71
+  - first:
+      213: 2115879634005343639
+    second: keyboard-key-icon-0_72
+  - first:
+      213: 319391586017216557
+    second: keyboard-key-icon-0_73
+  - first:
+      213: -6398861211258702132
+    second: keyboard-key-icon-0_74
+  - first:
+      213: 424798492750106800
+    second: keyboard-key-icon-0_75
+  - first:
+      213: -2245233473227944315
+    second: keyboard-key-icon-0_76
+  - first:
+      213: -7851642569366874628
+    second: keyboard-key-icon-0_77
+  - first:
+      213: -4188842807074049345
+    second: keyboard-key-icon-0_78
+  - first:
+      213: 6929948447565545900
+    second: keyboard-key-icon-0_79
+  - first:
+      213: 4140434895682707871
+    second: keyboard-key-icon-0_80
+  - first:
+      213: -1977870220599436049
+    second: keyboard-key-icon-0_81
+  - first:
+      213: -9146524494728134248
+    second: keyboard-key-icon-0_82
+  - first:
+      213: 700473447319713725
+    second: keyboard-key-icon-0_83
+  - first:
+      213: -8963319072142513010
+    second: keyboard-key-icon-0_84
+  - first:
+      213: 4140158889142600628
+    second: keyboard-key-icon-0_85
+  - first:
+      213: -387756006313050624
+    second: keyboard-key-icon-0_86
+  - first:
+      213: 7015698135761225078
+    second: keyboard-key-icon-0_87
+  - first:
+      213: -6386294399136084123
+    second: keyboard-key-icon-0_88
+  - first:
+      213: -5224645597039193812
+    second: keyboard-key-icon-0_89
+  - first:
+      213: 122337165794154459
+    second: keyboard-key-icon-0_90
+  - first:
+      213: 8964791125227273831
+    second: keyboard-key-icon-0_91
+  - first:
+      213: 5632958629037334751
+    second: keyboard-key-icon-0_92
+  - first:
+      213: 304710847694031657
+    second: keyboard-key-icon-0_93
+  - first:
+      213: 8115085364893612531
+    second: keyboard-key-icon-0_94
+  - first:
+      213: -6793992582977412404
+    second: keyboard-key-icon-0_95
+  - first:
+      213: 7136013020794119576
+    second: keyboard-key-icon-0_96
+  - first:
+      213: -7757207796672683449
+    second: keyboard-key-icon-0_97
+  - first:
+      213: -1969605711236611090
+    second: keyboard-key-icon-0_98
+  - first:
+      213: 8900717837863875018
+    second: keyboard-key-icon-0_99
+  - first:
+      213: -5009846577619406180
+    second: keyboard-key-icon-0_100
+  - first:
+      213: -1438976736367957129
+    second: keyboard-key-icon-0_101
+  - first:
+      213: 5836929119496497408
+    second: keyboard-key-icon-0_102
+  - first:
+      213: -8055840675075492012
+    second: keyboard-key-icon-0_103
+  - first:
+      213: 6308237333574527898
+    second: keyboard-key-icon-0_104
+  - first:
+      213: -1608874602095007896
+    second: keyboard-key-icon-0_105
+  - first:
+      213: -2726284190817096869
+    second: keyboard-key-icon-0_106
+  - first:
+      213: -6007364685357318286
+    second: keyboard-key-icon-0_107
+  - first:
+      213: 6741351872428974989
+    second: keyboard-key-icon-0_108
+  - first:
+      213: -2874863000153716443
+    second: keyboard-key-icon-0_109
+  - first:
+      213: -7900165632531674030
+    second: keyboard-key-icon-0_110
+  - first:
+      213: -2224529365039564566
+    second: keyboard-key-icon-0_111
+  - first:
+      213: -1668209700076060815
+    second: keyboard-key-icon-0_112
+  - first:
+      213: -8804543465221308295
+    second: keyboard-key-icon-0_113
+  - first:
+      213: -8686429001596377493
+    second: keyboard-key-icon-0_114
+  - first:
+      213: -9153986021712782087
+    second: keyboard-key-icon-0_115
+  - first:
+      213: 7502405499216663220
+    second: keyboard-key-icon-0_116
+  - first:
+      213: 2820326202685971244
+    second: keyboard-key-icon-0_117
+  - first:
+      213: -636341334644449106
+    second: keyboard-key-icon-0_118
+  - first:
+      213: 7968011710328810253
+    second: keyboard-key-icon-0_119
+  - first:
+      213: 4038277612143776882
+    second: keyboard-key-icon-0_120
+  - first:
+      213: -1911164254791001006
+    second: keyboard-key-icon-0_121
+  - first:
+      213: 2745130718631495370
+    second: keyboard-key-icon-0_122
+  - first:
+      213: -8877713513631953126
+    second: keyboard-key-icon-0_123
+  - first:
+      213: 1646062841146767102
+    second: keyboard-key-icon-0_124
+  - first:
+      213: 3822998325271926166
+    second: keyboard-key-icon-0_125
+  - first:
+      213: -2581975536566982269
+    second: keyboard-key-icon-0_126
+  - first:
+      213: 1580452741811419461
+    second: keyboard-key-icon-0_127
+  - first:
+      213: 8889271403401051863
+    second: keyboard-key-icon-0_128
+  - first:
+      213: 409323191409603878
+    second: keyboard-key-icon-0_129
+  - first:
+      213: -658069308375735074
+    second: keyboard-key-icon-0_130
+  - first:
+      213: -8741127033427050987
+    second: keyboard-key-icon-0_131
+  - first:
+      213: -5453263740305372178
+    second: keyboard-key-icon-0_132
+  - first:
+      213: 5734354436769168997
+    second: keyboard-key-icon-0_133
+  - first:
+      213: 6440245268471898259
+    second: keyboard-key-icon-0_134
+  - first:
+      213: 6766957060721404953
+    second: keyboard-key-icon-0_135
+  - first:
+      213: -9109451644220965511
+    second: keyboard-key-icon-0_136
+  - first:
+      213: -2879266294512584555
+    second: keyboard-key-icon-0_137
+  - first:
+      213: 5000165817103204722
+    second: keyboard-key-icon-0_138
+  - first:
+      213: -3316995121152656397
+    second: keyboard-key-icon-0_139
+  - first:
+      213: -9112245689736935023
+    second: keyboard-key-icon-0_140
+  - first:
+      213: -4653722083512652798
+    second: keyboard-key-icon-0_141
+  - first:
+      213: 9161949855978023378
+    second: keyboard-key-icon-0_142
+  - first:
+      213: 4701558064904469204
+    second: keyboard-key-icon-0_143
+  - first:
+      213: -5571410883863152269
+    second: keyboard-key-icon-0_144
+  - first:
+      213: 1909266312509858379
+    second: keyboard-key-icon-0_145
+  - first:
+      213: -6255927914437302297
+    second: keyboard-key-icon-0_146
+  - first:
+      213: -1784678739515456954
+    second: keyboard-key-icon-0_147
+  - first:
+      213: 5914278608805426690
+    second: keyboard-key-icon-0_148
+  - first:
+      213: 5052257502921153544
+    second: keyboard-key-icon-0_149
+  - first:
+      213: -5279835454275822458
+    second: keyboard-key-icon-0_150
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e42924cee5b8054b932280d62e69a12
+      internalID: -5191214646012618677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877bb9142db4b284791c47d715400313
+      internalID: 6977921584529770259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea3526624e99714abe0f46ab59a3cb0
+      internalID: -7876929439573943198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_3
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616324413b8eaad489035ccd4ee61e3b
+      internalID: -5077623072416240607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_4
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb6b12bdfa47e647902063769b2654d
+      internalID: 7794250565833872068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_5
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d99580721952254f9c18338b89488a7
+      internalID: 1333415979069297795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_6
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3f3315e9355ce4a8fb7768cffc5781
+      internalID: -7461278245726271960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_7
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126aef825f962aa44b56060e35c3c7cb
+      internalID: -3899108344605250574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_8
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986ea30e0195bab4cbfc650dbfaacc2d
+      internalID: -6926719693826270403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_9
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5001e714ec4eb9043b29a71bc422f193
+      internalID: 6362269151429748819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_10
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33c573e81686e4468fe021de7376966
+      internalID: 7393755784979545058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_11
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d2b724d62a4da4198d469de62421d7
+      internalID: -7798136488901880951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_12
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 1083
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fffd18cc93c83043b319f43c7298ffe
+      internalID: -4093288441300897973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_13
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1083
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031ed63e09064774dab49c227586df65
+      internalID: 482675106583885420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_14
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c574a47ff04cd284889a1ca5b5b7cfcf
+      internalID: 7672047506212834747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_15
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 979
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1173d68743e4646939ff53a26d6eec
+      internalID: 7434777683448610783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_16
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 979
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109e6702ad5852c479e9aa6380f55d5a
+      internalID: 744236101611517364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_17
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8035194e0b65f4fa92b6559151f0f1
+      internalID: -1696283052470650186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_18
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291b45359ac101045aeab19516fe3fc6
+      internalID: -3844802236950201004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_19
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 979
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbad02fe8b5f4194bbb836894463fcd4
+      internalID: -5937217501380886534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_20
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35714b1ae2a78b49bd337aafcbf2df6
+      internalID: -7925915730192108172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_21
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb08aa7392b77054e8738a861ba1296f
+      internalID: 668658165995289877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_22
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c85c393978dc641ae49d90e216f76d
+      internalID: 1076783841678152089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_23
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 979
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74dc4317035a52d45835a02f92ce26a5
+      internalID: 2821060339451439606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_24
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 979
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376221afaa277a54cafc5618e08e1faa
+      internalID: -4258625577707711059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_25
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3c4174ffe49174399e9a2f5a88b412
+      internalID: -5475101368020137538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_26
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e336a98656de693468d3f2073877e0eb
+      internalID: 1757580862410979299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_27
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 979
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564955d7baac34a43acbed0a2e350980
+      internalID: 7820305985700915279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_28
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 875
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820a4302962018f4a888b079ac6dfe8d
+      internalID: 1070624327845366803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_29
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 874
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85d5ae8f8276c948b54197c469d96d8
+      internalID: -4684876435784403484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_30
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 874
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa1e614cae94ca4cacf57ac97437efd
+      internalID: -6753711657122084588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_31
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 875
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea1393ffb0bd7341b5f37a621bfc55d
+      internalID: -6128131769886022501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_32
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc2e5a4139fff142bce57898a9a5b55
+      internalID: 7600461654353178132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_33
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 874
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af352d5c231d4b74d87e142213c3f3a8
+      internalID: 9175680610321062624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_34
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 875
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4835663f536fd349a208984c94b8d0a
+      internalID: -1617807614379011944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_35
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc805e85d09ae548826b0744b4fde56
+      internalID: 7837544320804774084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_36
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf9ea54d0bf80242af54360c236bcfa
+      internalID: -5542102258555814187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_37
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 875
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff60ea07704c0a45831a7c7eb82e997
+      internalID: -8590008533089803599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_38
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 874
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87941678165c8904e803d336856560fa
+      internalID: 2133394048788335521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_39
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd98f18d7f6c1164fb35160269919854
+      internalID: -2146279822177696794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_40
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab257824642b26842801f9f95e8d34ed
+      internalID: -1572303342641829200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_41
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 874
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd26b9cd47c26d41824e5174fd2dbd3
+      internalID: -2335252926818490961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_42
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04ed19a870e9d14e81ed52988319561
+      internalID: 6296979307883292025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_43
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 770
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64ea0c6bbfa4ac45b0c6ff56950e4bc
+      internalID: 6181206854431478052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_44
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 770
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d77fdaf1f9f9747913a12aaafbcbdd
+      internalID: 3334000083910467831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_45
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219a07e9325b541438d557dc2d016aad
+      internalID: -6092351931121267524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_46
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec2cebcf0788a448a0ea207e8700570
+      internalID: 5111544477226447018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_47
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 770
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96687f19cbdd9c04098aee33cfaf6185
+      internalID: 8196100154209886384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_48
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceabe400b55cd924c84e4da3f6797144
+      internalID: -3959405588144459248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_49
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0025a80ae2b0741beb758701a5da40
+      internalID: 5213295451427648868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_50
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f060c9e8e8d0a1b439a0add037497ebb
+      internalID: 3884028416033471759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_51
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 770
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353af21b58053004ea9536001e74d532
+      internalID: -371839415581894094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_52
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 770
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92707d3227b2ad468c441962c494805
+      internalID: -4711462895578681471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_53
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e292e18acdfcdc04e9dae3e551da1c3d
+      internalID: 5583031808857375571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_54
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46826c5113c48c54ca3303144d138730
+      internalID: -9015133768951834909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_55
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 770
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f64f92b429093488de9ead9b36b877
+      internalID: -6368618540764072056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_56
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc331dafa504cd4bbe6f1f167e81a5c
+      internalID: -4646858319191247236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_57
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 666
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88dd3300a308bd7428d9b77149f8693c
+      internalID: -5279058655625972294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_58
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 666
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a03d5a8e5edcf4a8414301f6a33ad6
+      internalID: 1857138640982585095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_59
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30bb555728d62043b4bda1e49e1cd4c
+      internalID: -2044783838138036762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_60
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1aff32c740ad24eb8891cede28bdaf
+      internalID: -4366926878983552648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_61
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 666
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cee1547b56bcd640b69de3e3946c160
+      internalID: 312323865518350666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_62
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907d5aa02fa9ae340b62373a281cc0e9
+      internalID: -8809533339941718225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_63
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c02655c16b8f841a2ed7f7e44fe4ec
+      internalID: -9064039398096306112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_64
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd26087d8d9dd37498e2c013f3ca1144
+      internalID: -9030420292888822078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_65
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 666
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0140d9a52fe4444b3cf460314e35de
+      internalID: 6913806856944175215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_66
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 666
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3964d88e3e7f14f85c3f39ca7ada6f
+      internalID: -856417749469192078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_67
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2042f7c3f2afa419981f63ff15d219
+      internalID: -5767966662750042136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_68
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e21eb3c05498e4f81ac66638fce0be
+      internalID: -9037712518871798391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_69
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 666
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c590fae96fef3684ca4abdb6ee0c4571
+      internalID: 6649097429357687730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_70
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe46ebce9021c914aaebcdd6d838b3cc
+      internalID: 5453273154753390978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_71
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7deee3f07690466468eab6da896cca61
+      internalID: -4127773736249080398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_72
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44534175616a02b4090ac92c98ea8db6
+      internalID: 2115879634005343639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_73
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744a8ab56d2f6bb4f8afe3e13368fa54
+      internalID: 319391586017216557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_74
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20aef15a7e6e374ea1c3c45c49878e3
+      internalID: -6398861211258702132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_75
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41dea510d553c7144b9f0fa8687066da
+      internalID: 424798492750106800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_76
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58f02da119392e40a04795ea8c8671c
+      internalID: -2245233473227944315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_77
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51185f50b4a328744bec760d02a4dad1
+      internalID: -7851642569366874628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_78
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51372b9f4ec44644b79e01e3a4f3fe8
+      internalID: -4188842807074049345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_79
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa5452a5cbd6f947b995f7720d174fb
+      internalID: 6929948447565545900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_80
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 561
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e123465fae645445a46f3ea3b1f3e34
+      internalID: 4140434895682707871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_81
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 561
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a716e69e6012140a39d52fc300d24f
+      internalID: -1977870220599436049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_82
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead2d1d10ae68a942982c7f4d00214e3
+      internalID: -9146524494728134248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_83
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 561
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6495fab946583a04796b740820c097e0
+      internalID: 700473447319713725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_84
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320c98084e1048e4094f123244abe41e
+      internalID: -8963319072142513010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_85
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f49b8a64272893418b97f92d168d112
+      internalID: 4140158889142600628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_86
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620a1de8a742754488121f72f65051c4
+      internalID: -387756006313050624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_87
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7c6e62d81f1b946ab4c459966c716f
+      internalID: 7015698135761225078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_88
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a755d111c3e4d64ab0d3108aa951f4e
+      internalID: -6386294399136084123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_89
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1aa16fcb8e56fb44b5d5be8f9a4f406
+      internalID: -5224645597039193812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_90
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2587771405834419cb24ba5ae46ff0
+      internalID: 122337165794154459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_91
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a641960dd27019048955bdfdd365c8c7
+      internalID: 8964791125227273831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_92
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6241147fd91d354dbd56513d6b3bf5e
+      internalID: 5632958629037334751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_93
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6582ec66b86193459d5c9d7ab239e15
+      internalID: 304710847694031657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_94
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 456
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26c50fd7646d8046b071b4c9c1c9b67
+      internalID: 8115085364893612531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_95
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4ddc062ab67aa418f27d06919e4e28
+      internalID: -6793992582977412404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_96
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbbbca54c4511e544837b8dc94d72980
+      internalID: 7136013020794119576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_97
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 456
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05751e4927c47194fa1b3cae1dbc5ed9
+      internalID: -7757207796672683449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_98
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4605a1aaf6cbef4439cbac7b69128f8b
+      internalID: -1969605711236611090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_99
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b317b989ec5af04a9a11086899866e3
+      internalID: 8900717837863875018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_100
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f2fd8445cfcf74a8c738b9a47dfb12
+      internalID: -5009846577619406180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_101
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52fc0933c7e1214a81c2c3dafdfa7ba
+      internalID: -1438976736367957129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_102
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de63bd6d197d4948a486d6153b0b7d6
+      internalID: 5836929119496497408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_103
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15183ee304665a04a916124b8ba5b3b0
+      internalID: -8055840675075492012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_104
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecba1de5dbdad4449ffe07b716ced01
+      internalID: 6308237333574527898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_105
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5b6e54577c29545b634a3cf285fa3d
+      internalID: -1608874602095007896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_106
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff0599d8419b354eb25b7adf80043ca
+      internalID: -2726284190817096869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_107
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190c9de594867484da65e879f08851b9
+      internalID: -6007364685357318286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_108
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 351
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39b650c9701b4b4bbd32fb47cc880e5
+      internalID: 6741351872428974989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_109
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce72107149a5b841b07d01245a1fc23
+      internalID: -2874863000153716443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_110
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55998aedeef44e4aa9c533914219c07
+      internalID: -7900165632531674030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_111
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 351
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b0875e9d9ef904cb0fd448bc7a3ea5
+      internalID: -2224529365039564566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_112
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5256aac14127d9d43ba50115a1c3513b
+      internalID: -1668209700076060815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_113
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 247
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170792eb4b892d24b82b3e069dc514ba
+      internalID: -8804543465221308295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_114
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab715eda4b6137408bea1dde17f7609
+      internalID: -8686429001596377493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_115
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d655518c521cbe64ba1fd6a235a6a0d5
+      internalID: -9153986021712782087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_116
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9b630b8c00ab740b173e9d12e05956
+      internalID: 7502405499216663220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_117
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 247
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a8498021bda8b488a1dea2da0e9bcf
+      internalID: 2820326202685971244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_118
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b1dd9a96b3e084fb1b82517c813e96
+      internalID: -636341334644449106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_119
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fdc0aede587ba4199c30e4c2d26235
+      internalID: 7968011710328810253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_120
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126a21678366de44395dcdb9fbc13975
+      internalID: 4038277612143776882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_121
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 247
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edd97f08dccd5049a7681bb192a04c7
+      internalID: -1911164254791001006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_122
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 247
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38574ac1781f4d2409d315cbbae4ccef
+      internalID: 2745130718631495370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_123
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ae651ed1fe1e64fbcd116f1b10c471
+      internalID: -8877713513631953126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_124
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128381d50db5edb41a169b3fadeb1bdf
+      internalID: 1646062841146767102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_125
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 247
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad9b6ef0b827624fbf4070a95b474f9
+      internalID: 3822998325271926166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_126
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da05e986a6002044a0da765ecacdf3e
+      internalID: -2581975536566982269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_127
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 142
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b227a6baa01bea40bd9dbfd582cde45
+      internalID: 1580452741811419461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_128
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 142
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854c78c24080b0f478bef3ae036a790f
+      internalID: 8889271403401051863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_129
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcfc7023c63aa148a69c2fee4ffa973
+      internalID: 409323191409603878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_130
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1d6b3a381fe7d4d8d9fd6d86c126c3
+      internalID: -658069308375735074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_131
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 142
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c9b232a37896a42a1fba63db669c1f
+      internalID: -8741127033427050987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_132
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a873c2b99b437b4faf2b8e276fc381e
+      internalID: -5453263740305372178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_133
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c1254966ecf3e4ab55b0c6cef9a4da
+      internalID: 5734354436769168997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_134
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facf6635aa987914bb2e4dda3a20cd86
+      internalID: 6440245268471898259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_135
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 142
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3f1ffff58cd0344b1728a5ae1f2ef5
+      internalID: 6766957060721404953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_136
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 142
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2d7a1155ba9b840939198d68983228
+      internalID: -9109451644220965511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_137
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae13aedda050df44961e1a3f19d4d3c
+      internalID: -2879266294512584555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_138
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32849e4794de5d642aaba14e9fe0e50b
+      internalID: 5000165817103204722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_139
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 142
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d37b8b340f843449fb420bc8dbc2f4
+      internalID: -3316995121152656397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_140
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0855ed1067e3a1540bb652504fa9a1b5
+      internalID: -9112245689736935023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_141
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 38
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e472ae584ea1e4d4e8f4b0874a5a46eb
+      internalID: -4653722083512652798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_142
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 38
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cad7fa33d20e84f8fb3a541a349ce6
+      internalID: 9161949855978023378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_143
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99acfeacf8267f94b9d978025f466974
+      internalID: 4701558064904469204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_144
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac10d7fafdbde8f47a28cc6b1b9bd3d4
+      internalID: -5571410883863152269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_145
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e8d241f17e38b49b9b861511eac6e4
+      internalID: 1909266312509858379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_146
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1ff5e57dedb254787925f377fcd1c4
+      internalID: -6255927914437302297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_147
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d950b98c70de2c648bfcec03bb94a6ca
+      internalID: -1784678739515456954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_148
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 38
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fd2eac3715d3747a542ba6bad203ba
+      internalID: 5914278608805426690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_149
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 60
+        width: 105
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4857c719309293846a23b6de26e35de9
+      internalID: 5052257502921153544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard-key-icon-0_150
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 38
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ebcac472e79644985293b2c4f84b14
+      internalID: -5279835454275822458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
