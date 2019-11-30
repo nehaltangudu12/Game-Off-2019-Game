@@ -113,6 +113,13 @@
 
         void Update ()
         {
+            if (CameraBattery.IsBatteryEmpty)
+            {
+                if (_isZoomedOut)
+                    CameraZoom (true);
+                return;
+            }
+
             CameraBoundsMovement ();
         }
 
