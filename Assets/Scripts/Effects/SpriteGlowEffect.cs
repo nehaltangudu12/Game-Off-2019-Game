@@ -75,13 +75,13 @@ public class SpriteGlowEffect : MonoBehaviour
     {
         ColorUtility.TryParseHtmlString("#7EFF00", out var greenColor);
 
-        DOTween.To (() => { return glowBrightness; }, val => { glowBrightness = val; glowColor = greenColor; }, 7.21f, .2f)
+        DOTween.To (() => { return glowBrightness; }, val => { glowBrightness = val; glowColor = greenColor; }, 5f, .2f)
             .SetEase (Ease.Flash)
             .OnComplete (() =>
             {
                 SetMaterialProperties ();
 
-                DOTween.To (() => { return glowBrightness; }, val => { glowColor = Color.black; glowBrightness = val; }, 2, .2f)
+                DOTween.To (() => { return glowBrightness; }, val => { glowColor = Color.black; glowBrightness = val; }, 1, .2f)
                     .SetEase (Ease.Flash)
                     .OnComplete (() =>
                     {
