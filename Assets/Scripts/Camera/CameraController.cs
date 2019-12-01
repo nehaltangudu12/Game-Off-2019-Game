@@ -5,7 +5,7 @@
     using UnityEngine.UI;
     using UnityEngine;
 
-    public class CameraController : Singleton<CameraController>
+    public class CameraController : SingletonMB<CameraController>
     {
         [SerializeField] private float CamMoveStep = 1.5f;
         [SerializeField] private float TimeToSnap = 0.25f;

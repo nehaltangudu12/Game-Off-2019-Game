@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : Singleton<GameController>
+public class GameController : SingletonMB<GameController>
 {
     public UIController UIControl;
     public CameraController CameraTest;
-    public TileMapController TilesController;
 
     void Start()
     {

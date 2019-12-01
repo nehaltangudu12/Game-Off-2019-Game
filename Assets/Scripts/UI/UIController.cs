@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController : Singleton<UIController>
+public class UIController : SingletonMB<UIController>
 {
     [SerializeField] private Battery Battery = null;
 

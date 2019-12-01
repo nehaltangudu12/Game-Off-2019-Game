@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Tilemaps;
 using UnityEngine;
 
-public class TileMapController : Singleton<TileMapController>
+public class TileMapController : SingletonMB<TileMapController>
 {
     private Grid _tilesGrid;
     public Grid TilesGrid => _tilesGrid;

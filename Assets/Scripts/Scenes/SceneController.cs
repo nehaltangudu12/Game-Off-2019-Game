@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : Singleton<SceneController>
+public class SceneController : SingletonMB<SceneController>
 {
     [SerializeField] private AudioClip BackgroundMusic = null;
     [SerializeField] private AudioClip MMBackgroundMusic = null;

@@ -2,7 +2,7 @@
 
 namespace GhAyoub.InputSystem
 {
-    public class PlayerInput : Singleton<PlayerInput>
+    public class PlayerInput : SingletonMB<PlayerInput>
     {
         public InputData Data { get; private set; } = new InputData ();
 

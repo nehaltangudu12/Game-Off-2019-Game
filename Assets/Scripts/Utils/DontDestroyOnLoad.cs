@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroyOnLoad : MonoBehaviour
+public class DontDestroyOnLoad : SingletonMB<DontDestroyOnLoad>
 {
-    void Awake()
+    new void Awake ()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad (this);
     }
 }

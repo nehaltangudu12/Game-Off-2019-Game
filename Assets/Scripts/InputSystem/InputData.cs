@@ -7,6 +7,7 @@ namespace GhAyoub.InputSystem
         public bool CameraZoomIn { get; internal set; }
         public bool CameraZoomOut { get; internal set; }
         public bool CameraZoomOutHold { get; internal set; }
+        public bool PauseMenu { get; internal set; }
         public bool Jump { get; internal set; }
         public bool MouseClick { get; internal set; }
         public bool CamArrowUp { get; internal set; }
@@ -22,6 +23,7 @@ namespace GhAyoub.InputSystem
             this.XMove = 0.0f;
             this.Jump = false;
             this.CamGrab = false;
+            this.PauseMenu = false;
             this.MouseClick = false;
             this.CamArrowUp = false;
             this.CamArrowDown = false;

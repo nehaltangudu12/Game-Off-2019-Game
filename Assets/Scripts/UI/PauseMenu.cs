@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GhAyoub.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,16 +9,18 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausemenuUI;
 
     public static bool IsPaused = false;
+    private PlayerInput _playerInput;
     private SceneController _sceneControl;
 
     private void Start ()
     {
         _sceneControl = SceneController.Instance;
+        _playerInput = PlayerInput.Instance;
     }
 
     void Update ()
     {
-        if (Input.GetKeyDown (KeyCode.Escape))
+        if (_playerInput.Data.PauseMenu)
         {
             if (IsPaused)
             {

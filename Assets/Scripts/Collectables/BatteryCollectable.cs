@@ -14,6 +14,8 @@ public class BatteryCollectable : ICollectable
 
     public override void Collect (GameObject target)
     {
+        if (_uiController == null) _uiController = UIController.Instance;
+
         if (_uiController.BatteryInstance.IsBatteryFull) return;
 
         base.Collect (target);

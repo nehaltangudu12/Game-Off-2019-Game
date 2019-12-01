@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuController : Singleton<MainMenuController>
+public class MainMenuController : SingletonMB<MainMenuController>
 {
     [SerializeField] private UI_Settings Settings = null;
     [SerializeField] private UI_HowToPlay HowToPlay = null;

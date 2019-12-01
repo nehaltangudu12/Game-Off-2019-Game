@@ -1694,6 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771a0ab1fa3321d40986a019d0061e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 0
   Settings: {fileID: 1551116752}
   HowToPlay: {fileID: 1701919207}
 --- !u!1 &889077778
@@ -2144,6 +2145,7 @@ GameObject:
   - component: {fileID: 1166611462}
   - component: {fileID: 1166611464}
   - component: {fileID: 1166611463}
+  - component: {fileID: 1166611465}
   m_Layer: 0
   m_Name: Versionning
   m_TagString: Untagged
@@ -2214,6 +2216,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1166611465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166611461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf384673a8a7894db664998489e61d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DontDestroy: 0
 --- !u!1 &1210263747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e924a141afd2be94ab77fa5b9ae03178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 0
 --- !u!1 &1417159909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,10 +3481,10 @@ RectTransform:
   m_Father: {fileID: 1654097581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1152, y: 708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1551116750
 MonoBehaviour:
@@ -3484,7 +3500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0.9372549}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3532,7 +3548,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1551145771}
   - component: {fileID: 1551145774}
-  - component: {fileID: 1551145773}
   - component: {fileID: 1551145772}
   m_Layer: 5
   m_Name: Instructions
@@ -3592,34 +3607,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1551145773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551145770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1551145774
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4026,10 +4013,10 @@ RectTransform:
   m_Father: {fileID: 1654097581}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1152, y: 708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1701919205
 MonoBehaviour:
@@ -4045,7 +4032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4477,6 +4464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7067db3e17fd25945b9ea0cec1fcd589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 0
   AudioMixer: {fileID: 24100000, guid: e03c1979660afc84e85ee47ebe45d8d4, type: 2}
   MasterGroup: {fileID: 24300002, guid: e03c1979660afc84e85ee47ebe45d8d4, type: 2}
   MusicGroup: {fileID: 3644464882847272711, guid: e03c1979660afc84e85ee47ebe45d8d4,
@@ -5021,6 +5009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64c77b117869214195b0882b187cea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 0
   BackgroundMusic: {fileID: 8300000, guid: 10ecef540047bc64aa1f6f6eb981350f, type: 3}
   MMBackgroundMusic: {fileID: 8300000, guid: 64759483ca024374380b1fe674e47a2e, type: 3}
 --- !u!1 &2007951124
@@ -5697,3 +5686,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39255a50ea91f8f4d964f744ae225321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 0

@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class AudioController : MonoBehaviour
+public class AudioController : SingletonMB<AudioController>
 {
-    public static AudioController Instance = null;
-
     [SerializeField] private AudioMixer AudioMixer = null;
     [SerializeField] private AudioMixerGroup MasterGroup = null;
     [SerializeField] private AudioMixerGroup MusicGroup = null;
@@ -17,13 +15,8 @@ public class AudioController : MonoBehaviour
     private AudioSource _backSource;
     private AudioListener _audioListener;
 
-    private void Awake ()
+    private void Start ()
     {
-        if (Instance == null)
-        {
-            Instance = FindObjectOfType<AudioController> ();
-        }
-
         Init ();
     }
 

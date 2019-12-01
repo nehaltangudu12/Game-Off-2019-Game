@@ -10,6 +10,7 @@ namespace GhAyoub.InputSystem
         private KeyCode _kcCamUp = KeyCode.UpArrow;
         private KeyCode _kcCamDown = KeyCode.DownArrow;
         private KeyCode _kcCamZoom = KeyCode.C;
+        private KeyCode _kcPauseMenu = KeyCode.Escape;
 
         public void Execute (InputData data)
         {
@@ -18,6 +19,7 @@ namespace GhAyoub.InputSystem
             data.XMove += xMove;
 
             data.Jump |= Input.GetKeyDown (_kcJump);
+            data.PauseMenu |= Input.GetKeyDown (_kcPauseMenu);
             data.CamArrowUp |= Input.GetKeyDown (_kcCamUp);
             data.CamArrowDown |= Input.GetKeyDown (_kcCamDown);
             data.CamArrowLeft |= Input.GetKeyDown (_kcCamLeft);
