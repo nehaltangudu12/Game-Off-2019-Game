@@ -17,8 +17,6 @@ public class AudioController : MonoBehaviour
     private AudioSource _backSource;
     private AudioListener _audioListener;
 
-    private AudioData _audioData;
-
     private void Awake ()
     {
         if (Instance == null)
@@ -44,26 +42,34 @@ public class AudioController : MonoBehaviour
         _sfxSource.outputAudioMixerGroup = SfxGroup;
         _backSource.outputAudioMixerGroup = MusicGroup;
 
-        var data = SaveLoadManager.LoadData<AudioData> ();
-        if (data == null)
-        {
-            _audioData = new AudioData ();
-        }
-        else
-        {
-            _audioData = data;
-
-            ChangeMasterVolume (_audioData.MasterVolume);
-            ChangeMusicVolume (_audioData.MusicVolume);
-            ChangeSfxVolume (_audioData.SfxVolume);
-        }
     }
 
     internal void InitSliders (Slider master, Slider music, Slider sfx)
     {
-        master.value = _audioData.MasterVolume;
-        music.value = _audioData.MusicVolume;
-        sfx.value = _audioData.SfxVolume;
+        var masterKey = PlayerPrefs.HasKey ("Master");
+        var musicKey = PlayerPrefs.HasKey ("Music");
+        var sfxKey = PlayerPrefs.HasKey ("Sfx");
+
+        if (masterKey)
+        {
+            var masterVal = PlayerPrefs.GetFloat ("Master");
+            ChangeMasterVolume (masterVal);
+            master.value = masterVal;
+        }
+
+        if (musicKey)
+        {
+            var musicVal = PlayerPrefs.GetFloat ("Music");
+            ChangeMusicVolume (musicVal);
+            music.value = musicVal;
+        }
+
+        if (sfxKey)
+        {
+            var sfxVal = PlayerPrefs.GetFloat ("Sfx");
+            ChangeSfxVolume (sfxVal);
+            sfx.value = sfxVal;
+        }
     }
 
     public void PlayMusic (AudioClip clip, float volume)
@@ -81,16 +87,19 @@ public class AudioController : MonoBehaviour
     internal void ChangeMasterVolume (float volume)
     {
         AudioMixer.SetFloat ("m", volume);
+        Save ();
     }
 
     internal void ChangeMusicVolume (float volume)
     {
         AudioMixer.SetFloat ("mu", volume);
+        Save ();
     }
 
     internal void ChangeSfxVolume (float volume)
     {
         AudioMixer.SetFloat ("sfx", volume);
+        Save ();
     }
 
     internal void ChangeSlider (Slider slider, float volume)
@@ -98,18 +107,17 @@ public class AudioController : MonoBehaviour
         slider.value = volume;
     }
 
-    void OnApplicationQuit ()
+    void Save ()
     {
-
         AudioMixer.GetFloat ("m", out var m);
         AudioMixer.GetFloat ("mu", out var mu);
         AudioMixer.GetFloat ("sfx", out var sfx);
 
-        _audioData.MasterVolume = m;
-        _audioData.MusicVolume = mu;
-        _audioData.SfxVolume = sfx;
+        PlayerPrefs.SetFloat ("Master", m);
+        PlayerPrefs.SetFloat ("Music", mu);
+        PlayerPrefs.SetFloat ("Sfx", sfx);
 
-        SaveLoadManager.SaveData (_audioData);
+        PlayerPrefs.Save ();
     }
 }
 

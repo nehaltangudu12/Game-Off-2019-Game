@@ -32,27 +32,29 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume ()
     {
+        IsPaused = false;
+        Cursor.visible = false;
         pausemenuUI.SetActive (false);
         Time.timeScale = 1f;
-        IsPaused = false;
     }
 
     void Pause ()
     {
+        IsPaused = true;
+        Cursor.visible = true;
         pausemenuUI.SetActive (true);
         Time.timeScale = 0.0f;
-        IsPaused = true;
     }
 
     public void LoadMenu ()
     {
-        SceneManager.LoadScene ("MainMenu");
         Time.timeScale = 1f;
+        _sceneControl.LoadSceneAsync (0);
     }
 
     public void Restart ()
     {
-        _sceneControl.ResetCurrentScene();
+        _sceneControl.ResetCurrentScene ();
         Resume ();
     }
 }
