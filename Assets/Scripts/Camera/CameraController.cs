@@ -137,7 +137,25 @@
                 {
                     Cursor.SetCursor (CameraHandGrab, Vector2.zero, CursorMode.Auto);
                     var mPos = _inputData.MousePosition;
-                    CameraBounds.transform.DOMove (new Vector3 (mPos.x, mPos.y, -200), TimeToSnap * Time.unscaledDeltaTime);
+                    var initVector = new Vector3 (mPos.x, mPos.y, -200);
+
+                    var minX = _player.transform.position.x - 21f;
+                    if (minX < -21f) minX = -21f;
+
+                    var maxX = _player.transform.position.x + 21f;
+                    if (maxX > 21f) maxX = 21f;
+
+                    var clampedVectorX = Mathf.Clamp (mPos.x, minX, maxX);
+
+                    var minY = (_player.transform.position.y + 3) - _zoomInOrthoSize;
+                    if (minY < -_zoomInOrthoSize) minY = -_zoomInOrthoSize;
+
+                    var maxY = _player.transform.position.y + _zoomInOrthoSize;
+                    if (maxY > _zoomInOrthoSize) maxY = _zoomInOrthoSize;
+
+                    var clampedVectorY = Mathf.Clamp (mPos.y, minY, maxY);
+
+                    CameraBounds.transform.DOMove (new Vector3 (clampedVectorX, clampedVectorY, initVector.z), TimeToSnap * Time.unscaledDeltaTime);
                 }
                 else
                 {
