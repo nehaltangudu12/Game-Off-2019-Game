@@ -3904,7 +3904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5e3628c0f2b9547b365e50c8cc7eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1968616606}
   maxrange: 5
   scalerate: 1
 --- !u!212 &1438452412
@@ -5524,6 +5524,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941931425}
   m_CullTransparentMesh: 0
+--- !u!1 &1968616606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 169968693615729817, guid: 760ed84a923e6e44fbc010fdd58a43d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 621893793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1972221916
 PrefabInstance:
   m_ObjectHideFlags: 0
