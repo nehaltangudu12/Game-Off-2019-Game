@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalCheck : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GoalCheck : MonoBehaviour
     {
         if (collider.TryGetComponent(out CharacterController player))
         {
-            _sceneInstance.LoadSceneAsync (0);
+            _sceneInstance.LoadSceneAsync (SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
