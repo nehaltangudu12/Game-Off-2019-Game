@@ -8,7 +8,7 @@ How to play :
 
 * Jump with Space
 
-* Hold C to switch the camera's mode, Arrows to move the camera's frame
+* Hold C to switch the camera's mode, Arrows to move the camera's frame or drag and drop it where you want.
 
 * If you hold it for too long, you will run out of battery's charge!
 
