@@ -2,7 +2,7 @@
 
 How to play :
 
-* The goal of the game is to reach a white square (I know it's ugly but hey!)
+* The goal of the game is to reach the goal (which is a ripple effect for now)
 
 * Move with A and D keyboard keys
 
