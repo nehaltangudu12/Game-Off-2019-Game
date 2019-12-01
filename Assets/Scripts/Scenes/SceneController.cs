@@ -21,14 +21,20 @@ public class SceneController : Singleton<SceneController>
     {
         SceneManager.LoadSceneAsync (sceneId, LoadSceneMode.Single);
 
-        if (sceneId == 1)
+        if (sceneId > 0)
+        {
+            Cursor.visible = false;
             _audioControl.PlayMusic (BackgroundMusic, .5f);
+        }
         else
+        {
+            Cursor.visible = true;
             _audioControl.PlayMusic (MMBackgroundMusic, .5f);
+        }
     }
 
     public void ResetCurrentScene ()
     {
-        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+        LoadSceneAsync (SceneManager.GetActiveScene ().buildIndex);
     }
 }

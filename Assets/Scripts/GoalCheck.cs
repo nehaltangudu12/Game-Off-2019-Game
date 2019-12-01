@@ -14,9 +14,17 @@ public class GoalCheck : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collider)
     {
-        if (collider.TryGetComponent(out CharacterController player))
+        if (collider.TryGetComponent (out CharacterController player))
         {
-            _sceneInstance.LoadSceneAsync (SceneManager.GetActiveScene().buildIndex + 1);
+            var nextSceneId = SceneManager.GetActiveScene ().buildIndex + 1;
+            if (nextSceneId >= SceneManager.sceneCountInBuildSettings)
+            {
+                _sceneInstance.LoadSceneAsync (0);
+            }
+            else
+            {
+                _sceneInstance.LoadSceneAsync (nextSceneId);
+            }
         }
     }
 }

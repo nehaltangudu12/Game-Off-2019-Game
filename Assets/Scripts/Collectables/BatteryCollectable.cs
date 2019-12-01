@@ -21,14 +21,12 @@ public class BatteryCollectable : ICollectable
         _uiController.FillBattery (.2f);
         target.TryGetComponent (out CharacterEffects effects);
         effects.PickUpBattery ();
-
-        Debug.Log ("Collect Battery");
+        // Debug.Log ("Collect Battery");
     }
 
     public override void Animate ()
     {
-        Debug.Log ("Animate Battery");
-
+        // Debug.Log ("Animate Battery");
         base.Animate ();
     }
 }

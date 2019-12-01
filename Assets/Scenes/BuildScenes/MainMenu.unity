@@ -951,7 +951,7 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
   m_AspectRatio: 3
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources: []
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 407543484}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.63274336
+  m_Size: 0.6327434
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1968,7 +1968,7 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
   m_AspectRatio: 3
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources: []
@@ -3865,7 +3865,7 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
   m_AspectRatio: 3
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources: []
@@ -4079,6 +4079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab83c6a384e61fe4aa80cb0e83553a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movies:
+  - {fileID: 1602269450}
+  - {fileID: 407741520}
+  - {fileID: 964388580}
   CloseBtn: {fileID: 1723004166}
 --- !u!1 &1712276382
 GameObject:

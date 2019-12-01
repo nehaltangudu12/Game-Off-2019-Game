@@ -8,8 +8,11 @@ using UnityEngine;
 
 public static class SaveLoadManager
 {
+#if UNITY_STANDALONE || UNITY_EDITOR
     public static string Path = string.Format ("{0}/FramePerfect", Application.persistentDataPath);
-
+#elif UNITY_WEBGL
+    public static string Path = string.Format ("{0}/FramePerfect", Application.streamingAssetsPath);
+#endif
     public static void SaveData<T> (T data) where T : class
     {
         if (!Directory.Exists (Path))
