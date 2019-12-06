@@ -9,11 +9,11 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool ShowDebug = false;
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
-    [SerializeField] private float AirForce = 400f;
     [SerializeField] private float WallCheckDistRight = 0.2f;
     [SerializeField] private float WallCheckDistLeft = 0.2f;
     [SerializeField] private float GroundCheckRadius = 0.2f;
     [SerializeField] private float WallSlidingSpeedThreshold = 0.2f;
+    [SerializeField] private Vector2 WallJumpForce;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private LayerMask WallLayer;
     [SerializeField] private LayerMask BoundsLayer;
@@ -102,14 +102,15 @@ public class CharacterController : MonoBehaviour
 
         FlipIt ();
 
-        WallSide ();
+        WallSideCheck ();
 
+        Movement ();
+        
         Jump ();
     }
 
     private void FixedUpdate ()
     {
-        Movement ();
 
         StatesChecker ();
     }
@@ -126,10 +127,9 @@ public class CharacterController : MonoBehaviour
                 // sound
                 CharSounds.PlayJumpGround ();
             }
-
-            if (_isWallSliding)
+            else if (_isWallSliding)
             {
-                _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
+                _rdPlayer.AddForce (WallJumpForce);
 
                 // sound
                 CharSounds.PlayWallJump ();
@@ -137,23 +137,25 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    void WallSide ()
+    void WallSideCheck ()
     {
         _isWallSliding = (_rdPlayer.velocity.y < 0 && (_isNearWallFromLeft || _isNearWallFromRight) && !_isGrounded);
     }
 
     void Movement ()
     {
-        var targetVelocity = new Vector2 (_inputData.XMove * RunSpeed * Time.fixedDeltaTime, _rdPlayer.velocity.y);
-
-        _rdPlayer.velocity = Vector3.SmoothDamp (_rdPlayer.velocity, targetVelocity, ref _storedVelocity, .05f);
-
         if (_isWallSliding)
         {
             if (_rdPlayer.velocity.y < -WallSlidingSpeedThreshold)
             {
-                _rdPlayer.velocity = new Vector2 (_rdPlayer.velocity.x, -WallSlidingSpeedThreshold);
+                _rdPlayer.velocity = new Vector2 (_rdPlayer.velocity.x, -WallSlidingSpeedThreshold * Time.deltaTime);
             }
+        }
+        else
+        {
+            var targetVelocity = new Vector2 (_inputData.XMove * RunSpeed * Time.deltaTime, _rdPlayer.velocity.y);
+
+            _rdPlayer.velocity = Vector3.SmoothDamp (_rdPlayer.velocity, targetVelocity, ref _storedVelocity, .05f);
         }
     }
 
