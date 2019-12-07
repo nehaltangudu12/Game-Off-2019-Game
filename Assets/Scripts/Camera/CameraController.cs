@@ -33,7 +33,7 @@
 
         public Property<bool> IsZoomedOut = new Property<bool> ();
 
-        public Property<bool> BatteryStatus = new Property<bool> ();
+        public PropertyEvent BatteryDischarged = new PropertyEvent ();
 
         public void Init ()
         {
@@ -127,11 +127,10 @@
         {
             if (_inputData.CameraZoomOut)
             {
-                CameraZoom (false);
                 CameraScreenShot ();
+                CameraZoom (false);
             }
-
-            if (_isZoomedOut && _inputData.CameraZoomOutHold)
+            else if (_isZoomedOut && _inputData.CameraZoomOutHold)
             {
                 if (_inputData.CamGrab)
                 {
@@ -169,6 +168,9 @@
                     if (max > _zoomInOrthoSize) max = _zoomInOrthoSize;
 
                     CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y + CamMoveStep, -_zoomInOrthoSize, max), TimeToSnap * Time.unscaledDeltaTime);
+
+                    //UI callback 
+                    BatteryDischarged.Fire ();
                 }
                 else if (_inputData.CamArrowDown)
                 {
@@ -177,6 +179,9 @@
                     if (min < -_zoomInOrthoSize) min = -_zoomInOrthoSize;
 
                     CameraBounds.transform.DOMoveY (Mathf.Clamp (CameraBounds.transform.position.y - CamMoveStep, min, _zoomInOrthoSize), TimeToSnap * Time.unscaledDeltaTime);
+
+                    //UI callback 
+                    BatteryDischarged.Fire ();
                 }
                 else if (_inputData.CamArrowLeft)
                 {
@@ -185,6 +190,9 @@
                     if (min < -21f) min = -21f;
 
                     CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x - CamMoveStep, min, 21f), TimeToSnap * Time.unscaledDeltaTime);
+
+                    //UI callback 
+                    BatteryDischarged.Fire ();
                 }
                 else if (_inputData.CamArrowRight)
                 {
@@ -193,10 +201,12 @@
                     if (max > 21f) max = 21f;
 
                     CameraBounds.transform.DOMoveX (Mathf.Clamp (CameraBounds.transform.position.x + CamMoveStep, -21f, max), TimeToSnap * Time.unscaledDeltaTime);
+
+                    //UI callback 
+                    BatteryDischarged.Fire ();
                 }
             }
-
-            if (_inputData.CameraZoomIn)
+            else if (_inputData.CameraZoomIn)
             {
                 CameraZoom (true);
             }
@@ -255,7 +265,6 @@
                         _mainCam.DOOrthoSize (_zoomInOrthoSize, 0.01f);
 
                         // UI Callback
-                        BatteryStatus.Fire (false);
                     });
                 }));
             }
@@ -268,7 +277,6 @@
                     transform.DOMoveY (CameraScreenTrans.position.y, CamTransition * Time.unscaledDeltaTime, false);
 
                     // UI Callback
-                    BatteryStatus.Fire (true);
                 }));
             }
         }
