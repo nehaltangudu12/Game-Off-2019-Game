@@ -22,6 +22,7 @@ public class UI_LevelsController : MonoBehaviour
         _inputInstance = PlayerInput.Instance;
         _sceneControl = SceneController.Instance;
         _menuControl = MainMenuController.Instance;
+        PlayerPrefs.SetInt("scene number", 2);
 
         foreach (var item in LevelItems)
         {

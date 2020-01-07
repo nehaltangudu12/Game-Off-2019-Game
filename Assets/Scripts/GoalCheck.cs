@@ -17,14 +17,16 @@ public class GoalCheck : MonoBehaviour
         if (collider.TryGetComponent (out CharacterController player))
         {
             var nextSceneId = SceneManager.GetActiveScene ().buildIndex + 1;
-            if (nextSceneId >= SceneManager.sceneCountInBuildSettings)
+            PlayerPrefs.SetInt("scene number", nextSceneId);
+            _sceneInstance.LoadSceneAsync(1);
+            /*if (nextSceneId >= SceneManager.sceneCountInBuildSettings)
             {
                 _sceneInstance.LoadSceneAsync (0);
             }
             else
             {
                 _sceneInstance.LoadSceneAsync (nextSceneId);
-            }
+            }*/
         }
     }
 }
