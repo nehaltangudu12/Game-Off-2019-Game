@@ -2145,7 +2145,6 @@ GameObject:
   - component: {fileID: 1166611462}
   - component: {fileID: 1166611464}
   - component: {fileID: 1166611463}
-  - component: {fileID: 1166611465}
   m_Layer: 0
   m_Name: Versionning
   m_TagString: Untagged
@@ -2216,19 +2215,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1166611465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166611461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf384673a8a7894db664998489e61d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DontDestroy: 0
 --- !u!1 &1210263747
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,30 +5349,35 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_text
-      value: Settings
+      value: Play
       objectReference: {fileID: 0}
-    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_fontSize
-      value: 27.45
+      value: 26.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7671372430066426805, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
@@ -5428,35 +5419,30 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_text
-      value: Play
+      value: Settings
       objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
+    - target: {fileID: 7671372430514386410, guid: a23a19eae3cd1024cb574682e66a21bc,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7963601019856691977, guid: a23a19eae3cd1024cb574682e66a21bc,
-        type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
+      value: 27.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23a19eae3cd1024cb574682e66a21bc, type: 3}

@@ -9,11 +9,11 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool ShowDebug = false;
     [SerializeField] private float RunSpeed = 600f;
     [SerializeField] private float JumpForce = 400f;
-    [SerializeField] private float AirForce = 400f;
     [SerializeField] private float WallCheckDistRight = 0.2f;
     [SerializeField] private float WallCheckDistLeft = 0.2f;
     [SerializeField] private float GroundCheckRadius = 0.2f;
     [SerializeField] private float WallSlidingSpeedThreshold = 0.2f;
+    [SerializeField] private Vector2 WallJumpForce;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private LayerMask WallLayer;
     [SerializeField] private LayerMask BoundsLayer;
@@ -27,7 +27,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private CharacterSound CharSounds = null;
 
     private bool _isGrounded = false;
-    private bool _isNearWall = false;
+    private bool _isNearWallFromRight = false;
+    private bool _isNearWallFromLeft = false;
     private bool _isWallSliding = false;
     private bool _isFacingRight = true;
     private InputData _inputData = null;
@@ -49,7 +50,7 @@ public class CharacterController : MonoBehaviour
         _inputData = PlayerInput.Instance.Data;
         _debugStyle = DebugGUISkin.label;
 
-        CamController.Init (this);
+        CamController?.Init (this);
     }
     #region  Debug
 
@@ -63,7 +64,7 @@ public class CharacterController : MonoBehaviour
 
         var wallRect = new Rect (50f, 110f, 250f, 50f);
 
-        GUI.Label (wallRect, string.Format ("Near Wall? => {0}", _isNearWall), _debugStyle);
+        // GUI.Label (wallRect, string.Format ("Near Wall? => {0}", _isNearWall), _debugStyle);
 
         var wallSlideRect = new Rect (50f, 170f, 250f, 50f);
 
@@ -101,14 +102,15 @@ public class CharacterController : MonoBehaviour
 
         FlipIt ();
 
-        WallSide ();
+        WallSideCheck ();
 
+        Movement ();
+        
         Jump ();
     }
 
     private void FixedUpdate ()
     {
-        Movement ();
 
         StatesChecker ();
     }
@@ -125,10 +127,9 @@ public class CharacterController : MonoBehaviour
                 // sound
                 CharSounds.PlayJumpGround ();
             }
-
-            if (_isWallSliding)
+            else if (_isWallSliding)
             {
-                _rdPlayer.AddForce (new Vector2 (AirForce, AirForce));
+                _rdPlayer.AddForce (WallJumpForce);
 
                 // sound
                 CharSounds.PlayWallJump ();
@@ -136,23 +137,25 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    void WallSide ()
+    void WallSideCheck ()
     {
-        _isWallSliding = (_rdPlayer.velocity.y < 0 && _isNearWall && !_isGrounded);
+        _isWallSliding = (_rdPlayer.velocity.y < 0 && (_isNearWallFromLeft || _isNearWallFromRight) && !_isGrounded);
     }
 
     void Movement ()
     {
-        var targetVelocity = new Vector2 (_inputData.XMove * RunSpeed * Time.fixedDeltaTime, _rdPlayer.velocity.y);
-
-        _rdPlayer.velocity = Vector3.SmoothDamp (_rdPlayer.velocity, targetVelocity, ref _storedVelocity, .05f);
-
         if (_isWallSliding)
         {
             if (_rdPlayer.velocity.y < -WallSlidingSpeedThreshold)
             {
-                _rdPlayer.velocity = new Vector2 (_rdPlayer.velocity.x, -WallSlidingSpeedThreshold);
+                _rdPlayer.velocity = new Vector2 (_rdPlayer.velocity.x, -WallSlidingSpeedThreshold * Time.deltaTime);
             }
+        }
+        else
+        {
+            var targetVelocity = new Vector2 (_inputData.XMove * RunSpeed * Time.deltaTime, _rdPlayer.velocity.y);
+
+            _rdPlayer.velocity = Vector3.SmoothDamp (_rdPlayer.velocity, targetVelocity, ref _storedVelocity, .05f);
         }
     }
 
@@ -190,9 +193,9 @@ public class CharacterController : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapCircle (GroundCheckObj.position, GroundCheckRadius, GroundLayer);
 
-        _isNearWall = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer | BoundsLayer) ||
-            Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer | BoundsLayer);
+        _isNearWallFromRight = Physics2D.Raycast (WallCheckObj.position, transform.right, WallCheckDistRight, WallLayer | BoundsLayer);
 
+        _isNearWallFromLeft = Physics2D.Raycast (WallCheckObj.position, -transform.right, WallCheckDistLeft, WallLayer | BoundsLayer);
     }
 
     void FlipIt ()
@@ -207,8 +210,25 @@ public class CharacterController : MonoBehaviour
             {
                 _isFacingRight = true;
             }
-        }
 
-        transform.localScale = new Vector3 (_isFacingRight ? (_isWallSliding? - 1.5f : 1.5f) : (_isWallSliding? 1.5f: -1.5f), 1.5f, 1.5f);
+            transform.localScale = new Vector3 (_isFacingRight ? 1.5f : -1.5f, 1.5f, 1.5f);
+        }
+        else // if sliding
+        {
+            if (_isNearWallFromLeft)
+            {
+                if (!_isFacingRight)
+                {
+                    transform.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
+                }
+            }
+            else if (_isNearWallFromRight)
+            {
+                if (_isFacingRight)
+                {
+                    transform.localScale = new Vector3 (-1.5f, 1.5f, 1.5f);
+                }
+            }
+        }
     }
 }

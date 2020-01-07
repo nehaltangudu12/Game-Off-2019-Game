@@ -7,9 +7,14 @@ public class GameController : SingletonMB<GameController>
     public UIController UIControl;
     public CameraController CameraTest;
 
-    void Start()
+    new void Awake ()
     {
-        UIControl.Init();
-        CameraTest.Init();
+        Application.targetFrameRate = 60;
+    }
+
+    void Start ()
+    {
+        UIControl.Init ();
+        CameraTest.Init ();
     }
 }

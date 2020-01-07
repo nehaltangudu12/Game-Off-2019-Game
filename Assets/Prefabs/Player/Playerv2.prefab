@@ -55,9 +55,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1.2
   m_Material: {fileID: 6200000, guid: 3ff684af1c31c1f4fb38695cc167a8aa, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &6208556424435459480
 BoxCollider2D:
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13030878, y: 1.2694336}
+  m_Offset: {x: 0.06884745, y: 1.2694336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -83,7 +83,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.660634, y: 2.542802}
+  m_Size: {x: 0.5377113, y: 2.542802}
   m_EdgeRadius: 0
 --- !u!114 &6876073529290754665
 MonoBehaviour:
@@ -98,13 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowDebug: 0
-  RunSpeed: 450
+  RunSpeed: 350
   JumpForce: 400
-  AirForce: 400
-  WallCheckDistRight: 0.73
-  WallCheckDistLeft: 0.73
-  GroundCheckRadius: 0.2
+  WallCheckDistRight: 0.55
+  WallCheckDistLeft: 0.55
+  GroundCheckRadius: 0.37
   WallSlidingSpeedThreshold: 0.2
+  WallJumpForce: {x: 0, y: 400}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -322,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7674819317959582394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10000102, y: -0.0593338, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 169968693615729822}
