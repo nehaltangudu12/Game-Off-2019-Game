@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Battery : MonoBehaviour
 {
     [SerializeField] private float UpdateSpeed = 1.5f;
+    [SerializeField] private float SubtractByMovement = 0.05f;
     [SerializeField] private Image BatteryTube = null;
     [SerializeField] private GameObject ContentContainer = null;
     [SerializeField] private Transform NormalTransHolder = null;
@@ -20,13 +21,13 @@ public class Battery : MonoBehaviour
     public bool IsBatteryFull => BatteryTube.fillAmount == 1f;
     public bool IsBatteryEmpty => BatteryTube.fillAmount == 0f;
 
-    public void FillAmount(float amount) => BatteryTube.fillAmount += amount;
+    public void FillAmount (float amount) => BatteryTube.fillAmount += amount;
 
     void Start ()
     {
         _camInstance = CameraController.Instance;
 
-        _camInstance.BatteryStatus.AddEvent (UpdateBattery, this);
+        _camInstance.BatteryDischarged.AddEvent (UpdateAmount, this);
         _camInstance.IsZoomedOut.AddEvent (UpdateStatus, this);
 
         DOTween.defaultAutoKill = false;
@@ -37,7 +38,7 @@ public class Battery : MonoBehaviour
         BatteryChecker ();
     }
 
-    internal void CacheBatteryAmount()
+    internal void CacheBatteryAmount ()
     {
         _cachedFillAmount = BatteryTube.fillAmount;
     }
@@ -54,31 +55,17 @@ public class Battery : MonoBehaviour
         }
     }
 
-    private void UpdateBattery (bool emptyIt)
+    void UpdateAmount ()
     {
         _batteryTween?.Pause ();
 
-        BatteryTube.fillAmount = _cachedFillAmount;
+        var targetAmount = BatteryTube.fillAmount - SubtractByMovement;
         
-        if (emptyIt)
-        {
-            // Debug.Log ("Fill amount when emptying : " + BatteryTube.fillAmount);
-            _batteryTween = BatteryTube.DOFillAmount (0, 4f * Time.unscaledDeltaTime).SetDelay (UpdateSpeed * Time.unscaledDeltaTime);
-        }
-        else
-        {
-            // Debug.Log ("Fill amount when filling : " + BatteryTube.fillAmount);
-            //_batteryTween = BatteryTube.DOFillAmount (1, 4f);
-        }
+        _batteryTween = BatteryTube.DOFillAmount (targetAmount, 0.1f * Time.unscaledDeltaTime);
     }
 
     void BatteryChecker ()
     {
-        // if (CameraBatteryTube.fillAmount <= 0.15f)
-        // {
-        //     if (_isZoomedOut) CameraZoom (true);
-        // }
-
         if (BatteryTube.fillAmount < 0.3f)
         {
             BatteryTube.color = Color.red;
