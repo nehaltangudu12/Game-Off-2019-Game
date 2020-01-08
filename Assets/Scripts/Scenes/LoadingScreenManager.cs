@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadingScreenManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class LoadingScreenManager : MonoBehaviour
     {
         _sceneInstance = SceneController.Instance;
         var sceneNumber = PlayerPrefs.GetInt("scene number");
+        if (sceneNumber >= SceneManager.sceneCountInBuildSettings)
+        {
+            _sceneInstance.LoadSceneAsync(0);
+        } else
         _sceneInstance.LoadSceneAsync(sceneNumber);
     }
 

@@ -52,7 +52,8 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu ()
     {
         Time.timeScale = 1f;
-        _sceneControl.LoadSceneAsync (0);
+        PlayerPrefs.SetInt("scene number", 0);
+        _sceneControl.LoadSceneAsync (1);
     }
 
     public void Restart ()
