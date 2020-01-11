@@ -11,6 +11,7 @@ public class Spikes : MonoBehaviour
         _sceneControl = SceneController.Instance;
     }
 
+    /*
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.GetComponent<CharacterController> () != null)
@@ -18,4 +19,5 @@ public class Spikes : MonoBehaviour
             _sceneControl.ResetCurrentScene ();
         }
     }
+    */
 }

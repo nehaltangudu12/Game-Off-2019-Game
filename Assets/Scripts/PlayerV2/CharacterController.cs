@@ -25,6 +25,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private CameraController CamController = null;
     [SerializeField] private CharacterEffects CharEffects = null;
     [SerializeField] private CharacterSound CharSounds = null;
+    [SerializeField] private Vector3 startpos;
 
     private bool _isGrounded = false;
     private bool _isNearWallFromRight = false;
@@ -37,6 +38,7 @@ public class CharacterController : MonoBehaviour
     private Vector3 _storedVelocity = Vector3.zero;
     private GUIStyle _debugStyle = null;
 
+
     public CharacterEffects Effects => CharEffects;
 
     void Awake ()
@@ -47,6 +49,7 @@ public class CharacterController : MonoBehaviour
 
     void Start ()
     {
+        startpos = gameObject.transform.position;
         _inputData = PlayerInput.Instance.Data;
         _debugStyle = DebugGUISkin.label;
 
@@ -229,6 +232,19 @@ public class CharacterController : MonoBehaviour
                     transform.localScale = new Vector3 (-1.5f, 1.5f, 1.5f);
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "enemy")
+        {
+            transform.position = startpos;
+        }
+
+        if (collision.tag == "checkpoint")
+        {
+            startpos = collision.transform.position;
         }
     }
 }
